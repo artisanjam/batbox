@@ -88,7 +88,11 @@ private:
   poetryEntries::AsyncSectionStash poetrySections_;
   context::AsyncContextStash contextStash_;
   instructions::project::async::MemoryDiscoveryStash discoveryStash_;
-  instructions::MemoryPathStash memoryPathStash_;
+  // Shared so discovery callbacks bound at startup keep a valid stash after
+  // Provider teardown (retired workspace shutdown drops queued continuations
+  // while their captured callbacks still run).
+  std::shared_ptr<instructions::MemoryPathStash> memoryPathStash_=
+    std::make_shared<instructions::MemoryPathStash>();
   instructions::MemoryPathServices memoryPaths_;
   instructions::project::DiscoveryServices discovery_;
   instructions::project::async::Services discoveryAsync_;
