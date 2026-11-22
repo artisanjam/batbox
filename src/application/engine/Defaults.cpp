@@ -1,13 +1,13 @@
 #include "application/engine/Defaults.hpp"
 #include "application/engine/AutoPolicy.hpp"
 #include "application/Async.hpp"
-#include "instructions/hooks/runtime/HookBlockingMessages.hpp"
+#include "lib/instructions/hooks/runtime/HookBlockingMessages.hpp"
 #include "interactive/background/NotificationAttachments.hpp"
 #include "messages/RuntimeMessages.hpp"
 #include "query/MemoryAttachmentFilter.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "flights/ProjectDirectories.hpp"
-#include "utils/tokens.hpp"
+#include "util/tokens.hpp"
 #include <cstdlib>
 #include <future>
 #include <set>

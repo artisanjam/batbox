@@ -1,5 +1,5 @@
 #pragma once
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::bash_gadget {
 // Preprocess semantic numbers and booleans, then validate the strict Bash

@@ -1,7 +1,7 @@
 #include "application/config/ConfigPanelInternal.hpp"
 #include "application/Async.hpp"
 #include "providers/ModelRequestSettings.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <cctype>
 #include <cstdlib>

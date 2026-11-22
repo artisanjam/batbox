@@ -1,7 +1,7 @@
 #include "application/media/AttachmentAggregate.hpp"
 #include "attachments/context/ContextCollectors.hpp"
 #include "attachments/files/FileAttachments.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <chrono>
 #include <cstdlib>

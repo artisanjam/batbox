@@ -1,5 +1,5 @@
 #include "skills/process/PoetryCommand.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::skills::process {
 bool isEnvTruthy(const std::string& value){

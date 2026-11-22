@@ -1,6 +1,6 @@
 #include "text_sdk/bun_text_width/Wrap.hpp"
 #include "text_sdk/bun_text_width/WrapInternal.hpp"
-#include "runtime/ArrayJoin.hpp"
+#include "core/runtime/ArrayJoin.hpp"
 #include <cmath>
 #include <cstdlib>
 #include <limits>

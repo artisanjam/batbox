@@ -1,5 +1,5 @@
 #include "interactive/text_input/Cursor.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <stdexcept>
 

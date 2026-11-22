@@ -1,9 +1,9 @@
 #include "application/hooks/Provider.hpp"
-#include "runtime/Loopback.hpp"
-#include "instructions/hooks/runtime/IndigenousHttp.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/Loopback.hpp"
+#include "lib/instructions/hooks/runtime/IndigenousHttp.hpp"
+#include "core/runtime/JsonValue.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include <curl/curl.h>
 #include <algorithm>

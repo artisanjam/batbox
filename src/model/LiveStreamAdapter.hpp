@@ -1,7 +1,7 @@
 #pragma once
 
 #include "model/StreamingAttempt.hpp"
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #include "streaming/Reducer.hpp"
 #include "model/Watchdog.hpp"
 

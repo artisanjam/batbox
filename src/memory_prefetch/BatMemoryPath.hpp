@@ -1,5 +1,5 @@
 #pragma once
-#include "instructions/MemoryPath.hpp"
+#include "lib/instructions/MemoryPath.hpp"
 
 namespace batbox::memory_prefetch {
 std::string getBatMemoryDir(const std::string& batType,

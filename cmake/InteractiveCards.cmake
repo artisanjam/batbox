@@ -66,5 +66,5 @@ target_sources(batbox_terminal_ftxui PRIVATE
 target_sources(batbox_interactive PRIVATE
   src/interactive/gadget_views/GadgetViewModel.cpp)
 target_sources(batbox_terminal_ftxui PRIVATE
-  src/terminal_ftxui/TextFit.cpp
+  src/ui/terminal_ftxui/TextFit.cpp
   src/interactive/gadget_views/GadgetViewProjection.cpp)

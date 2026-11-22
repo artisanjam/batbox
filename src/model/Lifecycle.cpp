@@ -1,6 +1,6 @@
 #include "model/Lifecycle.hpp"
 #include "services/api/batbox.hpp"
-#include "utils/envUtils.hpp"
+#include "util/envUtils.hpp"
 #include <cmath>
 
 namespace batbox::model {

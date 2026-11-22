@@ -1,5 +1,5 @@
 #include "application/hooks/Provider.hpp"
-#include "instructions/hooks/runtime/HookRuntimeBindings.hpp"
+#include "lib/instructions/hooks/runtime/HookRuntimeBindings.hpp"
 #include <stdexcept>
 
 namespace batbox::application::hooks {

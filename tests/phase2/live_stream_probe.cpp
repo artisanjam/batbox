@@ -1,7 +1,7 @@
 #include "model/LiveStream.hpp"
 #include "model/LiveStreamAdapter.hpp"
-#include "transport/Errors.hpp"
-#include "transport/WireClient.hpp"
+#include "lib/transport/Errors.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <chrono>
 #include <iostream>
 

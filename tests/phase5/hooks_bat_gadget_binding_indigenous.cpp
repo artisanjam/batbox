@@ -1,4 +1,4 @@
-#include "instructions/hooks/runtime/BatSyntheticGadgetBinding.hpp"
+#include "lib/instructions/hooks/runtime/BatSyntheticGadgetBinding.hpp"
 #include <cassert>
 #include <iostream>
 

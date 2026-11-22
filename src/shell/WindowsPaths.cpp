@@ -1,5 +1,5 @@
 #include "shell/WindowsPaths.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <cctype>
 #include <cstdlib>
@@ -9,7 +9,7 @@
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 
 namespace batbox::shell {

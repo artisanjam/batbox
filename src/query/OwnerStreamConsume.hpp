@@ -1,5 +1,5 @@
 #pragma once
-#include "event_loop/Loop.hpp"
+#include "core/event_loop/Loop.hpp"
 #include "model/StreamingAttempt.hpp"
 #include "model/Watchdog.hpp"
 #include "streaming/Reducer.hpp"

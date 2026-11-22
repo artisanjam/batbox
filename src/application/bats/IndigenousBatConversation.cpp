@@ -2,8 +2,8 @@
 #include "application/Async.hpp"
 #include "bats/ResumeFilters.hpp"
 #include "interactive/StreamReducer.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include "flights/Load.hpp"
 #include "flights/scanning/Scanning.hpp"
 #include <algorithm>

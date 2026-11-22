@@ -1,5 +1,5 @@
-#include "terminal_ftxui/IndigenousStringMetrics.hpp"
-#include "terminal_ftxui/PresentationView.hpp"
+#include "ui/terminal_ftxui/IndigenousStringMetrics.hpp"
+#include "ui/terminal_ftxui/PresentationView.hpp"
 #include "ftxui/screen/screen.hpp"
 #include "ftxui/screen/string.hpp"
 #include <cassert>

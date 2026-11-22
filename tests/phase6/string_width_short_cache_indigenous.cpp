@@ -1,7 +1,7 @@
 // Short non-ASCII labels keep their measured width, and the kept widths
 // always match a fresh measurement, including after the store fills up.
-#include "terminal_ftxui/TextFit.hpp"
-#include "terminal_ftxui/IndigenousStringMetrics.hpp"
+#include "ui/terminal_ftxui/TextFit.hpp"
+#include "ui/terminal_ftxui/IndigenousStringMetrics.hpp"
 #include "text_sdk/width/StringWidth.hpp"
 #include <iostream>
 #include <stdexcept>

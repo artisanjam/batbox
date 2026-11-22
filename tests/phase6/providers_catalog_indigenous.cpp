@@ -4,7 +4,7 @@
 #include "providers/Catalog.hpp"
 #include "providers/Onboarding.hpp"
 #include "providers/WireClients.hpp"
-#include "transport/Errors.hpp"
+#include "lib/transport/Errors.hpp"
 #include <filesystem>
 #include <fstream>
 #include <iostream>

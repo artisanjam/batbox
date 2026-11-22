@@ -1,9 +1,9 @@
 #pragma once
 
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "interactive/CommandUi.hpp"
 #include "application/mcp_elicitation/DateTimeParser.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <deque>
 #include <memory>
 #include <stop_token>

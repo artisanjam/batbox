@@ -1,5 +1,5 @@
 #include "attachment_triggers/Attachments.hpp"
-#include "glob/DiscoveryMatcherBinding.hpp"
+#include "lib/glob/DiscoveryMatcherBinding.hpp"
 #include "gadgets/files/ActiveStash.hpp"
 #include "gadgets/files/ActiveTriggers.hpp"
 #include <cassert>

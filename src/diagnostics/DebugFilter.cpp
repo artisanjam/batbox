@@ -1,5 +1,5 @@
 #include "diagnostics/DebugFilter.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <cctype>
 #include <regex>

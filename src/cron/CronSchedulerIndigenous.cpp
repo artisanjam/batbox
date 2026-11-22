@@ -3,7 +3,7 @@
 #include "cron/locale/NotificationDate.hpp"
 #include "cron/CronLock.hpp"
 #include "bootstrap/BootstrapState.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "settings/watcher/IndigenousWatcher.hpp"
 #include <atomic>
 #include <filesystem>

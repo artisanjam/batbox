@@ -1,6 +1,6 @@
 #pragma once
-#include "event_loop/Loop.hpp"
-#include "instructions/hooks/runtime/EnvHooks.hpp"
+#include "core/event_loop/Loop.hpp"
+#include "lib/instructions/hooks/runtime/EnvHooks.hpp"
 #include "settings/watcher/IndigenousWatcher.hpp"
 #include <memory>
 #include <string>

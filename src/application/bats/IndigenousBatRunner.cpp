@@ -1,5 +1,5 @@
 #include "application/bats/IndigenousBatApplication.hpp"
-#include "runtime/Version.hpp"
+#include "core/runtime/Version.hpp"
 #include "application/bats/GeneralPurpose.hpp"
 #include "application/bats/Memory.hpp"
 #include "application/bats/BatMcp.hpp"
@@ -8,7 +8,7 @@
 #include "interactive/background/NotificationAttachments.hpp"
 #include "application/Async.hpp"
 #include "bats/BatGadgets.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "settings/PermissionRules.hpp"
 #include <algorithm>
 #include <stdexcept>

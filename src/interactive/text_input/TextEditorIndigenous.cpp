@@ -1,6 +1,6 @@
 #include "interactive/text_input/TextEditorIndigenous.hpp"
 #include "text_sdk/npm_wrap_ansi/Internal.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <chrono>
 #include <stdexcept>
 

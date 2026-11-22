@@ -2,7 +2,7 @@
 #include "application/Config.hpp"
 #include "application/model/LocalModelService.hpp"
 #include "bootstrap/InvokedSkills.hpp"
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "messages/Messages.hpp"
 #include "skills/SkillRoster.hpp"
 #include "skills/SkillGadgetValidation.hpp"

@@ -7,7 +7,7 @@
 #include "interactive/TranscriptRows.hpp"
 #include "text_sdk/width/IndigenousLayout.hpp"
 #include "history/References.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
 #include <cassert>

@@ -1,6 +1,6 @@
 #include "shell/TailFile.hpp"
 #include "shell/ManagedShellInternal.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <cerrno>
 #include <cstring>

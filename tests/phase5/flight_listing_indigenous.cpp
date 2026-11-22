@@ -5,8 +5,8 @@
 #include "flights/Load.hpp"
 #include "flights/Transcript.hpp"
 #include "messages/RuntimeMessages.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
 #include <chrono>
 #include <filesystem>
 #include <fstream>

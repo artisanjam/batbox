@@ -54,11 +54,11 @@ target_sources(batbox_interactive PRIVATE
   src/interactive/background/NotificationAttachments.cpp)
 
 add_library(batbox_terminal_ftxui
-  src/terminal_ftxui/Driver.cpp src/terminal_ftxui/PresentationLayout.cpp
-  src/terminal_ftxui/TranscriptCopy.cpp
-  src/terminal_ftxui/PresentationView.cpp src/terminal_ftxui/StyleProjection.cpp
-  src/terminal_ftxui/IndigenousStringMetrics.cpp
-  src/terminal_ftxui/ScrollbackProjection.cpp)
+  src/ui/terminal_ftxui/Driver.cpp src/ui/terminal_ftxui/PresentationLayout.cpp
+  src/ui/terminal_ftxui/TranscriptCopy.cpp
+  src/ui/terminal_ftxui/PresentationView.cpp src/ui/terminal_ftxui/StyleProjection.cpp
+  src/ui/terminal_ftxui/IndigenousStringMetrics.cpp
+  src/ui/terminal_ftxui/ScrollbackProjection.cpp)
 target_link_libraries(batbox_terminal_ftxui PUBLIC batbox_interactive
   ftxui::component ftxui::dom ftxui::screen batbox_text_sdk batbox_intl
   batbox_user_input batbox_history)

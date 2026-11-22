@@ -1,5 +1,5 @@
 #include "intl/IndigenousInternal.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <unicode/brkiter.h>
 #include <unicode/locid.h>
 #include <unicode/ubrk.h>

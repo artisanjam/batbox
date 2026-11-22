@@ -1,5 +1,5 @@
 #include "interactive/gadget_views/GadgetViewProjection.hpp"
-#include "terminal_ftxui/TextFit.hpp"
+#include "ui/terminal_ftxui/TextFit.hpp"
 #include <ftxui/screen/string.hpp>
 #include <algorithm>
 #include <functional>

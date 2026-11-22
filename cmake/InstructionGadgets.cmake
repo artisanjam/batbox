@@ -1,11 +1,11 @@
 find_package(yaml-cpp REQUIRED)
 add_library(batbox_instructions
-  src/instructions/MemoryLines.cpp src/instructions/MemoryLoad.cpp
-  src/instructions/MemoryPath.cpp src/instructions/MemoryScan.cpp
-  src/instructions/MemoryTruncation.cpp src/instructions/MemoryTypes.cpp
-  src/instructions/MemoryTypesIndividual.cpp
-  src/instructions/FrontmatterYaml.cpp src/instructions/FrontmatterFields.cpp
-  src/instructions/FrontmatterPaths.cpp)
+  src/lib/instructions/MemoryLines.cpp src/lib/instructions/MemoryLoad.cpp
+  src/lib/instructions/MemoryPath.cpp src/lib/instructions/MemoryScan.cpp
+  src/lib/instructions/MemoryTruncation.cpp src/lib/instructions/MemoryTypes.cpp
+  src/lib/instructions/MemoryTypesIndividual.cpp
+  src/lib/instructions/FrontmatterYaml.cpp src/lib/instructions/FrontmatterFields.cpp
+  src/lib/instructions/FrontmatterPaths.cpp)
 target_link_libraries(batbox_instructions PUBLIC batbox_core yaml-cpp ICU::uc)
 target_compile_options(batbox_instructions PRIVATE -Wall -Wextra -Wpedantic)
 add_library(batbox_skills

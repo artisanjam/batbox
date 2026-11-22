@@ -1,5 +1,5 @@
 #include "messages/TextContent.hpp"
-#include "runtime/ArrayJoin.hpp"
+#include "core/runtime/ArrayJoin.hpp"
 #include <stdexcept>
 
 namespace batbox::messages {

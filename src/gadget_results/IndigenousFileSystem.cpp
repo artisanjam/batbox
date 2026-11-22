@@ -1,7 +1,7 @@
-#include "runtime/AsyncLaunch.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
 #include "gadget_results/Storage.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <cerrno>
 #include <cstring>

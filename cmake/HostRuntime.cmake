@@ -3,7 +3,7 @@ if(WIN32)
 else()
   set(BATBOX_SHELL_BOOTSTRAP_SOURCE src/shell/ShellBootstrapIndigenous.cpp)
 endif()
-# The hook runtime (src/instructions/hooks/runtime/) is its own target in
+# The hook runtime (src/lib/instructions/hooks/runtime/) is its own target in
 # cmake/HooksCore.cmake, with the Indigenous process sources there too.
 add_library(batbox_roost src/cwd/Override.cpp
   src/shell/ShellBootstrap.cpp ${BATBOX_SHELL_BOOTSTRAP_SOURCE})
@@ -34,22 +34,22 @@ find_package(OpenSSL REQUIRED COMPONENTS Crypto)
 # (Foundation.cmake); the former batbox_git_utils target was a name inversion.
 target_sources(batbox_settings PRIVATE src/settings/persistence/WatchTargets.cpp)
 add_library(batbox_instruction_async
-  src/instructions/project/async/IndigenousFs.cpp src/instructions/project/async/AsyncFile.cpp
-  src/instructions/project/async/AsyncRules.cpp src/instructions/project/async/AsyncStash.cpp
-  src/instructions/project/async/MemoryStages.cpp src/instructions/project/async/MemoryFinish.cpp
-  src/instructions/project/async/ContextBinding.cpp src/instructions/project/async/ConditionalRules.cpp
-  src/instructions/project/async/ManagedConditional.cpp src/instructions/project/async/NestedConditional.cpp
-  src/instructions/hooks/InstructionsLoaded.cpp)
+  src/lib/instructions/project/async/IndigenousFs.cpp src/lib/instructions/project/async/AsyncFile.cpp
+  src/lib/instructions/project/async/AsyncRules.cpp src/lib/instructions/project/async/AsyncStash.cpp
+  src/lib/instructions/project/async/MemoryStages.cpp src/lib/instructions/project/async/MemoryFinish.cpp
+  src/lib/instructions/project/async/ContextBinding.cpp src/lib/instructions/project/async/ConditionalRules.cpp
+  src/lib/instructions/project/async/ManagedConditional.cpp src/lib/instructions/project/async/NestedConditional.cpp
+  src/lib/instructions/hooks/InstructionsLoaded.cpp)
 target_link_libraries(batbox_instruction_async PUBLIC batbox_instructions batbox_context batbox_event_loop)
 target_compile_options(batbox_instruction_async PRIVATE -Wall -Wextra -Wpedantic)
 
 target_sources(batbox_settings PRIVATE src/settings/watcher/IndigenousWatcher.cpp)
 target_link_libraries(batbox_settings PUBLIC batbox_event_loop)
 pkg_check_modules(PCRE2_16 REQUIRED IMPORTED_TARGET libpcre2-16)
-add_library(batbox_glob src/glob/Regex16.cpp src/glob/IgnorePattern.cpp
-  src/glob/IgnoreMatcher.cpp src/glob/PicomatchCore.cpp src/glob/PicomatchSyntax.cpp
-  src/glob/PicomatchStars.cpp src/glob/PicomatchSafety.cpp src/glob/PicomatchMatch.cpp
-  src/glob/DiscoveryMatcherBinding.cpp)
+add_library(batbox_glob src/lib/glob/Regex16.cpp src/lib/glob/IgnorePattern.cpp
+  src/lib/glob/IgnoreMatcher.cpp src/lib/glob/PicomatchCore.cpp src/lib/glob/PicomatchSyntax.cpp
+  src/lib/glob/PicomatchStars.cpp src/lib/glob/PicomatchSafety.cpp src/lib/glob/PicomatchMatch.cpp
+  src/lib/glob/DiscoveryMatcherBinding.cpp)
 target_link_libraries(batbox_glob PUBLIC batbox_instructions PkgConfig::PCRE2_16)
 target_compile_options(batbox_glob PRIVATE -Wall -Wextra -Wpedantic)
 

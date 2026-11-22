@@ -4,8 +4,8 @@
 #include "bats/BatResultBindings.hpp"
 #include "bats/BatGadgetBackgroundContinuation.hpp"
 #include "cwd/Override.hpp"
-#include "runtime/AsyncLaunch.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
+#include "core/runtime/Platform.hpp"
 #include <stdexcept>
 
 namespace batbox::application::bats {

@@ -3,8 +3,8 @@
 #include "cron/CronLock.hpp"
 #include "bootstrap/BootstrapState.hpp"
 #include "cleanup/Roster.hpp"
-#include "runtime/JsonValue.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/Platform.hpp"
 #include <cassert>
 #include <chrono>
 #include <filesystem>

@@ -1,7 +1,7 @@
 #include "application/hooks/Provider.hpp"
 #include "application/Async.hpp"
 #include "messages/Context.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::application::hooks {
 namespace {

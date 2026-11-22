@@ -2,7 +2,7 @@
 #include "interactive/TranscriptRows.hpp"
 #include "interactive/presentation_providers/MissionFooter.hpp"
 #include "history/References.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <stdexcept>
 #include <unordered_map>

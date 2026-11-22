@@ -1,5 +1,5 @@
 #include "interactive/message_list_view/Search.hpp"
-#include "utils/messages.hpp"
+#include "util/messages.hpp"
 #include <algorithm>
 #include <stdexcept>
 

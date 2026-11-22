@@ -1,5 +1,5 @@
 #include "cleanup/Terminal.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <algorithm>
 #include <cerrno>
 #ifndef _WIN32

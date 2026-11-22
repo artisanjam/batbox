@@ -2,7 +2,7 @@
 #include "providers/aws/EventStream.hpp"
 #include "providers/cloud/CloudClients.hpp"
 #include "providers/gcp/VertexClient.hpp"
-#include "transport/Errors.hpp"
+#include "lib/transport/Errors.hpp"
 #include <openssl/bn.h>
 #include <openssl/core_names.h>
 #include <openssl/evp.h>

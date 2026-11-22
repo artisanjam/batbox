@@ -1,5 +1,5 @@
 #include "skills/Skill.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <regex>
 #include <stdexcept>
 

@@ -15,8 +15,8 @@
 #include "text_sdk/width/AnsiSlice.hpp"
 #include "text_sdk/width/IndigenousLayout.hpp"
 #include "text_sdk/npm_wrap_ansi/Wrap.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/IndigenousTime.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/IndigenousTime.hpp"
 #include <chrono>
 #include <cstdio>
 #include <ctime>

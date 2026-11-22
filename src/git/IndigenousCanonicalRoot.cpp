@@ -1,7 +1,7 @@
 #include "git/CanonicalRoot.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/JsonValue.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cerrno>
 #include <cstdlib>
 #include <fstream>

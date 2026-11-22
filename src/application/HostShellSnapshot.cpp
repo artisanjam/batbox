@@ -1,12 +1,12 @@
 #include "application/HostShellSnapshot.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
 #include "shell/SnapshotRun.hpp"
 #include <cstdlib>
 #include <map>
 #include <utility>
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #include <cwchar>
 #include <windows.h>
 #else

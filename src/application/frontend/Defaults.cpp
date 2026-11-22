@@ -3,7 +3,7 @@
 #include "interactive/context/GadgetPool.hpp"
 #include "messages/TextContent.hpp"
 #include "messages/Context.hpp"
-#include "media/Media.hpp"
+#include "lib/media/Media.hpp"
 #include "compaction/Compaction.hpp"
 #include <chrono>
 #include <filesystem>

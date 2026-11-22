@@ -4,7 +4,7 @@
 #include "bats/ForkedBat.hpp"
 #include "application/engine/AutoPolicy.hpp"
 #include "project_recovery/Recovery.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <filesystem>
 #include <fstream>
 #include <iostream>

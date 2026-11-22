@@ -7,7 +7,7 @@
 #include "bats/RunBat.hpp"
 #include "skills/process/PoetryCommand.hpp"
 #include "user_input/CommandMessages.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <stdexcept>
 
 namespace batbox::application::skills {

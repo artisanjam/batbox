@@ -1,4 +1,4 @@
-#include "instructions/hooks/runtime/PoetryModelBinding.hpp"
+#include "lib/instructions/hooks/runtime/PoetryModelBinding.hpp"
 #include <cassert>
 #include <iostream>
 #include <stdexcept>

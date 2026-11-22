@@ -1,6 +1,6 @@
 #include "git/GitBasics.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <filesystem>
 #ifndef _WIN32
 #include <unistd.h>

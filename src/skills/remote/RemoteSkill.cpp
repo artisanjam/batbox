@@ -1,8 +1,8 @@
 #include "skills/remote/RemoteSkill.hpp"
-#include "instructions/Frontmatter.hpp"
+#include "lib/instructions/Frontmatter.hpp"
 #include "connectors/Abort.hpp"
 #include "skills/SkillGadgetExecution.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::skills::remote {

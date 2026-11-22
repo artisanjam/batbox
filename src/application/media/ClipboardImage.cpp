@@ -2,9 +2,9 @@
 #ifdef __APPLE__
 #include "application/media/ClipboardImageMac.hpp"
 #endif
-#include "media/Base64.hpp"
-#include "media/ImageIndigenous.hpp"
-#include "media/Media.hpp"
+#include "lib/media/Base64.hpp"
+#include "lib/media/ImageIndigenous.hpp"
+#include "lib/media/Media.hpp"
 #include <algorithm>
 #include <chrono>
 #include <cstdio>

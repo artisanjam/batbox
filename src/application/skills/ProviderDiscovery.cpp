@@ -1,6 +1,6 @@
 #include "application/skills/Provider.hpp"
-#include "instructions/Frontmatter.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "lib/instructions/Frontmatter.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <filesystem>
 #include <fstream>

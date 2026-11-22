@@ -1,6 +1,6 @@
 #pragma once
-#include "filesystem/FileOps.hpp"
-#include "filesystem/RipgrepProcess.hpp"
+#include "lib/filesystem/FileOps.hpp"
+#include "lib/filesystem/RipgrepProcess.hpp"
 #include "gadgets/Gadget.hpp"
 #include <functional>
 #include <string>

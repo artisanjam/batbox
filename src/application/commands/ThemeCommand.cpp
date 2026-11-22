@@ -1,6 +1,6 @@
 #include "application/commands/ThemeCommand.hpp"
 #include "interactive/presentation_providers/StyleRoles.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <stdexcept>
 

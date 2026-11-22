@@ -4,9 +4,9 @@
 #include "bats/RunBat.hpp"
 #include "interactive/background/NotificationAttachments.hpp"
 #include "messages/RuntimeMessages.hpp"
-#include "mcp/Mcp.hpp"
-#include "runtime/Platform.hpp"
-#include "transport/Errors.hpp"
+#include "lib/mcp/Mcp.hpp"
+#include "core/runtime/Platform.hpp"
+#include "lib/transport/Errors.hpp"
 
 namespace batbox::application::engine {
 std::shared_ptr<execution::Services> makeExecutionServices(ExecutionInputs inputs){

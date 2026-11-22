@@ -1,5 +1,5 @@
-#include "instructions/hooks/runtime/IndigenousCommandFull.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/instructions/hooks/runtime/IndigenousCommandFull.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <cassert>
 #include <iostream>
 #include <string>

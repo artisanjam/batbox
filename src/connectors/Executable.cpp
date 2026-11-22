@@ -1,10 +1,10 @@
 #include "connectors/Executable.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cstdlib>
 #include <system_error>
 #include <vector>
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #else
 #include <unistd.h>
 #endif

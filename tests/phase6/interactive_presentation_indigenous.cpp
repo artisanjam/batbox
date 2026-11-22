@@ -1,6 +1,6 @@
 #include "interactive/PresentationState.hpp"
 #include "interactive/TranscriptRows.hpp"
-#include "terminal_ftxui/PresentationView.hpp"
+#include "ui/terminal_ftxui/PresentationView.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>
 #include <iostream>

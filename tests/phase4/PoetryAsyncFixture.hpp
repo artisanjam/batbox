@@ -1,6 +1,6 @@
 #pragma once
-#include "poetryEntries/AsyncSystemPoetry.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/poetryEntries/AsyncSystemPoetry.hpp"
+#include "core/runtime/JsonValue.hpp"
 namespace poetry_fixture {
 using batbox::Json;
 namespace poetryEntries=batbox::poetryEntries;

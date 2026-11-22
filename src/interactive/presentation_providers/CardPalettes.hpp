@@ -10,7 +10,7 @@
 #include "interactive/presentation_providers/ThemeState.hpp"
 #include "interactive/presentation_providers/StyleRoles.hpp"
 #include "interactive/gadget_views/GadgetViewProjection.hpp"
-#include "terminal_ftxui/PresentationView.hpp"
+#include "ui/terminal_ftxui/PresentationView.hpp"
 
 namespace batbox::interactive::presentation_providers {
 cards::OutputLinePalette outputLinePalette(const ThemeState&);

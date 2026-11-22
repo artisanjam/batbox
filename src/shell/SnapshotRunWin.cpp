@@ -1,6 +1,6 @@
 #include "shell/SnapshotRun.hpp"
 #include "shell/WindowsPaths.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #define WIN32_LEAN_AND_MEAN
 #ifndef NOMINMAX
 #define NOMINMAX

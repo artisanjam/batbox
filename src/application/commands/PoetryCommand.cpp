@@ -1,5 +1,5 @@
 #include "application/commands/PoetryCommand.hpp"
-#include "utils/envUtils.hpp"
+#include "util/envUtils.hpp"
 #include <cstdlib>
 #include <sstream>
 #include <stdexcept>

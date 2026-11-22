@@ -1,5 +1,5 @@
 #include "application/lsp/Symbol.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <array>
 #include <fstream>
 

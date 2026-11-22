@@ -1,5 +1,5 @@
 # MCP authentication, connection state machines, and the Indigenous SDK transport boundary.
-add_library(batbox_indigenous_jsonl_process src/process/IndigenousJsonlProcess.cpp)
+add_library(batbox_indigenous_jsonl_process src/core/process/IndigenousJsonlProcess.cpp)
 target_link_libraries(batbox_indigenous_jsonl_process PUBLIC batbox_core
   PkgConfig::LIBUV Threads::Threads)
 target_compile_options(batbox_indigenous_jsonl_process PRIVATE -Wall -Wextra -Wpedantic)
@@ -20,17 +20,17 @@ if(WIN32)
 endif()
 
 add_library(batbox_mcp_runtime
-  src/mcp/http/IndigenousHttp.cpp
-  src/mcp/auth/Helpers.cpp src/mcp/auth/Provider.cpp src/mcp/auth/Refresh.cpp
-  src/mcp/auth/Revocation.cpp
-  src/mcp/auth/Discovery.cpp src/mcp/auth/OAuthFlight.cpp
-  src/mcp/auth/IndigenousServices.cpp src/mcp/auth/Flow.cpp
-  src/mcp/remote/RemoteCore.cpp src/mcp/remote/RemoteRequest.cpp
-  src/mcp/remote/RemoteRead.cpp
-  src/mcp/manager/ManagerCore.cpp src/mcp/manager/ManagerConnect.cpp
-  src/mcp/manager/ManagerEvents.cpp src/mcp/manager/IndigenousRuntime.cpp
-  src/mcp/manager/IndigenousConfiguration.cpp src/mcp/manager/IndigenousFactory.cpp
-  src/mcp/manager/IndigenousAuth.cpp)
+  src/lib/mcp/http/IndigenousHttp.cpp
+  src/lib/mcp/auth/Helpers.cpp src/lib/mcp/auth/Provider.cpp src/lib/mcp/auth/Refresh.cpp
+  src/lib/mcp/auth/Revocation.cpp
+  src/lib/mcp/auth/Discovery.cpp src/lib/mcp/auth/OAuthFlight.cpp
+  src/lib/mcp/auth/IndigenousServices.cpp src/lib/mcp/auth/Flow.cpp
+  src/lib/mcp/remote/RemoteCore.cpp src/lib/mcp/remote/RemoteRequest.cpp
+  src/lib/mcp/remote/RemoteRead.cpp
+  src/lib/mcp/manager/ManagerCore.cpp src/lib/mcp/manager/ManagerConnect.cpp
+  src/lib/mcp/manager/ManagerEvents.cpp src/lib/mcp/manager/IndigenousRuntime.cpp
+  src/lib/mcp/manager/IndigenousConfiguration.cpp src/lib/mcp/manager/IndigenousFactory.cpp
+  src/lib/mcp/manager/IndigenousAuth.cpp)
 target_link_libraries(batbox_mcp_runtime PUBLIC batbox_mcp batbox_auth
   batbox_process batbox_url batbox_event_loop batbox_transport CURL::libcurl OpenSSL::Crypto)
 target_compile_options(batbox_mcp_runtime PRIVATE -Wall -Wextra -Wpedantic)

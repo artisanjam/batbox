@@ -1,4 +1,4 @@
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 #include "streaming/Reducer.hpp"
 #include <atomic>
 #include <cassert>

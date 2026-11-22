@@ -1,6 +1,6 @@
 #include "interactive/presentation_providers/Shortcut.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <cctype>
 #include <stdexcept>

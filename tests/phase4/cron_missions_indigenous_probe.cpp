@@ -1,6 +1,6 @@
 #include "bootstrap/BootstrapState.hpp"
 #include "cron/CronMissions.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

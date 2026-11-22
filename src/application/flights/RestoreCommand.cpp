@@ -1,10 +1,10 @@
 #include "application/flights/Restore.hpp"
-#include "process/ExecFileNoThrow.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/process/ExecFileNoThrow.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include "flights/FlightListing.hpp"
 #include "flights/Views.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #include "shell/ShellQuote.hpp"
 #include <algorithm>
 #include <cstdlib>

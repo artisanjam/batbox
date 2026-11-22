@@ -1,5 +1,5 @@
 #pragma once
-#include "event_loop/Loop.hpp"
+#include "core/event_loop/Loop.hpp"
 #include "shell/BashProvider.hpp"
 #include "shell/ManagedShell.hpp"
 #include "shell/MissionOutputPoller.hpp"

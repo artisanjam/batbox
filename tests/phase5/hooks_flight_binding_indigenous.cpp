@@ -1,4 +1,4 @@
-#include "instructions/hooks/runtime/FlightHookBinding.hpp"
+#include "lib/instructions/hooks/runtime/FlightHookBinding.hpp"
 #include <cassert>
 #include <iostream>
 

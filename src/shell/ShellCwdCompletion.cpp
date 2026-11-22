@@ -1,5 +1,5 @@
 #include "shell/ShellCwdCompletion.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::shell {

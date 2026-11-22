@@ -1,4 +1,4 @@
-#include "instructions/hooks/InstructionsLoaded.hpp"
+#include "lib/instructions/hooks/InstructionsLoaded.hpp"
 #include <cassert>
 #include <stdexcept>
 

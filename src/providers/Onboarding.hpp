@@ -1,6 +1,6 @@
 #pragma once
 #include "application/Config.hpp"
-#include "mcp/http/Http.hpp"
+#include "lib/mcp/http/Http.hpp"
 #include "providers/Catalog.hpp"
 #include "providers/WireClients.hpp"
 #include <chrono>

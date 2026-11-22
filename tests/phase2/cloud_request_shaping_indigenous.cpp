@@ -4,7 +4,7 @@
 #include "providers/cloud/Crypto.hpp"
 #include "providers/cloud/ErrorShape.hpp"
 #include "providers/gcp/VertexClient.hpp"
-#include "transport/Errors.hpp"
+#include "lib/transport/Errors.hpp"
 #include <openssl/evp.h>
 #include <openssl/pem.h>
 #include <openssl/rsa.h>

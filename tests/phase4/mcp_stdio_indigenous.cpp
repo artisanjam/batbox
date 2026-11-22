@@ -1,4 +1,4 @@
-#include "mcp/StdioClient.hpp"
+#include "lib/mcp/StdioClient.hpp"
 #include "connectors/Abort.hpp"
 #include <cassert>
 #include <chrono>

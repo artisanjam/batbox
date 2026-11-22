@@ -5,10 +5,10 @@
 #include "application/engine/Execution.hpp"
 #include "application/gadgets/DefaultInputs.hpp"
 #include "application/commands/CommandsMcp.hpp"
-#include "mcp/OutputStorage.hpp"
+#include "lib/mcp/OutputStorage.hpp"
 #include "application/Async.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
 #include <stdexcept>
 
 namespace batbox::application {

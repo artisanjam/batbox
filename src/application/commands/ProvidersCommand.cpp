@@ -2,7 +2,7 @@
 #include "application/config/ConfigPanelInternal.hpp"
 #include "application/config/EndpointStore.hpp"
 #include "commands_indigenous/UiCommands.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <cctype>
 #include <set>

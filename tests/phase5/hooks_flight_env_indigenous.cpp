@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "instructions/hooks/runtime/FlightEnvironment.hpp"
+#include "lib/instructions/hooks/runtime/FlightEnvironment.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

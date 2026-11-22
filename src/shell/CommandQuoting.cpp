@@ -1,7 +1,7 @@
 #include "shell/CommandQuoting.hpp"
 #include "shell/CommandQuotingInternal.hpp"
 #include "shell/ShellQuote.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::shell_command {
 namespace {

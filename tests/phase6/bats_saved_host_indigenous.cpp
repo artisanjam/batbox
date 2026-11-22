@@ -1,7 +1,7 @@
 #include "application/HostInternal.hpp"
 #include "flights/SavedBats.hpp"
 #include "interactive/presentation_providers/MissionFooter.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "user_input/SlashInternal.hpp"
 #include <algorithm>
 #include <chrono>

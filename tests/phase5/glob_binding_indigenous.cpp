@@ -1,5 +1,5 @@
-#include "glob/DiscoveryMatcherBinding.hpp"
-#include "instructions/project/ProjectDiscovery.hpp"
+#include "lib/glob/DiscoveryMatcherBinding.hpp"
+#include "lib/instructions/project/ProjectDiscovery.hpp"
 #include <cassert>
 
 int main(){

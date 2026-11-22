@@ -31,9 +31,9 @@
 #include "application/memory/Provider.hpp"
 #include "application/lsp/Runtime.hpp"
 #include "application/mission_ui/BatMissionBridge.hpp"
-#include "mcp/manager/IndigenousRuntime.hpp"
+#include "lib/mcp/manager/IndigenousRuntime.hpp"
 #include "application/mcp_elicitation/Controller.hpp"
-#include "event_loop/Loop.hpp"
+#include "core/event_loop/Loop.hpp"
 #include "gadgets/live_roster/LiveRoster.hpp"
 #include <atomic>
 #include <fstream>

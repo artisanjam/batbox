@@ -1,5 +1,5 @@
 #include "gadgets/synthetic_output/SyntheticOutput.hpp"
-#include "instructions/hooks/runtime/HookResponseSchema.hpp"
+#include "lib/instructions/hooks/runtime/HookResponseSchema.hpp"
 #include <future>
 #include <stdexcept>
 

@@ -15,7 +15,7 @@ The project license does not replace those terms.
 | AWS SigV4 signing test vectors (test fixtures only) | [Apache-2.0](tests/fixtures/sigv4/LICENSE), [NOTICE](tests/fixtures/sigv4/NOTICE), from [aws-c-auth revision 3d29adcecf5c032131acee9f4125a636d2aaea6a](https://github.com/awslabs/aws-c-auth/tree/3d29adcecf5c032131acee9f4125a636d2aaea6a/tests/aws-signing-test-suite/v4) |
 | Additional adapted helpers | Preserved notices in [third_party/notices](third_party/notices/) and [third_party/licenses](third_party/licenses/) |
 
-SDK adaptations in `src/transport/` use algorithms from
+SDK adaptations in `src/lib/transport/` use algorithms from
 [Anthropic’s SDK revision cb5fba419808e3844fa6407e59577ab7ba346b79](https://github.com/anthropics/anthropic-sdk-typescript/tree/cb5fba419808e3844fa6407e59577ab7ba346b79).
 Copyright 2023 Anthropic, PBC. Batbox’s C++ adaptations and integration changes
 remain subject to the SDK’s Apache-2.0 terms.

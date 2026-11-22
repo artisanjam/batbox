@@ -1,5 +1,5 @@
 #include "skills/Skill.hpp"
-#include "instructions/Frontmatter.hpp"
+#include "lib/instructions/Frontmatter.hpp"
 #include <algorithm>
 #include <cmath>
 #include <regex>

@@ -37,7 +37,7 @@ def check_checkout(source, archive, root, autocrlf, env):
     checkout.mkdir(parents=True)
     paths = [Path(".gitattributes"), Path("cmake/FtxuiPatch.cmake")]
     patches = sorted(path.relative_to(source) for path in
-                     (source / "src/terminal_ftxui/patches").glob("*.patch"))
+                     (source / "src/ui/terminal_ftxui/patches").glob("*.patch"))
     if not patches:
         raise RuntimeError("No FTXUI adapter patches found")
     paths += patches

@@ -17,13 +17,13 @@
 #include "bats/BatMissionState.hpp"
 #include "bats/ForkedBat.hpp"
 #include "bats/IndigenousMissionOutput.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #include "messages/Context.hpp"
-#include "poetryEntries/EffectiveSystemPoetry.hpp"
+#include "lib/poetryEntries/EffectiveSystemPoetry.hpp"
 #include "flights/MetadataOperations.hpp"
 #include "flights/Title.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <cstdlib>
 #include <filesystem>
 #include <fstream>

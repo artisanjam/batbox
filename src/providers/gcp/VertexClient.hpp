@@ -1,6 +1,6 @@
 #pragma once
 #include "providers/cloud/HttpExchange.hpp"
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #include "providers/gcp/GoogleAuth.hpp"
 #include <memory>
 #include <mutex>

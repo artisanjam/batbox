@@ -1,6 +1,6 @@
-#include "fs_operations/ReverseLines.hpp"
-#include "fs_operations/NodeFsBytesIndigenous.hpp"
-#include "event_loop/Loop.hpp"
+#include "lib/fs_operations/ReverseLines.hpp"
+#include "lib/fs_operations/NodeFsBytesIndigenous.hpp"
+#include "core/event_loop/Loop.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

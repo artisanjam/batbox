@@ -1,5 +1,5 @@
-#include "fs_operations/IndigenousPathChecks.hpp"
-#include "filesystem/FileOps.hpp"
+#include "lib/fs_operations/IndigenousPathChecks.hpp"
+#include "lib/filesystem/FileOps.hpp"
 #include <algorithm>
 #include <cassert>
 #include <filesystem>

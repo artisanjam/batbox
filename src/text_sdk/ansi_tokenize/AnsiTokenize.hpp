@@ -1,6 +1,6 @@
 #pragma once
 #include "text_sdk/ansi_tokenize/Types.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <limits>
 #include <string>
 

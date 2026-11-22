@@ -1,5 +1,5 @@
 #pragma once
-#include "utils/envUtils.hpp"
+#include "util/envUtils.hpp"
 namespace batbox {
 struct AutoCompactDependencies {
   double contextWindow;

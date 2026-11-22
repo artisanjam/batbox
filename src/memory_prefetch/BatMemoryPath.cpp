@@ -1,5 +1,5 @@
 #include "memory_prefetch/BatMemoryPath.hpp"
-#include "runtime/PathSanitization.hpp"
+#include "core/runtime/PathSanitization.hpp"
 #include "shell/PosixPath.hpp"
 #include <algorithm>
 #include <stdexcept>

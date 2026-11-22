@@ -1,5 +1,5 @@
 #pragma once
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <algorithm>
 #include <string>
 

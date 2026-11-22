@@ -1,7 +1,7 @@
 if(WIN32)
-  set(BATBOX_RIPGREP_PROCESS_SOURCE src/filesystem/RipgrepProcessWin.cpp)
+  set(BATBOX_RIPGREP_PROCESS_SOURCE src/lib/filesystem/RipgrepProcessWin.cpp)
 else()
-  set(BATBOX_RIPGREP_PROCESS_SOURCE src/filesystem/RipgrepProcess.cpp)
+  set(BATBOX_RIPGREP_PROCESS_SOURCE src/lib/filesystem/RipgrepProcess.cpp)
 endif()
 # The file gadgets (Read/Edit/Grep/Glob/Notebook implementations), their
 # filesystem support, and the read-file staleness stash form one cohesive
@@ -12,13 +12,13 @@ add_library(batbox_file_gadgets
   src/file_state_stash/FileStateStash.cpp
   src/file_state_stash/Path.cpp
   src/file_state_stash/Helpers.cpp
-  src/filesystem/FileOps.cpp
-  src/filesystem/Paths.cpp
-  src/filesystem/Range.cpp
-  src/filesystem/RangeFast.cpp
-  src/filesystem/RangeStream.cpp
+  src/lib/filesystem/FileOps.cpp
+  src/lib/filesystem/Paths.cpp
+  src/lib/filesystem/Range.cpp
+  src/lib/filesystem/RangeFast.cpp
+  src/lib/filesystem/RangeStream.cpp
   ${BATBOX_RIPGREP_PROCESS_SOURCE}
-  src/filesystem/RipgrepOutcome.cpp
+  src/lib/filesystem/RipgrepOutcome.cpp
   src/gadgets/files/BinaryExtensions.cpp
   src/gadgets/files/EditMatch.cpp
   src/gadgets/files/EditPatch.cpp

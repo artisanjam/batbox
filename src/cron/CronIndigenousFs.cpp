@@ -1,9 +1,9 @@
-#include "runtime/AsyncLaunch.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
 #include "cron/CronMissions.hpp"
 #include "bootstrap/BootstrapState.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <cerrno>
 #include <filesystem>

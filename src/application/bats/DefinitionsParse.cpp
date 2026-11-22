@@ -1,6 +1,6 @@
 #include "application/bats/Definitions.hpp"
-#include "instructions/Frontmatter.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "lib/instructions/Frontmatter.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include "skills/Skill.hpp"
 #include <algorithm>
 #include <fstream>

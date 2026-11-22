@@ -1,6 +1,6 @@
 #include "text_sdk/width/StringWidth.hpp"
 #include "text_sdk/width/IndigenousData.hpp"
-#include "glob/Regex16.hpp"
+#include "lib/glob/Regex16.hpp"
 #include <stdexcept>
 namespace batbox::text_sdk::width {
 namespace {

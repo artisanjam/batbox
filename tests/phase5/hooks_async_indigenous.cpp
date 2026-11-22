@@ -1,4 +1,4 @@
-#include "instructions/hooks/runtime/IndigenousManagedHookProcess.hpp"
+#include "lib/instructions/hooks/runtime/IndigenousManagedHookProcess.hpp"
 #include <cassert>
 #include <chrono>
 #include <iostream>

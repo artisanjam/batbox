@@ -1,9 +1,9 @@
 #include "providers/WireClients.hpp"
 #include "application/config/EndpointStore.hpp"
 #include "providers/cloud/CloudClients.hpp"
-#include "transport/openai_chat/OpenAIChatClient.hpp"
+#include "lib/transport/openai_chat/OpenAIChatClient.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include <algorithm>
 #include <cctype>

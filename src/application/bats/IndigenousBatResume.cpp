@@ -1,11 +1,11 @@
 #include "application/bats/IndigenousBatApplication.hpp"
-#include "mcp/manager/IndigenousRuntime.hpp"
+#include "lib/mcp/manager/IndigenousRuntime.hpp"
 #include "application/Async.hpp"
 #include "bats/ResumeFilters.hpp"
 #include "normalization/Normalization.hpp"
 #include "cwd/Override.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
 #include "gadget_results/Budget.hpp"
 #include <stdexcept>
 

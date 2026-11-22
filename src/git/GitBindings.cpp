@@ -1,5 +1,5 @@
 #include "git/GitBindings.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <cstdlib>
 #include <stdexcept>
 #include <utility>

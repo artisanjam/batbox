@@ -1,5 +1,5 @@
 #include "interactive/cards_assistant/AssistantProjection.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <stdexcept>
 #include <utility>
 #include <vector>

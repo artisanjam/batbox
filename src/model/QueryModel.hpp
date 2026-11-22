@@ -8,7 +8,7 @@
 #include "model/PostStream.hpp"
 #include "api_errors/ApiErrors.hpp"
 #include "streaming/Reducer.hpp"
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <exception>
 #include <memory>
 #include <stop_token>

@@ -1,6 +1,6 @@
 #include "interactive/conversation_shell/PoetryViewport.hpp"
 #include "interactive/text_input/Cursor.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
 #include <algorithm>

@@ -2,7 +2,7 @@
 #include "application/editor/IndigenousProcess.hpp"
 #include "application/editor/TranscriptFile.hpp"
 #include "text_sdk/npm_wrap_ansi/Internal.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
 #include <algorithm>

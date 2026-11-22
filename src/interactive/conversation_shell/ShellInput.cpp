@@ -1,6 +1,6 @@
 #include "interactive/conversation_shell/Shell.hpp"
 #include "interactive/presentation_providers/MissionFooter.hpp"
-#include "termio/Csi.hpp"
+#include "ui/termio/Csi.hpp"
 #include "history/References.hpp"
 #include "text_sdk/npm_wrap_ansi/Internal.hpp"
 #include "application/editor/PoetryEditor.hpp"

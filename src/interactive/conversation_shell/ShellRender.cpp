@@ -2,8 +2,8 @@
 #include "interactive/conversation_shell/Shell.hpp"
 #include "interactive/conversation_shell/PoetryViewport.hpp"
 #include "interactive/presentation_providers/MissionFooter.hpp"
-#include "terminal_ftxui/ElementSearch.hpp"
-#include "terminal_ftxui/TextFit.hpp"
+#include "ui/terminal_ftxui/ElementSearch.hpp"
+#include "ui/terminal_ftxui/TextFit.hpp"
 #include "interactive/gadget_views/GadgetViewModel.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>

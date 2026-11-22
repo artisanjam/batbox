@@ -3,7 +3,7 @@
 #include "application/flights/Flight.hpp"
 #include "bats/ForkedBat.hpp"
 #include "bootstrap/InvokedSkills.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "gadgets/live_roster/LiveRoster.hpp"
 #include <atomic>
 #include <filesystem>

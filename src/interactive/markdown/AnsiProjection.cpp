@@ -1,5 +1,5 @@
 #include "interactive/markdown/AnsiProjection.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <algorithm>
 #include <cstdint>
 #include <optional>

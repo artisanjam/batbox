@@ -1,5 +1,5 @@
 #include "bats/IndigenousMissionOutput.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cerrno>
 #include <system_error>
 #ifdef _WIN32

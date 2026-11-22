@@ -2,12 +2,12 @@
 #include "application/commands/ProvidersCommand.hpp"
 #include "application/config/Discovery.hpp"
 #include "providers/WireClients.hpp"
-#include "transport/Errors.hpp"
+#include "lib/transport/Errors.hpp"
 #include "application/config/EndpointStore.hpp"
 #include "application/Config.hpp"
 #include "application/model/LocalModelService.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "app_state/State.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/app_state/State.hpp"
 #include <algorithm>
 #include <cassert>
 #include <chrono>

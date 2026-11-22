@@ -1,6 +1,6 @@
 #include "application/file_history/HistoryInternal.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <openssl/sha.h>
 #include <array>
 #include <filesystem>

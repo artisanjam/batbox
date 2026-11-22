@@ -1,5 +1,5 @@
 #include "providers/LocalDiscovery.hpp"
-#include "transport/RawHttp.hpp"
+#include "lib/transport/RawHttp.hpp"
 #include <algorithm>
 #include <cctype>
 #include <optional>

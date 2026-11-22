@@ -1,5 +1,5 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "interactive/MessageGrouping.hpp"
 #include "interactive/viewport/Controller.hpp"
 #include "text_sdk/scan/Scan.hpp"

@@ -1,6 +1,6 @@
 #include "interactive/MessageTags.hpp"
-#include "glob/Regex16.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/glob/Regex16.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <cctype>
 #include <memory>
 #include <string_view>

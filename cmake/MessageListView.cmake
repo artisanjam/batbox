@@ -15,4 +15,4 @@ target_sources(batbox_terminal_ftxui PRIVATE
 target_sources(batbox_terminal_ftxui PRIVATE
   src/interactive/message_list_view/Projection.cpp
   src/interactive/viewport/Controller.cpp
-  src/terminal_ftxui/ElementSearch.cpp)
+  src/ui/terminal_ftxui/ElementSearch.cpp)

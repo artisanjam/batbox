@@ -1,8 +1,8 @@
 #include "application/model/Internal.hpp"
 #include "query/SimpleQueriesBinding.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "providers/cloud/CloudKinds.hpp"
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <future>
 #include <stdexcept>
 #include <utility>

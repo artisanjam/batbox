@@ -1,8 +1,8 @@
 #pragma once
 #include "providers/cloud/Clock.hpp"
 #include "providers/cloud/Command.hpp"
-#include "runtime/JsonValue.hpp"
-#include "transport/Client.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "lib/transport/Client.hpp"
 #include <chrono>
 #include <filesystem>
 #include <functional>

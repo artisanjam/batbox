@@ -1,5 +1,5 @@
 #include "api_errors/Internal.hpp"
-#include "formatting/Format.hpp"
+#include "ui/formatting/Format.hpp"
 
 namespace batbox::api_errors::internal {
 namespace {

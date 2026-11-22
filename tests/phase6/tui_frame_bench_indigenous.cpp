@@ -7,7 +7,7 @@
 #include "application/presentation/Bindings.hpp"
 #include "interactive/TranscriptRows.hpp"
 #include "interactive/presentation_providers/StyleRoles.hpp"
-#include "terminal_ftxui/ScrollbackProjection.hpp"
+#include "ui/terminal_ftxui/ScrollbackProjection.hpp"
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/screen/terminal.hpp>
 #include <algorithm>

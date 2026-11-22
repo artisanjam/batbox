@@ -1,6 +1,6 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
-#include "transport/Errors.hpp"
+#include "core/event_loop/Deferred.hpp"
+#include "lib/transport/Errors.hpp"
 #include <condition_variable>
 #include <exception>
 #include <memory>

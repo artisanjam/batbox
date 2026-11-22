@@ -1,10 +1,10 @@
 #pragma once
 #include "interactive/CommandUi.hpp"
 #include "interactive/PresentationState.hpp"
-#include "keyboard_input/Keyboard.hpp"
-#include "terminal_ftxui/Driver.hpp"
-#include "terminal_ftxui/PresentationView.hpp"
-#include "terminal_ftxui/ScrollbackProjection.hpp"
+#include "ui/keyboard_input/Keyboard.hpp"
+#include "ui/terminal_ftxui/Driver.hpp"
+#include "ui/terminal_ftxui/PresentationView.hpp"
+#include "ui/terminal_ftxui/ScrollbackProjection.hpp"
 #include "interactive/MessageListMemo.hpp"
 #include "interactive/message_list_view/Projection.hpp"
 #include "interactive/message_list_view/Search.hpp"
@@ -13,7 +13,7 @@
 #include "interactive/text_input/TextEditor.hpp"
 #include "interactive/transcript_navigation/Navigation.hpp"
 #include "interactive/viewport/Controller.hpp"
-#include "terminal_ftxui/TranscriptCopy.hpp"
+#include "ui/terminal_ftxui/TranscriptCopy.hpp"
 #include "application/history/History.hpp"
 #include "application/completion/Completion.hpp"
 #include <ftxui/dom/node.hpp>

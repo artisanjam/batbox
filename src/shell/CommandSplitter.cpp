@@ -2,7 +2,7 @@
 #include "shell/Heredoc.hpp"
 #include "shell/RandomSalt.hpp"
 #include "shell/ShellQuote.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <optional>
 #include <stdexcept>
 

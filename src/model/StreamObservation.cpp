@@ -1,5 +1,5 @@
 #include "model/StreamObservation.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <chrono>
 #include <cmath>
 #include <stdexcept>

@@ -1,6 +1,6 @@
 #pragma once
 #include "application/poetry/Provider.hpp"
-#include "poetryEntries/SystemPoetryFile.hpp"
+#include "lib/poetryEntries/SystemPoetryFile.hpp"
 #include "user_input/SlashDispatch.hpp"
 
 namespace batbox::application::commands {

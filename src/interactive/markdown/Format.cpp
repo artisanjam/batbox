@@ -1,7 +1,7 @@
 #include "interactive/markdown/Format.hpp"
 #include "interactive/markdown/Lexer.hpp"
 #include "interactive/PoetryXmlTags.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <regex>
 #include <stdexcept>

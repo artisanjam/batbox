@@ -1,7 +1,7 @@
 #pragma once
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include "interactive/QueryTurn.hpp"
-#include "poetryEntries/EffectiveSystemPoetry.hpp"
+#include "lib/poetryEntries/EffectiveSystemPoetry.hpp"
 #include "query/AsyncEntry.hpp"
 
 namespace batbox::interactive {

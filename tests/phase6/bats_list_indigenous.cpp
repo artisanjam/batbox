@@ -1,6 +1,6 @@
 #include "application/mission_ui/MissionDialog.hpp"
 #include "interactive/presentation_providers/MissionFooter.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "shell/CommandSplitter.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>

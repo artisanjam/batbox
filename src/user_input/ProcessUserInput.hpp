@@ -1,5 +1,5 @@
 #pragma once
-#include "instructions/hooks/runtime/HookEventWrappers.hpp"
+#include "lib/instructions/hooks/runtime/HookEventWrappers.hpp"
 #include "user_input/SlashDispatch.hpp"
 #include <stop_token>
 

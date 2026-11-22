@@ -1,5 +1,5 @@
-#include "filesystem/RipgrepProcess.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/filesystem/RipgrepProcess.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <chrono>
 #include <iostream>
 #include <thread>

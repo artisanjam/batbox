@@ -2,7 +2,7 @@
 #include "interactive/markdown/AnsiProjection.hpp"
 #include "interactive/markdown/Blocks.hpp"
 #include "interactive/PoetryXmlTags.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 #include <utility>
 

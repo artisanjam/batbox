@@ -1,8 +1,8 @@
 #include "client_factory/tls/IndigenousCerts.hpp"
 #include "client_factory/tls/IndigenousRoots.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include <cstdlib>
 #include <fstream>

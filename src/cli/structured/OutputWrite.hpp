@@ -1,6 +1,6 @@
 #pragma once
 #include "cli/util/Ndjson.hpp"
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include <functional>
 #include <string>
 

@@ -1,8 +1,8 @@
 // The permission dialog names a file by its path inside the Roost, or under
 // "~" outside it, while the rule it offers to save keeps the exact path.
 #include "application/permissions/PermissionProvider.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
 #include <filesystem>
 #include <iostream>
 #include <optional>

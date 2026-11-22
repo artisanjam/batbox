@@ -1,5 +1,5 @@
 #include "application/config/ConfigPanelInternal.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <limits>
 #include <stdexcept>

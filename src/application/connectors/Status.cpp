@@ -1,11 +1,11 @@
 #include "application/connectors/Status.hpp"
-#include "runtime/Loopback.hpp"
+#include "core/runtime/Loopback.hpp"
 #include "application/connectors/Bootstrap.hpp"
 #include "connectors/Executable.hpp"
 #include "connectors/Scrapling.hpp"
 #include "connectors/Searxng.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <curl/curl.h>
 #include <fstream>
 #include <future>

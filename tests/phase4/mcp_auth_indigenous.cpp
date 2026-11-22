@@ -1,5 +1,5 @@
-#include "mcp/Call.hpp"
-#include "mcp/StdioClient.hpp"
+#include "lib/mcp/Call.hpp"
+#include "lib/mcp/StdioClient.hpp"
 #include "connectors/Abort.hpp"
 #include <iostream>
 #include <stdexcept>

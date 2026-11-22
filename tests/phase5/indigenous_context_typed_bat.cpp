@@ -1,6 +1,6 @@
 #include "bats/ForkedBat.hpp"
 #include "bats/TypedBatState.hpp"
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include <iostream>
 #include <stdexcept>
 

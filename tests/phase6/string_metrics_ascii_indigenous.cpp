@@ -1,4 +1,4 @@
-#include "terminal_ftxui/IndigenousStringMetrics.hpp"
+#include "ui/terminal_ftxui/IndigenousStringMetrics.hpp"
 #include "ftxui/screen/string.hpp"
 #include <cassert>
 #include <iostream>

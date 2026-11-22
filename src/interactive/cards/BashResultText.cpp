@@ -1,6 +1,6 @@
 #include "interactive/cards/BashResultText.hpp"
-#include "glob/Regex16.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/glob/Regex16.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::interactive::cards {
 namespace {

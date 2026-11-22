@@ -1,7 +1,7 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "interactive/navigation/MessageCopy.hpp"
-#include "termio/Clipboard.hpp"
+#include "ui/termio/Clipboard.hpp"
 #include <deque>
 #include <filesystem>
 #include <map>

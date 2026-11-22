@@ -1,7 +1,7 @@
 #include "interactive/cards_assistant/AssistantTextCard.hpp"
-#include "glob/Regex16.hpp"
+#include "lib/glob/Regex16.hpp"
 #include "interactive/PoetryXmlTags.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::interactive::cards_assistant {

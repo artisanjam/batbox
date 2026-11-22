@@ -10,7 +10,7 @@
 #include "interactive/markdown/Renderer.hpp"
 #include "interactive/presentation_providers/StyleRoles.hpp"
 #include "interactive/presentation_providers/ThemeData.hpp"
-#include "terminal_ftxui/TextFit.hpp"
+#include "ui/terminal_ftxui/TextFit.hpp"
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/screen/terminal.hpp>
 #include <cmath>

@@ -6,7 +6,7 @@
 #include "interactive/gadget_views/GadgetViewModel.hpp"
 #include "intl/Intl.hpp"
 #include "messages/RuntimeMessages.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include "text_sdk/width/StringWidth.hpp"
 #include <cerrno>
 #include <stdexcept>

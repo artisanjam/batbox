@@ -1,5 +1,5 @@
 #include "application/shell/RuleMatch.hpp"
-#include "glob/Regex16.hpp"
+#include "lib/glob/Regex16.hpp"
 
 namespace batbox::application::shell {
 std::optional<std::string> permissionRuleExtractPrefix(const std::string& rule){

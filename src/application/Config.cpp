@@ -1,12 +1,12 @@
 #include "application/Config.hpp"
 #include "application/config/EndpointStore.hpp"
-#include "app_state/PermissionModeBridge.hpp"
-#include "app_state/provider/PermissionHelpers.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/app_state/PermissionModeBridge.hpp"
+#include "core/app_state/provider/PermissionHelpers.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include "providers/cloud/CloudKinds.hpp"
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include <array>
 #include <cstdio>

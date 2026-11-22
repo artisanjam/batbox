@@ -3,8 +3,8 @@
 #include "application/hooks/Provider.hpp"
 #include "git/CanonicalRoot.hpp"
 
-#include "runtime/JsonValue.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <filesystem>
 #include <fstream>

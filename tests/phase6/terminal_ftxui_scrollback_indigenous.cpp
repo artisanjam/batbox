@@ -1,4 +1,4 @@
-#include "terminal_ftxui/ScrollbackProjection.hpp"
+#include "ui/terminal_ftxui/ScrollbackProjection.hpp"
 #include "interactive/TranscriptRows.hpp"
 #include <cassert>
 #include <iostream>

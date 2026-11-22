@@ -5,7 +5,7 @@
 #include "application/permissions/PermissionProvider.hpp"
 #include "application/shell/ApplicationShell.hpp"
 #include "application/Config.hpp"
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include "application/file_history/History.hpp"
 #include "application/lsp/Runtime.hpp"
 #include "missions/store/Gadgets.hpp"

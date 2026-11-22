@@ -2,9 +2,9 @@
 #include "history/ReaderIndigenous.hpp"
 #include "history/WriterIndigenous.hpp"
 #include "history/PasteStoreBinding.hpp"
-#include "fs_operations/NodeFsBytesIndigenous.hpp"
+#include "lib/fs_operations/NodeFsBytesIndigenous.hpp"
 #include "paste_store/Indigenous.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <cstdlib>
 #include <stdexcept>

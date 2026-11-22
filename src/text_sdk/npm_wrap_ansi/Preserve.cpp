@@ -1,5 +1,5 @@
 #include "text_sdk/npm_wrap_ansi/Internal.hpp"
-#include "glob/Regex16.hpp"
+#include "lib/glob/Regex16.hpp"
 #include <cstdlib>
 #include <optional>
 

@@ -1,5 +1,5 @@
 #include "skills/SkillRoster.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <filesystem>
 #include <stdexcept>

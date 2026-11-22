@@ -1,6 +1,6 @@
 #include "application/hooks/Provider.hpp"
-#include "instructions/hooks/runtime/NotificationHooks.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/instructions/hooks/runtime/NotificationHooks.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::application::hooks {
 namespace {

@@ -9,9 +9,9 @@
 #include "bats/BatGadgetPresentation.hpp"
 #include "bats/BatResultBindings.hpp"
 #include "bats/TypedBatState.hpp"
-#include "runtime/AsyncLaunch.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <chrono>
 #include <stdexcept>

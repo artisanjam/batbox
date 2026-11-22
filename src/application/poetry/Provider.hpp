@@ -5,12 +5,12 @@
 #include "git/GitBasics.hpp"
 #include "git/filesystem/GitFilesystem.hpp"
 
-#include "instructions/MemoryPath.hpp"
-#include "instructions/project/async/AsyncDiscovery.hpp"
-#include "process/ExecFileNoThrow.hpp"
-#include "poetryEntries/AsyncSystemPoetry.hpp"
-#include "poetryEntries/Guidance.hpp"
-#include "poetryEntries/SystemPoetryFile.hpp"
+#include "lib/instructions/MemoryPath.hpp"
+#include "lib/instructions/project/async/AsyncDiscovery.hpp"
+#include "core/process/ExecFileNoThrow.hpp"
+#include "lib/poetryEntries/AsyncSystemPoetry.hpp"
+#include "lib/poetryEntries/Guidance.hpp"
+#include "lib/poetryEntries/SystemPoetryFile.hpp"
 
 #include <mutex>
 

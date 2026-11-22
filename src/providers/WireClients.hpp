@@ -1,6 +1,6 @@
 #pragma once
 #include "application/Config.hpp"
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <chrono>
 #include <functional>
 #include <memory>

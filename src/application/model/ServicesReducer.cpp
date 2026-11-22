@@ -1,5 +1,5 @@
 #include "application/model/Internal.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "gadgets/Gadget.hpp"
 
 namespace batbox::application::model {

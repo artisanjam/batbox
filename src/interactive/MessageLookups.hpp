@@ -1,7 +1,7 @@
 #pragma once
 
 #include "interactive/MessageDecisions.hpp"
-#include "runtime/OrderedStringSet.hpp"
+#include "core/runtime/OrderedStringSet.hpp"
 #include <memory>
 
 namespace batbox::interactive {

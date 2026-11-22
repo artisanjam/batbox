@@ -1,6 +1,6 @@
 #include "skills/Skill.hpp"
-#include "runtime/JsonValue.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cmath>
 #include <filesystem>
 #include <stdexcept>

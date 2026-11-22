@@ -1,23 +1,23 @@
 include(cmake/Icu.cmake)
 add_library(batbox_core
-  src/runtime/Version.cpp
-  src/runtime/ArrayJoin.cpp
-  src/runtime/JsonValue.cpp
-  src/runtime/Platform.cpp
-  src/runtime/Strings.cpp
-  src/runtime/JsonParse.cpp
-  src/runtime/Encoding.cpp
-  src/runtime/EncodeUtf8.cpp
-  src/runtime/PrettyJson.cpp
-  src/runtime/PathSanitization.cpp src/utils/hash.cpp
-  src/runtime/Unicode.cpp
+  src/core/runtime/Version.cpp
+  src/core/runtime/ArrayJoin.cpp
+  src/core/runtime/JsonValue.cpp
+  src/core/runtime/Platform.cpp
+  src/core/runtime/Strings.cpp
+  src/core/runtime/JsonParse.cpp
+  src/core/runtime/Encoding.cpp
+  src/core/runtime/EncodeUtf8.cpp
+  src/core/runtime/PrettyJson.cpp
+  src/core/runtime/PathSanitization.cpp src/util/hash.cpp
+  src/core/runtime/Unicode.cpp
   src/shell/PosixPath.cpp
-  src/utils/envUtils.cpp
-  src/utils/tokens.cpp
-  src/utils/messages.cpp
+  src/util/envUtils.cpp
+  src/util/tokens.cpp
+  src/util/messages.cpp
 )
 # The one place the project version enters the sources.
-set_source_files_properties(src/runtime/Version.cpp PROPERTIES
+set_source_files_properties(src/core/runtime/Version.cpp PROPERTIES
   COMPILE_DEFINITIONS "BATBOX_VERSION=\"${PROJECT_VERSION}\"")
 target_include_directories(batbox_core PUBLIC src)
 target_link_libraries(batbox_core PUBLIC nlohmann_json::nlohmann_json Threads::Threads ICU::uc)
@@ -59,8 +59,8 @@ add_library(batbox_protocol
   src/normalization/ImageValidation.cpp
   src/normalization/Pipeline.cpp
   src/normalization/References.cpp
-  src/model_config/ModelNames.cpp
-  src/formatting/Format.cpp
+  src/model/ModelNames.cpp
+  src/ui/formatting/Format.cpp
   # Tag-string scrubbing: message normalization living with the other
   # message transforms, reached through the core aggregate.
   src/messages/Tags.cpp
@@ -87,13 +87,13 @@ target_include_directories(batbox_connectors PUBLIC src)
 target_link_libraries(batbox_connectors PUBLIC batbox_core CURL::libcurl)
 target_compile_options(batbox_connectors PRIVATE -Wall -Wextra -Wpedantic)
 add_library(batbox_transport
-  src/transport/Messages.cpp
-  src/transport/Errors.cpp
-  src/transport/SSE.cpp src/transport/Client.cpp)
-target_sources(batbox_transport PRIVATE src/transport/RetryAdapter.cpp
-  src/transport/RawHttp.cpp src/transport/Perform.cpp src/transport/WireClient.cpp
-  src/transport/openai_chat/Translate.cpp src/transport/openai_chat/StreamDecoder.cpp
-  src/transport/openai_chat/OpenAIChatClient.cpp)
+  src/lib/transport/Messages.cpp
+  src/lib/transport/Errors.cpp
+  src/lib/transport/SSE.cpp src/lib/transport/Client.cpp)
+target_sources(batbox_transport PRIVATE src/lib/transport/RetryAdapter.cpp
+  src/lib/transport/RawHttp.cpp src/lib/transport/Perform.cpp src/lib/transport/WireClient.cpp
+  src/lib/transport/openai_chat/Translate.cpp src/lib/transport/openai_chat/StreamDecoder.cpp
+  src/lib/transport/openai_chat/OpenAIChatClient.cpp)
 target_include_directories(batbox_transport PUBLIC src)
 target_link_libraries(batbox_transport PUBLIC batbox_core CURL::libcurl)
 target_compile_options(batbox_transport PRIVATE -Wall -Wextra -Wpedantic)
@@ -233,5 +233,5 @@ include(cmake/CoreCommands.cmake)
 
 # Scoped context is shared by low-level timer/future adapters and the owner
 # loop: it belongs to the event-loop mechanism, not the foundation bundle.
-target_sources(batbox_event_loop PRIVATE src/event_loop/AsyncContext.cpp)
+target_sources(batbox_event_loop PRIVATE src/core/event_loop/AsyncContext.cpp)
 include(cmake/CloudProviders.cmake)

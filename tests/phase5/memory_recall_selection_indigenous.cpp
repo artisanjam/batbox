@@ -1,6 +1,6 @@
 #include "application/memory/Provider.hpp"
 #include "memory_prefetch/Prefetch.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <chrono>
 #include <filesystem>
 #include <fstream>

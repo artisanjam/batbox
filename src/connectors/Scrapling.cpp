@@ -1,6 +1,6 @@
 #include "connectors/Scrapling.hpp"
 #include "connectors/Executable.hpp"
-#include "mcp/StdioClient.hpp"
+#include "lib/mcp/StdioClient.hpp"
 #include <algorithm>
 namespace batbox {
 namespace {

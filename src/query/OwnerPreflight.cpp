@@ -1,8 +1,8 @@
 #include "query/OwnerPreflight.hpp"
 #include "query/OwnerPromiseAll.hpp"
 #include "model/ModelWrappers.hpp"
-#include "runtime/JsonValue.hpp"
-#include "transport/Errors.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "lib/transport/Errors.hpp"
 #include <stdexcept>
 
 namespace batbox::query {

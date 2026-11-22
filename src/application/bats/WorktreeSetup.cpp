@@ -1,7 +1,7 @@
 #include "application/bats/Worktree.hpp"
-#include "glob/Ignore.hpp"
-#include "runtime/JsonValue.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "lib/glob/Ignore.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <filesystem>
 #include <fstream>
 #include <sstream>

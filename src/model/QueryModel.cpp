@@ -5,10 +5,10 @@
 #include "model/StreamObservation.hpp"
 #include "requests/RequestBuilder.hpp"
 #include "services/api/batbox.hpp"
-#include "transport/Errors.hpp"
-#include "transport/RetryAdapter.hpp"
-#include "utils/envUtils.hpp"
-#include "utils/tokens.hpp"
+#include "lib/transport/Errors.hpp"
+#include "lib/transport/RetryAdapter.hpp"
+#include "util/envUtils.hpp"
+#include "util/tokens.hpp"
 #include <stdexcept>
 #include <utility>
 

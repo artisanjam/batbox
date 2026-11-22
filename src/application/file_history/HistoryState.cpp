@@ -1,7 +1,7 @@
 #include "application/file_history/HistoryInternal.hpp"
 #include "application/Async.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <cstdlib>
 #include <fstream>

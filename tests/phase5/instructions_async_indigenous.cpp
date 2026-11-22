@@ -1,7 +1,7 @@
 #include <cstdlib>
-#include "instructions/project/async/AsyncDiscovery.hpp"
-#include "instructions/project/async/ContextBinding.hpp"
-#include "instructions/project/ProjectMemory.hpp"
+#include "lib/instructions/project/async/AsyncDiscovery.hpp"
+#include "lib/instructions/project/async/ContextBinding.hpp"
+#include "lib/instructions/project/ProjectMemory.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

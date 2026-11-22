@@ -1,6 +1,6 @@
 #pragma once
-#include "runtime/JsonValue.hpp"
-#include "transport/Client.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "lib/transport/Client.hpp"
 #include <chrono>
 #include <functional>
 #include <memory>

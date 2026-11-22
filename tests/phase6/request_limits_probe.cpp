@@ -5,7 +5,7 @@
 #include "providers/ModelRequestSettings.hpp"
 #include "query/Recovery.hpp"
 #include "query/SimpleQueriesBinding.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <iostream>
 #include <stdexcept>
 

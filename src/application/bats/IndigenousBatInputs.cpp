@@ -1,6 +1,6 @@
 #include "application/bats/IndigenousBatApplication.hpp"
 #include "application/Async.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <fstream>
 #include <stdexcept>
 #include <unordered_set>

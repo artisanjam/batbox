@@ -1,8 +1,8 @@
 #include "application/model/Internal.hpp"
 #include "providers/WireClients.hpp"
-#include "runtime/Platform.hpp"
-#include "transport/WireClient.hpp"
-#include "transport/RawHttp.hpp"
+#include "core/runtime/Platform.hpp"
+#include "lib/transport/WireClient.hpp"
+#include "lib/transport/RawHttp.hpp"
 #include <algorithm>
 #include <cctype>
 #include <stdexcept>

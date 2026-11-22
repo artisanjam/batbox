@@ -1,10 +1,10 @@
 #include "application/bats/Memory.hpp"
 #include "git/CanonicalRoot.hpp"
-#include "instructions/MemoryPoetry.hpp"
+#include "lib/instructions/MemoryPoetry.hpp"
 #include "memory_prefetch/BatMemoryPath.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include <cstdlib>
 #include <filesystem>

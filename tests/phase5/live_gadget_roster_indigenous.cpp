@@ -1,7 +1,7 @@
 #include "gadgets/live_roster/LiveRoster.hpp"
-#include "mcp/ProcessResult.hpp"
-#include "mcp/StdioClient.hpp"
-#include "event_loop/Loop.hpp"
+#include "lib/mcp/ProcessResult.hpp"
+#include "lib/mcp/StdioClient.hpp"
+#include "core/event_loop/Loop.hpp"
 #include <chrono>
 #include <iostream>
 #include <stdexcept>

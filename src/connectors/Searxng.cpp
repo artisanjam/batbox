@@ -1,6 +1,6 @@
 #include "connectors/Searxng.hpp"
-#include "runtime/Version.hpp"
-#include "runtime/Loopback.hpp"
+#include "core/runtime/Version.hpp"
+#include "core/runtime/Loopback.hpp"
 #include <curl/curl.h>
 #include <algorithm>
 #include <memory>

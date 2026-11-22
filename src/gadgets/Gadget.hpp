@@ -1,6 +1,6 @@
 #pragma once
-#include "runtime/JsonValue.hpp"
-#include "runtime/OrderedStringSet.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/OrderedStringSet.hpp"
 #include <functional>
 #include <future>
 #include <memory>

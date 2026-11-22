@@ -1,7 +1,7 @@
 #include "application/hooks/Provider.hpp"
-#include "instructions/hooks/runtime/EnvHooks.hpp"
-#include "instructions/hooks/runtime/HookRuntimeBindings.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "lib/instructions/hooks/runtime/EnvHooks.hpp"
+#include "lib/instructions/hooks/runtime/HookRuntimeBindings.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cstdlib>
 #include <filesystem>
 #include <stdexcept>

@@ -1,6 +1,6 @@
 #include "skills/SkillRoster.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Unicode.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Unicode.hpp"
 #ifdef _WIN32
 #include <unicode/locid.h>
 #include <unicode/unistr.h>

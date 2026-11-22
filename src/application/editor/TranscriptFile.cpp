@@ -1,5 +1,5 @@
 #include "application/editor/TranscriptFile.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <algorithm>
 #include <stdexcept>
 #ifdef _WIN32

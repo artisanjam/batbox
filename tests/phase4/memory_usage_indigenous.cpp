@@ -1,5 +1,5 @@
 #include "profiler/Indigenous.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <cassert>
 #include <iostream>
 #include <memory>

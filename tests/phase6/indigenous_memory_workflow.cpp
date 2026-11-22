@@ -2,7 +2,7 @@
 #include "application/memory/Consolidation.hpp"
 #include "query/MemoryAttachmentFilter.hpp"
 #include "memory_prefetch/PoetryScan.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

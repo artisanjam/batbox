@@ -1,5 +1,5 @@
 #include "shell/ManagedShellInternal.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cerrno>
 #include <filesystem>
 #include <fstream>

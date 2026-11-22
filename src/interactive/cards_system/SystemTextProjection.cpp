@@ -1,5 +1,5 @@
 #include "interactive/cards_system/SystemTextProjection.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <stdexcept>
 #include <utility>
 

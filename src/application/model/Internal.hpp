@@ -1,9 +1,9 @@
 #pragma once
 #include "application/model/LocalModelService.hpp"
 #include "normalization/Normalization.hpp"
-#include "model_config/ModelConfig.hpp"
+#include "model/ModelConfig.hpp"
 #include "requests/PoetryStash.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 
 namespace batbox::application::model {
 struct LocalServiceBuilder {

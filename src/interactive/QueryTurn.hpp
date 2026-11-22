@@ -1,7 +1,7 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "interactive/QueryGuard.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stop_token>
 #include <vector>
 

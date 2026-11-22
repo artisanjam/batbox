@@ -1,6 +1,6 @@
 #include "application/config/Discovery.hpp"
-#include "transport/Errors.hpp"
-#include "transport/RawHttp.hpp"
+#include "lib/transport/Errors.hpp"
+#include "lib/transport/RawHttp.hpp"
 #include <set>
 
 namespace batbox::application::config {

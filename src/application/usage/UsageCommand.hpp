@@ -4,7 +4,7 @@
 #include "application/model/LocalModelService.hpp"
 #include "application/poetry/Provider.hpp"
 #include "application/compaction_settings/Policy.hpp"
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include "interactive/PresentationState.hpp"
 #include "user_input/UiCommandRouter.hpp"
 #include <functional>

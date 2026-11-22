@@ -1,10 +1,10 @@
 #include "retry/Retry.hpp"
 #include "streaming/Reducer.hpp"
-#include "transport/RawHttp.hpp"
-#include "transport/RetryAdapter.hpp"
-#include "transport/SSE.hpp"
-#include "transport/openai_chat/StreamDecoder.hpp"
-#include "transport/openai_chat/Translate.hpp"
+#include "lib/transport/RawHttp.hpp"
+#include "lib/transport/RetryAdapter.hpp"
+#include "lib/transport/SSE.hpp"
+#include "lib/transport/openai_chat/StreamDecoder.hpp"
+#include "lib/transport/openai_chat/Translate.hpp"
 #include <cassert>
 #include <functional>
 #include <iostream>

@@ -1,4 +1,4 @@
-#include "instructions/hooks/runtime/BatOwnerQueryBinding.hpp"
+#include "lib/instructions/hooks/runtime/BatOwnerQueryBinding.hpp"
 #include <cassert>
 #include <iostream>
 

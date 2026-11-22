@@ -1,8 +1,8 @@
 #include "interactive/conversation_shell/Shell.hpp"
 #include "interactive/text_input/TextEditorIndigenous.hpp"
 #include "interactive/TranscriptRows.hpp"
-#include "runtime/JsonValue.hpp"
-#include "runtime/MessageMutation.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/MessageMutation.hpp"
 #include <cctype>
 #include <stdexcept>
 

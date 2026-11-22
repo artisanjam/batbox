@@ -1,5 +1,5 @@
 #include "interactive/MessageListMemo.hpp"
-#include "runtime/MessageMutation.hpp"
+#include "core/runtime/MessageMutation.hpp"
 #include <algorithm>
 #include <stdexcept>
 

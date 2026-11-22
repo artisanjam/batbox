@@ -1,6 +1,6 @@
 #include "auth/oauth_client/FormUrl.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::auth::oauth_client {
 namespace {

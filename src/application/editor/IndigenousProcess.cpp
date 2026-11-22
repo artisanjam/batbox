@@ -1,6 +1,6 @@
-#include "process/StandardDescriptors.hpp"
+#include "core/process/StandardDescriptors.hpp"
 #include "application/editor/IndigenousProcess.hpp"
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #include <algorithm>
 #include <cctype>
 #include <cstdlib>

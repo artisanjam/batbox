@@ -2,9 +2,9 @@
 #include "application/gadgets/ApplicationGadgets.hpp"
 #include "application/gadgets/IndigenousFileHelpers.hpp"
 #include "interactive/context/ContextFactory.hpp"
-#include "mcp/ProcessResult.hpp"
-#include "mcp/StdioClient.hpp"
-#include "event_loop/Loop.hpp"
+#include "lib/mcp/ProcessResult.hpp"
+#include "lib/mcp/StdioClient.hpp"
+#include "core/event_loop/Loop.hpp"
 #include <filesystem>
 #include <fstream>
 #include <future>

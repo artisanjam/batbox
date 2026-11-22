@@ -1,6 +1,6 @@
 #include "interactive/cards/OutputLineProjection.hpp"
 #include "text_sdk/ansi_tokenize/AnsiTokenize.hpp"
-#include "terminal_ftxui/StyleProjection.hpp"
+#include "ui/terminal_ftxui/StyleProjection.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <algorithm>
 #include <stdexcept>

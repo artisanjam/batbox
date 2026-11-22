@@ -7,7 +7,7 @@ set(batbox_ftxui_patch_names
     ftxui-7.0.3-selection-spaces.patch ftxui-7.0.3-focus-events.patch)
 set(batbox_ftxui_signature_files)
 foreach(name IN LISTS batbox_ftxui_patch_names)
-  set(patch "${CMAKE_CURRENT_LIST_DIR}/../src/terminal_ftxui/patches/${name}")
+  set(patch "${CMAKE_CURRENT_LIST_DIR}/../src/ui/terminal_ftxui/patches/${name}")
   list(APPEND batbox_ftxui_signature_files "${patch}")
   file(STRINGS "${patch}" targets REGEX "^\\+\\+\\+ b/")
   foreach(target IN LISTS targets)
@@ -39,7 +39,7 @@ endif()
 set(batbox_ftxui_reverse_names ${batbox_ftxui_patch_names})
 list(REVERSE batbox_ftxui_reverse_names)
 foreach(name IN LISTS batbox_ftxui_reverse_names)
-  set(patch "${CMAKE_CURRENT_LIST_DIR}/../src/terminal_ftxui/patches/${name}")
+  set(patch "${CMAKE_CURRENT_LIST_DIR}/../src/ui/terminal_ftxui/patches/${name}")
   execute_process(COMMAND "${GIT_EXECUTABLE}" apply --reverse --check "${patch}"
     WORKING_DIRECTORY "${batbox_ftxui_upstream_SOURCE_DIR}"
     RESULT_VARIABLE applied OUTPUT_QUIET ERROR_QUIET)
@@ -51,7 +51,7 @@ foreach(name IN LISTS batbox_ftxui_reverse_names)
 endforeach()
 foreach(batbox_ftxui_patch_name IN LISTS batbox_ftxui_patch_names)
 set(batbox_ftxui_patch
-  "${CMAKE_CURRENT_LIST_DIR}/../src/terminal_ftxui/patches/${batbox_ftxui_patch_name}")
+  "${CMAKE_CURRENT_LIST_DIR}/../src/ui/terminal_ftxui/patches/${batbox_ftxui_patch_name}")
 execute_process(
   COMMAND "${GIT_EXECUTABLE}" apply --reverse --check "${batbox_ftxui_patch}"
   WORKING_DIRECTORY "${batbox_ftxui_upstream_SOURCE_DIR}"

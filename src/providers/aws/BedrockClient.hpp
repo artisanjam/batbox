@@ -2,7 +2,7 @@
 #include "providers/aws/Credentials.hpp"
 #include "providers/aws/EventStream.hpp"
 #include "providers/cloud/HttpExchange.hpp"
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <memory>
 #include <mutex>
 #include <string>

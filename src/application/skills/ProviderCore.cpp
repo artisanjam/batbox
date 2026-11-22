@@ -4,11 +4,11 @@
 #include "application/media/AttachmentAggregate.hpp"
 #include "application/flights/Flight.hpp"
 #include "git/CanonicalRoot.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "shell/ShellQuote.hpp"
 #include <algorithm>
 #include <cstdlib>

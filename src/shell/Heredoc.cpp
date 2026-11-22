@@ -1,6 +1,6 @@
 #include "shell/HeredocInternal.hpp"
 #include "shell/RandomSalt.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <unordered_set>
 

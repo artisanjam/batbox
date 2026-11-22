@@ -3,9 +3,9 @@
 #include "bats/AsyncLifecycle.hpp"
 #include "bats/BatMissionRegistration.hpp"
 #include "bats/RunBat.hpp"
-#include "mcp/manager/IndigenousRuntime.hpp"
-#include "runtime/AsyncLaunch.hpp"
-#include "runtime/Platform.hpp"
+#include "lib/mcp/manager/IndigenousRuntime.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
+#include "core/runtime/Platform.hpp"
 #include <stdexcept>
 
 namespace batbox::application::bats {

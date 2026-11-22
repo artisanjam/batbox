@@ -1,6 +1,6 @@
 #pragma once
 #include "lsp/Protocol.hpp"
-#include "process/IndigenousJsonlProcess.hpp"
+#include "core/process/IndigenousJsonlProcess.hpp"
 #include <chrono>
 #include <condition_variable>
 #include <deque>

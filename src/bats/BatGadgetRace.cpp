@@ -1,5 +1,5 @@
 #include "bats/BatGadgetRace.hpp"
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include <chrono>
 #include <exception>
 #include <functional>

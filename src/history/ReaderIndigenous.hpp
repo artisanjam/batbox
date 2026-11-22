@@ -1,6 +1,6 @@
 #pragma once
 #include "history/Reader.hpp"
-#include "fs_operations/NodeFsBytes.hpp"
+#include "lib/fs_operations/NodeFsBytes.hpp"
 
 namespace batbox::history {
 HistoryReaderImports indigenousHistoryReaderImports(event_loop::Loop& loop,

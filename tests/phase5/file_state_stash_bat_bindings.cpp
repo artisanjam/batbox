@@ -2,7 +2,7 @@
 #include "bats/RunBat.hpp"
 #include "file_state_stash/FileStateStash.hpp"
 #include "gadgets/files/FileGadgets.hpp"
-#include "filesystem/FileOps.hpp"
+#include "lib/filesystem/FileOps.hpp"
 #include <cassert>
 #include <cmath>
 #include <filesystem>

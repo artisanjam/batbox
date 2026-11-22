@@ -1,7 +1,7 @@
 #include "interactive/cards_remaining/AttachmentCard.hpp"
-#include "formatting/Format.hpp"
+#include "ui/formatting/Format.hpp"
 #include "messages/TextContent.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::interactive::cards_remaining {

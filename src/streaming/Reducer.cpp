@@ -1,6 +1,6 @@
 #include "streaming/Reducer.hpp"
 #include "services/api/batbox.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 #include <chrono>
 #include <stdexcept>
 #include <utility>

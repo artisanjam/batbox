@@ -1,6 +1,6 @@
 #include "interactive/MessageListMemo.hpp"
-#include "runtime/MessageMutation.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageMutation.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 #include "streaming/Reducer.hpp"
 #include <cassert>
 #include <iostream>

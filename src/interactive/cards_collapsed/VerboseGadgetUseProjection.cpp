@@ -1,6 +1,6 @@
 #include "interactive/cards_collapsed/VerboseGadgetUseProjection.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 #include <utility>
 

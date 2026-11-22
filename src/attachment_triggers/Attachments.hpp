@@ -1,9 +1,9 @@
 #pragma once
-#include "app_state/State.hpp"
-#include "event_loop/Deferred.hpp"
+#include "core/app_state/State.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "execution/GadgetExecution.hpp"
-#include "instructions/hooks/InstructionsLoaded.hpp"
-#include "instructions/project/async/AsyncDiscovery.hpp"
+#include "lib/instructions/hooks/InstructionsLoaded.hpp"
+#include "lib/instructions/project/async/AsyncDiscovery.hpp"
 #include <functional>
 #include <optional>
 #include <string>

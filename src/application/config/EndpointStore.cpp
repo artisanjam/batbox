@@ -1,7 +1,7 @@
 #include "application/config/EndpointStore.hpp"
 #include "providers/cloud/CloudKinds.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "transport/WireClient.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <algorithm>
 #include <chrono>
 #include <fstream>

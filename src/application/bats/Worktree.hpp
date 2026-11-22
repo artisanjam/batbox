@@ -1,8 +1,8 @@
 #pragma once
 #include "application/Config.hpp"
 #include "bats/BatGadgetCall.hpp"
-#include "event_loop/Loop.hpp"
-#include "process/ExecFileNoThrow.hpp"
+#include "core/event_loop/Loop.hpp"
+#include "core/process/ExecFileNoThrow.hpp"
 #include <functional>
 #include <memory>
 #include <string>

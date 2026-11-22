@@ -1,5 +1,5 @@
 #include "user_input/TextPoetry.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::user_input {

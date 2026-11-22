@@ -1,6 +1,6 @@
 #pragma once
 
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <condition_variable>
 #include <deque>
 #include <exception>

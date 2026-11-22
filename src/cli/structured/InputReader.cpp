@@ -1,5 +1,5 @@
 #include "cli/structured/InputReader.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 #include <utility>
 

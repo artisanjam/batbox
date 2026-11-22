@@ -1,8 +1,8 @@
 #pragma once
-#include "app_state/State.hpp"
-#include "event_loop/Deferred.hpp"
+#include "core/app_state/State.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "file_state_stash/FileStateStash.hpp"
-#include "runtime/OrderedStringSet.hpp"
+#include "core/runtime/OrderedStringSet.hpp"
 #include "user_input/SlashDispatch.hpp"
 #include <functional>
 #include <memory>

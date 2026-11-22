@@ -2,8 +2,8 @@
 #include "application/cli/LocalOutput.hpp"
 #include "messages/Context.hpp"
 #include "text_sdk/npm_wrap_ansi/Internal.hpp"
-#include "runtime/MessageSnapshot.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
+#include "core/runtime/Platform.hpp"
 #include <algorithm>
 
 namespace batbox::application::cli {

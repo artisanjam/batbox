@@ -1,5 +1,5 @@
 #include "interactive/cards_gadget_result/GadgetErrorProjection.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <utility>
 
 namespace batbox::interactive::cards_gadget_result {

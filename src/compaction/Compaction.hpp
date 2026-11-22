@@ -1,5 +1,5 @@
 #pragma once
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include "services/compact/autoCompact.hpp"
 #include <functional>
 #include <optional>

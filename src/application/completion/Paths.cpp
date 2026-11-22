@@ -1,7 +1,7 @@
 #include "application/completion/Paths.hpp"
 #include "application/completion/Commands.hpp"
-#include "runtime/AsyncLaunch.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <cctype>
 #include <cstdlib>

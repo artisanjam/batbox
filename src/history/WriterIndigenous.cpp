@@ -1,6 +1,6 @@
 #include "history/WriterIndigenous.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <cerrno>
 #include <chrono>

@@ -4,7 +4,7 @@
 #include "application/engine/Engine.hpp"
 #include "messages/RuntimeMessages.hpp"
 #include "services/api/batbox.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <cctype>
 #include <future>

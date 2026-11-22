@@ -1,3 +1,3 @@
-add_library(batbox_terminal_events src/terminal_events/Key.cpp)
+add_library(batbox_terminal_events src/ui/terminal_events/Key.cpp)
 target_link_libraries(batbox_terminal_events PUBLIC batbox_core batbox_keyboard_input)
 target_compile_options(batbox_terminal_events PRIVATE -Wall -Wextra -Wpedantic)

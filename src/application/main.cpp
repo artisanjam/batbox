@@ -1,9 +1,9 @@
 #include "application/Config.hpp"
-#include "runtime/Version.hpp"
+#include "core/runtime/Version.hpp"
 #include "application/Host.hpp"
 #include "application/Subcommands.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include <exception>
 #include <iostream>

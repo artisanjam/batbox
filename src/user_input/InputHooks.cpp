@@ -1,5 +1,5 @@
 #include "user_input/InputInternal.hpp"
-#include "instructions/hooks/runtime/HookBlockingMessages.hpp"
+#include "lib/instructions/hooks/runtime/HookBlockingMessages.hpp"
 #include "messages/TextContent.hpp"
 #include "user_input/CommandMessages.hpp"
 #include <stdexcept>

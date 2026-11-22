@@ -1,5 +1,5 @@
 #pragma once
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include "file_state_stash/FileStateStash.hpp"
 #include "interactive/QueryGuard.hpp"
 #include "interactive/lifecycle/MessageState.hpp"

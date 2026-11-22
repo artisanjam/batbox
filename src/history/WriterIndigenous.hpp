@@ -1,6 +1,6 @@
 #pragma once
 #include "history/Writer.hpp"
-#include "fs_operations/NodeFsAsyncIndigenous.hpp"
+#include "lib/fs_operations/NodeFsAsyncIndigenous.hpp"
 #include "locking/ProperLock.hpp"
 #include "cleanup/Roster.hpp"
 

@@ -1,8 +1,8 @@
 #include "application/config/ConfigPanelInternal.hpp"
 #include "application/config/EndpointStore.hpp"
 #include "application/Config.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "transport/WireClient.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <cassert>
 #include <chrono>
 #include <filesystem>

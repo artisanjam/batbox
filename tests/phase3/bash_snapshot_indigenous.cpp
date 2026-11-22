@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include "shell/SnapshotRun.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <filesystem>
 #include <fstream>
 #include <iostream>

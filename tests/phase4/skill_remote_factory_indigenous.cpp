@@ -1,6 +1,6 @@
 #include "skills/SkillGadgetFactory.hpp"
 #include "connectors/Abort.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <iostream>
 #include <stdexcept>
 

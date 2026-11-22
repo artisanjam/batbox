@@ -1,6 +1,6 @@
 #pragma once
-#include "app_state/State.hpp"
-#include "runtime/OrderedStringSet.hpp"
+#include "core/app_state/State.hpp"
+#include "core/runtime/OrderedStringSet.hpp"
 #include "gadgets/Gadget.hpp"
 #include "messages/Messages.hpp"
 #include "gadget_results/State.hpp"

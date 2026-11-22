@@ -1,7 +1,7 @@
 #include "auth/storage/Storage.hpp"
 #include "locking/Async.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cerrno>
 #include <filesystem>
 #include <fstream>

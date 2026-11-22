@@ -1,7 +1,7 @@
 #include "application/HostInternal.hpp"
 #include "application/Async.hpp"
 #include "cleanup/Terminal.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cstdio>
 #include <filesystem>
 #include <stdexcept>

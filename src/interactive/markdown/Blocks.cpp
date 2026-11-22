@@ -1,7 +1,7 @@
 #include "interactive/markdown/Blocks.hpp"
 #include "interactive/markdown/AnsiProjection.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <ftxui/dom/node.hpp>
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/screen/string.hpp>

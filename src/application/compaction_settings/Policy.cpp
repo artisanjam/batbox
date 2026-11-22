@@ -1,7 +1,7 @@
 #include "application/compaction_settings/Policy.hpp"
 #include "application/Async.hpp"
 #include "application/config/EndpointStore.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::application::compaction_settings {

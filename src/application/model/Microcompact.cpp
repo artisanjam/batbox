@@ -2,7 +2,7 @@
 #include "compaction/FlightPolicy.hpp"
 #include "diagnostics/LogDates.hpp"
 #include "query/AsyncSetup.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "services/tokenEstimation.hpp"
 #include <algorithm>
 #include <cmath>

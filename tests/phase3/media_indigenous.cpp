@@ -1,6 +1,6 @@
-#include "media/Media.hpp"
-#include "media/ImageIndigenous.hpp"
-#include "filesystem/FileOps.hpp"
+#include "lib/media/Media.hpp"
+#include "lib/media/ImageIndigenous.hpp"
+#include "lib/filesystem/FileOps.hpp"
 #include <cassert>
 #include <filesystem>
 #include <iostream>

@@ -1,5 +1,5 @@
 #include "paste_store/PasteStore.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <openssl/evp.h>
 #include <stdexcept>
 

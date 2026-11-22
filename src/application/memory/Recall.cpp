@@ -1,10 +1,10 @@
 #include "application/memory/Provider.hpp"
 #include "application/Async.hpp"
 #include "memory_prefetch/Bindings.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
-#include "transport/Errors.hpp"
-#include "transport/RetryAdapter.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
+#include "lib/transport/Errors.hpp"
+#include "lib/transport/RetryAdapter.hpp"
 #include <algorithm>
 
 namespace batbox::application::memory {

@@ -1,14 +1,14 @@
 #include "application/hooks/Provider.hpp"
-#include "instructions/hooks/runtime/HookSchema.hpp"
-#include "instructions/hooks/runtime/IfCondition.hpp"
-#include "runtime/JsonValue.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
+#include "lib/instructions/hooks/runtime/HookSchema.hpp"
+#include "lib/instructions/hooks/runtime/IfCondition.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
 #ifdef _WIN32
 #include "shell/WindowsPaths.hpp"
 #endif
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include "flights/ProjectDirectories.hpp"
 #include <atomic>

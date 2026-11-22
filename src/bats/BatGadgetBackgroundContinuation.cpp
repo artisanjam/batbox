@@ -1,5 +1,5 @@
 #include "bats/BatGadgetBackgroundContinuation.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 #include <stdexcept>
 
 namespace batbox::bats {

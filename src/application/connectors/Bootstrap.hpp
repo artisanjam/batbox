@@ -2,8 +2,8 @@
 #include "application/Config.hpp"
 #include "connectors/Scrapling.hpp"
 #include "connectors/Searxng.hpp"
-#include "event_loop/Loop.hpp"
-#include "mcp/StdioClient.hpp"
+#include "core/event_loop/Loop.hpp"
+#include "lib/mcp/StdioClient.hpp"
 #include <filesystem>
 
 namespace batbox::application::connectors {

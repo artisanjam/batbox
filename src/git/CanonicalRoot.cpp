@@ -1,9 +1,9 @@
 #include "git/CanonicalRoot.hpp"
 #include "git/filesystem/GitFilesystemInternal.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/JsonValue.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Unicode.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Unicode.hpp"
 #include <filesystem>
 #include <stdexcept>
 #include <system_error>

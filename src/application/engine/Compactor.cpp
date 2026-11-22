@@ -2,8 +2,8 @@
 #include "application/Async.hpp"
 #include "api_errors/ApiErrors.hpp"
 #include "bats/ForkedBat.hpp"
-#include "runtime/Platform.hpp"
-#include "utils/tokens.hpp"
+#include "core/runtime/Platform.hpp"
+#include "util/tokens.hpp"
 
 namespace batbox::application::engine {
 std::shared_ptr<Compactor> Compactor::create(CompactorInputs inputs){

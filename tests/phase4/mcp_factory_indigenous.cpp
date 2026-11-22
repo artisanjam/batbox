@@ -1,5 +1,5 @@
-#include "mcp/ProcessResult.hpp"
-#include "mcp/StdioClient.hpp"
+#include "lib/mcp/ProcessResult.hpp"
+#include "lib/mcp/StdioClient.hpp"
 #include <chrono>
 #include <condition_variable>
 #include <deque>

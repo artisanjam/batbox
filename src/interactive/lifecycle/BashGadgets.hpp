@@ -1,6 +1,6 @@
 #pragma once
 #include "interactive/QueryTurn.hpp"
-#include "runtime/OrderedStringSet.hpp"
+#include "core/runtime/OrderedStringSet.hpp"
 
 namespace batbox::interactive::lifecycle {
 std::optional<std::string> extractCliName(const std::optional<std::string>& command);

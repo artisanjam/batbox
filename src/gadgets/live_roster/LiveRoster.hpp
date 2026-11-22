@@ -2,7 +2,7 @@
 #include "bats/BatGadgetBinding.hpp"
 #include "bats/BatGadgetDescriptor.hpp"
 #include "bats/BatGadgetSchema.hpp"
-#include "mcp/Mcp.hpp"
+#include "lib/mcp/Mcp.hpp"
 #include "gadgets/Catalog.hpp"
 #include "gadgets/bash/BashGadget.hpp"
 #include "gadgets/files/FileGadgets.hpp"

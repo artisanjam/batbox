@@ -1,7 +1,7 @@
-#include "terminal_ftxui/IndigenousStringMetrics.hpp"
-#include "terminal_ftxui/TextFit.hpp"
+#include "ui/terminal_ftxui/IndigenousStringMetrics.hpp"
+#include "ui/terminal_ftxui/TextFit.hpp"
 #include "ftxui/screen/string.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <string>

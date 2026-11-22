@@ -1,7 +1,7 @@
-#include "runtime/AsyncLaunch.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
 #include "gadgets/bash/AsyncBashImage.hpp"
-#include "media/Media.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/media/Media.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <filesystem>
 #include <fstream>
 #include <memory>

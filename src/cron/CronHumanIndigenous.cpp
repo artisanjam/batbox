@@ -1,6 +1,6 @@
 #include "cron/CronHuman.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousTime.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousTime.hpp"
 #include <cmath>
 #include <ctime>
 #include <limits>

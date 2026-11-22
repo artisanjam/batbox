@@ -1,7 +1,7 @@
 #include "providers/cloud/HttpExchange.hpp"
-#include "transport/Errors.hpp"
-#include "transport/Perform.hpp"
-#include "runtime/Loopback.hpp"
+#include "lib/transport/Errors.hpp"
+#include "lib/transport/Perform.hpp"
+#include "core/runtime/Loopback.hpp"
 #include <curl/curl.h>
 #include <algorithm>
 #include <cerrno>

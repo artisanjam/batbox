@@ -1,5 +1,5 @@
 #include "bats/BatGadgetForeground.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 #include <cassert>
 #include <chrono>
 #include <iostream>

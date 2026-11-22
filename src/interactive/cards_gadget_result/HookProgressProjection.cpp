@@ -1,5 +1,5 @@
 #include "interactive/cards_gadget_result/HookProgressProjection.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 
 namespace batbox::interactive::cards_gadget_result {
 

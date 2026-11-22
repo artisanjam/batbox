@@ -1,5 +1,5 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "gadgets/bash/AsyncRunShellCommand.hpp"
 #include "gadgets/bash/AsyncBashPersistence.hpp"
 #include "gadgets/bash/BashGadget.hpp"

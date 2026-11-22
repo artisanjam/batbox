@@ -1,5 +1,5 @@
 #include "flights/Transcript.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 namespace batbox::flights {
 namespace {
 // collectReplIds over references, reading each message under its lock

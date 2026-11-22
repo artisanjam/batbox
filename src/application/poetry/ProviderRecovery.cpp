@@ -1,8 +1,8 @@
 #include "application/poetry/Provider.hpp"
 #include "application/poetry/Stamp.hpp"
 #include "project_recovery/Recovery.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "utils/envUtils.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "util/envUtils.hpp"
 #include <filesystem>
 
 namespace batbox::application::poetry {

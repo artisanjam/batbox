@@ -1,6 +1,6 @@
 #include "application/HostInternal.hpp"
 #include "profiler/Indigenous.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::application {

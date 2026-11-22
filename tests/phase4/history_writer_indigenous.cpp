@@ -1,6 +1,6 @@
 #include "history/WriterIndigenous.hpp"
-#include "event_loop/Loop.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/event_loop/Loop.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

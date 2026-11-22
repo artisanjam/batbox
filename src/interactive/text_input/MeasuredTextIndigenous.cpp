@@ -1,5 +1,5 @@
 #include "interactive/text_input/MeasuredText.hpp"
-#include "runtime/Unicode.hpp"
+#include "core/runtime/Unicode.hpp"
 #include <stdexcept>
 #include <utility>
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "query/Setup.hpp"
 
 namespace batbox::query {

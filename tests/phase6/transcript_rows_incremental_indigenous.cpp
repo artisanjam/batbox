@@ -1,8 +1,8 @@
 #include "interactive/PresentationState.hpp"
 #include "interactive/TranscriptRows.hpp"
-#include "runtime/MessageMutation.hpp"
-#include "runtime/MessageSnapshot.hpp"
-#include "terminal_ftxui/PresentationView.hpp"
+#include "core/runtime/MessageMutation.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
+#include "ui/terminal_ftxui/PresentationView.hpp"
 #include <cassert>
 #include <iostream>
 #include <random>

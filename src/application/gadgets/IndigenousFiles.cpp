@@ -2,9 +2,9 @@
 #include "application/gadgets/IndigenousFileHelpers.hpp"
 #include "gadgets/files/Notebook.hpp"
 #include "services/tokenEstimation.hpp"
-#include "instructions/MemoryScan.hpp"
-#include "formatting/Format.hpp"
-#include "runtime/Unicode.hpp"
+#include "lib/instructions/MemoryScan.hpp"
+#include "ui/formatting/Format.hpp"
+#include "core/runtime/Unicode.hpp"
 #include <filesystem>
 #include <stdexcept>
 

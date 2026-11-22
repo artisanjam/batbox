@@ -1,4 +1,4 @@
-#include "terminal_ftxui/Driver.hpp"
+#include "ui/terminal_ftxui/Driver.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <chrono>
 #include <cstring>

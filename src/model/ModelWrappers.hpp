@@ -1,7 +1,7 @@
 #pragma once
 
-#include "runtime/JsonValue.hpp"
-#include "transport/Errors.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "lib/transport/Errors.hpp"
 #include <functional>
 #include <memory>
 #include <optional>

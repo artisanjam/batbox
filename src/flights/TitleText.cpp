@@ -1,5 +1,5 @@
 #include "flights/Title.hpp"
-#include "runtime/ArrayJoin.hpp"
+#include "core/runtime/ArrayJoin.hpp"
 
 namespace batbox::flights {
 namespace {constexpr std::size_t maxConversationText=1000;}

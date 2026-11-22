@@ -1,4 +1,4 @@
-#include "terminal_ftxui/TranscriptCopy.hpp"
+#include "ui/terminal_ftxui/TranscriptCopy.hpp"
 #include <stdexcept>
 #include <iostream>
 

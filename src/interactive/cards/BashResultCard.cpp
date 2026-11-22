@@ -1,6 +1,6 @@
 #include "interactive/cards/BashResultCard.hpp"
 #include "interactive/cards/BashResultText.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <cmath>
 
 namespace batbox::interactive::cards {

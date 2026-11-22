@@ -1,6 +1,6 @@
 #include "application/bats/IndigenousQueryBridge.hpp"
 #include "application/Async.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 #include <stdexcept>
 
 namespace batbox::application::bats {

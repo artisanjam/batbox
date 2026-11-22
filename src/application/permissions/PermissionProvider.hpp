@@ -1,6 +1,6 @@
 #pragma once
 #include "interactive/CommandUi.hpp"
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include "gadgets/bash/BashGadget.hpp"
 #include <deque>
 #include <future>

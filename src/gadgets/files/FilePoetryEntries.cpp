@@ -1,5 +1,5 @@
 #include "gadgets/files/FilePoetryEntries.hpp"
-#include "formatting/Format.hpp"
+#include "ui/formatting/Format.hpp"
 #include <stdexcept>
 
 namespace batbox::gadgets::files {

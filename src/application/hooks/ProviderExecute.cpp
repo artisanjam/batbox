@@ -1,8 +1,8 @@
 #include "application/hooks/Provider.hpp"
 #include "application/Async.hpp"
-#include "instructions/hooks/runtime/ExecuteHooks.hpp"
-#include "runtime/JsonValue.hpp"
-#include "runtime/Platform.hpp"
+#include "lib/instructions/hooks/runtime/ExecuteHooks.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "core/runtime/Platform.hpp"
 #include <stdexcept>
 
 namespace batbox::application::hooks {

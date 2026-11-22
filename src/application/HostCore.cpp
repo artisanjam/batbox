@@ -3,16 +3,16 @@
 #include "application/Async.hpp"
 #include "application/ErrorReport.hpp"
 #include "application/mcp_elicitation/ModelBinding.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include "flights/ProjectDirectories.hpp"
 #include "shell/BashProvider.hpp"
 #include "shell/ShellBootstrap.hpp"
 #include "shell/WindowsPaths.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include "interactive/background/NotificationAttachments.hpp"
 #include "gadgets/Gadget.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include <chrono>
 #include <cstdlib>

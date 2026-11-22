@@ -1,6 +1,6 @@
 #include "interactive/cards/OutputLineCard.hpp"
-#include "glob/Regex16.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/glob/Regex16.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 #include <string_view>
 #include <vector>

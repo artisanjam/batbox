@@ -1,8 +1,8 @@
 #include "application/poetry/Provider.hpp"
-#include "instructions/MemoryPoetry.hpp"
-#include "poetryEntries/Environment.hpp"
-#include "poetryEntries/BatPoetry.hpp"
-#include "poetryEntries/PoetryBindings.hpp"
+#include "lib/instructions/MemoryPoetry.hpp"
+#include "lib/poetryEntries/Environment.hpp"
+#include "lib/poetryEntries/BatPoetry.hpp"
+#include "lib/poetryEntries/PoetryBindings.hpp"
 #include <future>
 #include <stdexcept>
 #ifdef _WIN32

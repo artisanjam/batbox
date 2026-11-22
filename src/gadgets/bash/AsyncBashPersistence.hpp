@@ -1,5 +1,5 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "gadgets/bash/BashCompletion.hpp"
 
 namespace batbox::bash_gadget {

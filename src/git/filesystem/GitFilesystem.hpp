@@ -1,6 +1,6 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/event_loop/Deferred.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <atomic>
 #include <cstdint>
 #include <functional>

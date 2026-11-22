@@ -8,9 +8,9 @@
 #include "interactive/background/NotificationAttachments.hpp"
 #include "messages/RuntimeMessages.hpp"
 #include "retry/Retry.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/OrderedStringSet.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/OrderedStringSet.hpp"
 #include <fstream>
 
 namespace batbox::application::engine {

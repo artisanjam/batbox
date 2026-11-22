@@ -1,7 +1,7 @@
 #pragma once
 #include "interactive/viewport/Range.hpp"
 #include "interactive/message_list_view/Projection.hpp"
-#include "terminal_ftxui/ElementSearch.hpp"
+#include "ui/terminal_ftxui/ElementSearch.hpp"
 #include <ftxui/dom/node.hpp>
 #include <functional>
 #include <unordered_set>

@@ -1,6 +1,6 @@
 #include "flights/SavedBats.hpp"
 #include "flights/IndigenousPath.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <chrono>
 #include <cstdio>

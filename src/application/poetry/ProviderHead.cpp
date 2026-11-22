@@ -1,6 +1,6 @@
 #include "application/poetry/Provider.hpp"
 #include "application/poetry/Stamp.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <algorithm>
 #include <fstream>
 #include <iterator>

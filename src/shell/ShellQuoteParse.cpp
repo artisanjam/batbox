@@ -1,5 +1,5 @@
 #include "shell/ShellQuote.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <regex>
 #include <stdexcept>
 #include <utility>

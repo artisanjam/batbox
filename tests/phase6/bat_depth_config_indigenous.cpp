@@ -1,5 +1,5 @@
 #include "application/Config.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <chrono>
 #include <cstdlib>
 #include <filesystem>

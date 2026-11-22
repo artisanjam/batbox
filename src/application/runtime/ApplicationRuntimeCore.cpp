@@ -1,6 +1,6 @@
 #include "application/runtime/ApplicationRuntime.hpp"
 #include "interactive/TranscriptRows.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 #include <algorithm>
 #include <stdexcept>
 

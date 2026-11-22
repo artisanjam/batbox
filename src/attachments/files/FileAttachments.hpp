@@ -1,7 +1,7 @@
 #pragma once
 #include "attachment_triggers/Attachments.hpp"
 #include "attachments/files/Mentions.hpp"
-#include "filesystem/FileOps.hpp"
+#include "lib/filesystem/FileOps.hpp"
 #include "gadgets/files/FileRead.hpp"
 #include <functional>
 #include <optional>

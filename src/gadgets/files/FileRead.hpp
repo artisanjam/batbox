@@ -1,6 +1,6 @@
 #pragma once
-#include "filesystem/FileOps.hpp"
-#include "filesystem/Range.hpp"
+#include "lib/filesystem/FileOps.hpp"
+#include "lib/filesystem/Range.hpp"
 #include "messages/Messages.hpp"
 #include "gadgets/Gadget.hpp"
 #include "gadgets/files/FileWrite.hpp"

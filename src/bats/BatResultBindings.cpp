@@ -1,8 +1,8 @@
 #include "bats/BatResultBindings.hpp"
 #include "messages/Context.hpp"
 #include "messages/TextContent.hpp"
-#include "runtime/Platform.hpp"
-#include "utils/tokens.hpp"
+#include "core/runtime/Platform.hpp"
+#include "util/tokens.hpp"
 
 namespace batbox::bats {
 BatResultImports indigenousBatResultImports(){

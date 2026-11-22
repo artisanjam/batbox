@@ -1,8 +1,8 @@
 #include "application/engine/GadgetErrors.hpp"
 #include "bats/RunBat.hpp"
 #include "gadgets/bash/BashGadget.hpp"
-#include "transport/Errors.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/transport/Errors.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::application::engine {
 namespace {

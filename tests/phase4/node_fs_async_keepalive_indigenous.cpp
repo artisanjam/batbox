@@ -1,5 +1,5 @@
-#include "fs_operations/NodeFsAsyncIndigenous.hpp"
-#include "event_loop/Loop.hpp"
+#include "lib/fs_operations/NodeFsAsyncIndigenous.hpp"
+#include "core/event_loop/Loop.hpp"
 #include <cassert>
 #include <chrono>
 #include <memory>

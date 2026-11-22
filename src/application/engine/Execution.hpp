@@ -1,6 +1,6 @@
 #pragma once
 #include "bats/ForkedBat.hpp"
-#include "event_loop/Loop.hpp"
+#include "core/event_loop/Loop.hpp"
 #include "messages/Messages.hpp"
 #include "gadget_results/Storage.hpp"
 

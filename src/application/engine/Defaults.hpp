@@ -7,7 +7,7 @@
 #include "interactive/submit/CommandQueue.hpp"
 #include "memory_prefetch/Prefetch.hpp"
 #include "services/tokenEstimation.hpp"
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include <optional>
 
 namespace batbox::application::engine {

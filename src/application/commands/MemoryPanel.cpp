@@ -1,7 +1,7 @@
 #include "application/commands/MemoryPanel.hpp"
 #include "application/Async.hpp"
 #include "application/editor/IndigenousProcess.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <stdexcept>
 

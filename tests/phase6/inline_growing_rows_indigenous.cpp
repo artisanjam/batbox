@@ -1,7 +1,7 @@
 // The inline view wraps the streaming preview and a Gadget's partial input
 // incrementally. Fed in random fragments, the lines must equal wrapping the
 // whole row at once, and a cached layout must equal an uncached one.
-#include "terminal_ftxui/ScrollbackProjection.hpp"
+#include "ui/terminal_ftxui/ScrollbackProjection.hpp"
 #include "interactive/TranscriptRows.hpp"
 #include <iostream>
 #include <random>

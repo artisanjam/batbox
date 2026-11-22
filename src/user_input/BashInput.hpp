@@ -1,6 +1,6 @@
 #pragma once
 #include "user_input/TextPoetry.hpp"
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 
 namespace batbox::user_input {
 struct BashInputServices {

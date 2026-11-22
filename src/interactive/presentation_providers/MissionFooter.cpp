@@ -1,5 +1,5 @@
 #include "interactive/presentation_providers/MissionFooter.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <algorithm>
 #include <cmath>

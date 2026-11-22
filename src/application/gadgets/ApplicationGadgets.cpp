@@ -1,6 +1,6 @@
 #include "application/gadgets/ApplicationGadgets.hpp"
 #include "application/gadgets/IndigenousFiles.hpp"
-#include "formatting/Format.hpp"
+#include "ui/formatting/Format.hpp"
 #include "gadgets/bash/BashGadget.hpp"
 #include <chrono>
 #include <cstdlib>

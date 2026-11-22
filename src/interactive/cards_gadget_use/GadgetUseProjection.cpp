@@ -1,6 +1,6 @@
 #include "interactive/cards_gadget_use/GadgetUseProjection.hpp"
 #include "interactive/cards_gadget_result/HookProgressProjection.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <stdexcept>
 #include <utility>
 #include <vector>

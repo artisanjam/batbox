@@ -1,8 +1,8 @@
 #include "attachments/files/FileAttachments.hpp"
-#include "filesystem/FileOps.hpp"
-#include "media/Media.hpp"
-#include "runtime/AsyncLaunch.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "lib/filesystem/FileOps.hpp"
+#include "lib/media/Media.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include "gadgets/files/ActiveStash.hpp"
 #include <filesystem>
 #include <stdexcept>

@@ -1,5 +1,5 @@
 #include "interactive/text_input/Cursor.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::interactive::text_input {
 Cursor Cursor::modifyText(const Cursor& end,

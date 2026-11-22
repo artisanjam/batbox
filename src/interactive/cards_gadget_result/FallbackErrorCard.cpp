@@ -2,7 +2,7 @@
 #include "interactive/MessageTags.hpp"
 #include "interactive/cards/BashResultText.hpp"
 #include "interactive/cards/OutputLineCard.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <stdexcept>
 

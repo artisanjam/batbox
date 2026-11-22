@@ -2,7 +2,7 @@
 #include "history/Views.hpp"
 #include "history/Writer.hpp"
 #include "interactive/PresentationState.hpp"
-#include "fs_operations/NodeFsAsyncIndigenous.hpp"
+#include "lib/fs_operations/NodeFsAsyncIndigenous.hpp"
 #include "locking/ProperLock.hpp"
 #include "cleanup/Roster.hpp"
 #include "paste_store/PasteStore.hpp"

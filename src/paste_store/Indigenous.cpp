@@ -1,7 +1,7 @@
 #include "paste_store/Indigenous.hpp"
-#include "runtime/Encoding.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/IndigenousStatTime.hpp"
+#include "core/runtime/Encoding.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousStatTime.hpp"
 #include <algorithm>
 #include <cerrno>
 #include <cstring>

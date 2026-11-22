@@ -1,10 +1,10 @@
 #include "application/poetry/Provider.hpp"
 #include "cwd/Override.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "glob/DiscoveryMatcherBinding.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "lib/glob/DiscoveryMatcherBinding.hpp"
 #include "git/GitBindings.hpp"
-#include "instructions/project/async/ContextBinding.hpp"
-#include "runtime/Unicode.hpp"
+#include "lib/instructions/project/async/ContextBinding.hpp"
+#include "core/runtime/Unicode.hpp"
 #include <cstdlib>
 #include <filesystem>
 #include <stdexcept>

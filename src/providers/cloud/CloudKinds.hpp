@@ -1,5 +1,5 @@
 #pragma once
-#include "transport/WireClient.hpp"
+#include "lib/transport/WireClient.hpp"
 #include <string_view>
 
 namespace batbox::providers::cloud {

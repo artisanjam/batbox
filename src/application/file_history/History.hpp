@@ -1,8 +1,8 @@
 #pragma once
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include "application/flights/Flight.hpp"
-#include "event_loop/Deferred.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/event_loop/Deferred.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <filesystem>
 #include <functional>
 #include <memory>

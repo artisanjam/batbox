@@ -1,5 +1,5 @@
 #include "gadget_results/Budget.hpp"
-#include "formatting/Format.hpp"
+#include "ui/formatting/Format.hpp"
 
 namespace batbox::gadget_results {
 event_loop::Deferred<Json> buildReplacement(event_loop::Loop& loop,const BudgetImports& imports,

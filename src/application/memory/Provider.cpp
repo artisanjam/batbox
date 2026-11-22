@@ -1,7 +1,7 @@
 #include "application/memory/Provider.hpp"
 #include "memory_prefetch/BatMemoryPath.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "utils/envUtils.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "util/envUtils.hpp"
 #include <filesystem>
 #include <stdexcept>
 

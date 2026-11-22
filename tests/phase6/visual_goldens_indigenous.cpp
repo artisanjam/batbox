@@ -13,7 +13,7 @@
 #include "interactive/presentation_providers/MissionFooter.hpp"
 #include "interactive/presentation_providers/StyleRoles.hpp"
 #include "interactive/presentation_providers/CardPalettes.hpp"
-#include "terminal_ftxui/PresentationView.hpp"
+#include "ui/terminal_ftxui/PresentationView.hpp"
 #include <ftxui/screen/terminal.hpp>
 #include <chrono>
 #include <iostream>

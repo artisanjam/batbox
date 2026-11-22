@@ -1,10 +1,10 @@
 #include "providers/aws/BedrockClient.hpp"
-#include "runtime/Version.hpp"
+#include "core/runtime/Version.hpp"
 #include "providers/aws/SigV4.hpp"
 #include "providers/cloud/Crypto.hpp"
 #include "providers/cloud/ErrorShape.hpp"
-#include "transport/Errors.hpp"
-#include "transport/Messages.hpp"
+#include "lib/transport/Errors.hpp"
+#include "lib/transport/Messages.hpp"
 #include <cstdlib>
 #include <set>
 

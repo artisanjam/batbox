@@ -1,5 +1,5 @@
 #pragma once
-#include "termio/Clipboard.hpp"
+#include "ui/termio/Clipboard.hpp"
 
 namespace batbox::interactive::navigation {
 struct CopyNotification {

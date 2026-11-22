@@ -1,7 +1,7 @@
 #include "interactive/submit/PoetrySubmit.hpp"
 #include "commands/Roster.hpp"
 #include "history/References.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <set>
 #include <stdexcept>
 

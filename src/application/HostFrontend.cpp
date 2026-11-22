@@ -6,12 +6,12 @@
 #include "interactive/presentation_providers/DefaultBindings.hpp"
 #include "interactive/text_input/TextEditorIndigenous.hpp"
 #include "interactive/submit/QueuedInputs.hpp"
-#include "runtime/MessageSnapshot.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #include "flights/Transcript.hpp"
-#include "mcp/OutputStorage.hpp"
+#include "lib/mcp/OutputStorage.hpp"
 #include "gadget_results/Storage.hpp"
 #include "user_input/CommandMessages.hpp"
 #include "cli/headless/PermissionControl.hpp"
@@ -19,7 +19,7 @@
 #include "interactive/presentation_providers/StyleRoles.hpp"
 #include "interactive/presentation_providers/CardPalettes.hpp"
 #include "interactive/presentation_providers/SystemTheme.hpp"
-#include "utils/tokens.hpp"
+#include "util/tokens.hpp"
 #include <filesystem>
 #include <fstream>
 #include <algorithm>

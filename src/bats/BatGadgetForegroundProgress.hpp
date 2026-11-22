@@ -1,6 +1,6 @@
 #pragma once
 #include "bats/BatMissionProgress.hpp"
-#include "runtime/MessageSnapshot.hpp"
+#include "core/runtime/MessageSnapshot.hpp"
 
 namespace batbox::bats {
 struct BatGadgetForegroundProgressServices {

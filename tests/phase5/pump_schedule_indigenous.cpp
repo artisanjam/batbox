@@ -1,4 +1,4 @@
-#include "terminal_ftxui/PumpSchedule.hpp"
+#include "ui/terminal_ftxui/PumpSchedule.hpp"
 #include <cassert>
 #include <iostream>
 #include <stdexcept>

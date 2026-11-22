@@ -1,6 +1,6 @@
 #include "interactive/TranscriptRows.hpp"
 #include "messages/TextContent.hpp"
-#include "runtime/MessageMutation.hpp"
+#include "core/runtime/MessageMutation.hpp"
 #include <algorithm>
 
 namespace batbox::interactive {

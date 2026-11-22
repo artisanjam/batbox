@@ -1,10 +1,10 @@
 #include "application/media/Bindings.hpp"
-#include "media/Base64.hpp"
-#include "media/Media.hpp"
-#include "media/ImageIndigenous.hpp"
+#include "lib/media/Base64.hpp"
+#include "lib/media/Media.hpp"
+#include "lib/media/ImageIndigenous.hpp"
 #include "application/media/ClipboardImage.hpp"
-#include "runtime/AsyncLaunch.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <chrono>
 #include <algorithm>
 #include <cerrno>

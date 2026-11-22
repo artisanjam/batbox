@@ -1,7 +1,7 @@
-#include "runtime/AsyncLaunch.hpp"
+#include "core/runtime/AsyncLaunch.hpp"
 #include "settings/watcher/IndigenousWatcher.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/IndigenousStatTime.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousStatTime.hpp"
 #include <uv.h>
 #ifndef _WIN32
 #include <sys/stat.h>

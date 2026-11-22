@@ -1,9 +1,9 @@
-#include "instructions/project/ProjectDiscovery.hpp"
+#include "lib/instructions/project/ProjectDiscovery.hpp"
 #include "application/memory/Provider.hpp"
 #include "application/memory/Consolidation.hpp"
 #include "application/memory/IndigenousWork.hpp"
 #include "application/Async.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <filesystem>
 #include <fstream>
 #include <set>

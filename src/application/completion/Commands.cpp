@@ -1,6 +1,6 @@
 #include "application/completion/Commands.hpp"
 #include "commands/Roster.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <cctype>
 #include <regex>

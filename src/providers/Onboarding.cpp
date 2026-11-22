@@ -1,9 +1,9 @@
 #include "providers/Onboarding.hpp"
 #include "application/config/EndpointStore.hpp"
-#include "transport/Errors.hpp"
-#include "transport/RawHttp.hpp"
+#include "lib/transport/Errors.hpp"
+#include "lib/transport/RawHttp.hpp"
 #ifdef _WIN32
-#include "runtime/IndigenousUnicode.hpp"
+#include "core/runtime/IndigenousUnicode.hpp"
 #endif
 #include <algorithm>
 #include <cstdlib>

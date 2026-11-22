@@ -1,6 +1,6 @@
 #include "application/Config.hpp"
 #include "application/Subcommands.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cassert>
 #include <chrono>
 #include <filesystem>

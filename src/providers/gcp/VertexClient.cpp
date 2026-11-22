@@ -1,9 +1,9 @@
 #include "providers/gcp/VertexClient.hpp"
-#include "runtime/Version.hpp"
+#include "core/runtime/Version.hpp"
 #include "providers/cloud/ErrorShape.hpp"
-#include "transport/Errors.hpp"
-#include "transport/Messages.hpp"
-#include "transport/SSE.hpp"
+#include "lib/transport/Errors.hpp"
+#include "lib/transport/Messages.hpp"
+#include "lib/transport/SSE.hpp"
 #include <cstdlib>
 #include <stdexcept>
 

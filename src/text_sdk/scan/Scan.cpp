@@ -1,5 +1,5 @@
 #include "text_sdk/scan/Scan.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <unicode/ustring.h>
 #include <stdexcept>
 

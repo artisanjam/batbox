@@ -2,8 +2,8 @@
 #include "gadgets/live_roster/LiveRoster.hpp"
 #include "skills/SkillRoster.hpp"
 #include "messages/Messages.hpp"
-#include "filesystem/RipgrepProcess.hpp"
-#include "media/Media.hpp"
+#include "lib/filesystem/RipgrepProcess.hpp"
+#include "lib/media/Media.hpp"
 #include "gadgets/web/ModelAdapter.hpp"
 #include "gadgets/bash/AsyncBashCall.hpp"
 

@@ -1,6 +1,6 @@
 #pragma once
-#include "filesystem/FileOps.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/filesystem/FileOps.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <functional>
 #include <optional>
 #include <string>

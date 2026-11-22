@@ -1,5 +1,5 @@
 #include "gadgets/files/FileEdit.hpp"
-#include "formatting/Format.hpp"
+#include "ui/formatting/Format.hpp"
 #include <filesystem>
 #include <stdexcept>
 #include <system_error>

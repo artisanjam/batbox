@@ -1,5 +1,5 @@
 #include "messages/RuntimeMessages.hpp"
-#include "glob/Regex16.hpp"
+#include "lib/glob/Regex16.hpp"
 
 namespace batbox::messages {
 std::optional<std::string> extractTag(const std::string& html,const std::string& name){

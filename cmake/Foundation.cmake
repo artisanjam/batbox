@@ -1,10 +1,10 @@
 include(cmake/Icu.cmake)
 include(cmake/CmarkDependency.cmake)
 target_sources(batbox_instructions PRIVATE
-  src/instructions/project/MarkdownLexer.cpp src/instructions/project/ProjectComments.cpp
-  src/instructions/project/ProjectContent.cpp src/instructions/project/ProjectFrontmatter.cpp
-  src/instructions/project/ProjectIncludes.cpp src/instructions/project/ProjectPaths.cpp
-  src/instructions/project/ProjectContext.cpp)
+  src/lib/instructions/project/MarkdownLexer.cpp src/lib/instructions/project/ProjectComments.cpp
+  src/lib/instructions/project/ProjectContent.cpp src/lib/instructions/project/ProjectFrontmatter.cpp
+  src/lib/instructions/project/ProjectIncludes.cpp src/lib/instructions/project/ProjectPaths.cpp
+  src/lib/instructions/project/ProjectContext.cpp)
 target_link_libraries(batbox_instructions PUBLIC PkgConfig::CMARK_GFM ICU::i18n)
 add_library(batbox_context src/context/AsyncContextStash.cpp src/context/AsyncGitStatus.cpp
   src/context/AsyncSystemContext.cpp src/context/AsyncUserContext.cpp)
@@ -17,26 +17,26 @@ set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS ${BATBOX_SYSTEM_P
 file(READ ${BATBOX_SYSTEM_POETRY_SOURCE} BATBOX_SYSTEM_POETRY_HEX HEX)
 string(REGEX REPLACE "([0-9a-f][0-9a-f])" "0x\\1," BATBOX_SYSTEM_POETRY_BYTES "${BATBOX_SYSTEM_POETRY_HEX}")
 string(REGEX REPLACE "((0x..,){24})" "\\1\n" BATBOX_SYSTEM_POETRY_BYTES "${BATBOX_SYSTEM_POETRY_BYTES}")
-configure_file(src/poetryEntries/SystemPoetryDefault.cpp.in
+configure_file(src/lib/poetryEntries/SystemPoetryDefault.cpp.in
   ${CMAKE_BINARY_DIR}/generated/poetryEntries/SystemPoetryDefault.cpp @ONLY)
 add_library(batbox_poetryEntries
-  src/poetryEntries/BatPoetry.cpp src/poetryEntries/EnvironmentBasics.cpp src/poetryEntries/EnvironmentRender.cpp
-  src/poetryEntries/GuidanceCore.cpp src/poetryEntries/GuidanceFlight.cpp
-  src/poetryEntries/GuidanceGadgets.cpp src/poetryEntries/PoetryBindings.cpp src/poetryEntries/PoetryBlocks.cpp
-  src/poetryEntries/SystemHead.cpp src/poetryEntries/SystemPoetryFile.cpp
+  src/lib/poetryEntries/BatPoetry.cpp src/lib/poetryEntries/EnvironmentBasics.cpp src/lib/poetryEntries/EnvironmentRender.cpp
+  src/lib/poetryEntries/GuidanceCore.cpp src/lib/poetryEntries/GuidanceFlight.cpp
+  src/lib/poetryEntries/GuidanceGadgets.cpp src/lib/poetryEntries/PoetryBindings.cpp src/lib/poetryEntries/PoetryBlocks.cpp
+  src/lib/poetryEntries/SystemHead.cpp src/lib/poetryEntries/SystemPoetryFile.cpp
   ${CMAKE_BINARY_DIR}/generated/poetryEntries/SystemPoetryDefault.cpp
-  src/poetryEntries/AsyncSections.cpp
-  src/poetryEntries/AsyncPoetryStart.cpp
-  src/poetryEntries/AsyncPoetryDynamic.cpp src/poetryEntries/AsyncPoetryFinish.cpp
-  src/poetryEntries/EffectiveSystemPoetry.cpp)
+  src/lib/poetryEntries/AsyncSections.cpp
+  src/lib/poetryEntries/AsyncPoetryStart.cpp
+  src/lib/poetryEntries/AsyncPoetryDynamic.cpp src/lib/poetryEntries/AsyncPoetryFinish.cpp
+  src/lib/poetryEntries/EffectiveSystemPoetry.cpp)
 target_link_libraries(batbox_poetryEntries PUBLIC batbox_context batbox_core)
 target_compile_options(batbox_poetryEntries PRIVATE -Wall -Wextra -Wpedantic)
 if(WIN32)
-  set(BATBOX_INDIGENOUS_EXEC_SOURCE src/process/IndigenousExecUv.cpp)
+  set(BATBOX_INDIGENOUS_EXEC_SOURCE src/core/process/IndigenousExecUv.cpp)
 else()
-  set(BATBOX_INDIGENOUS_EXEC_SOURCE src/process/IndigenousExec.cpp)
+  set(BATBOX_INDIGENOUS_EXEC_SOURCE src/core/process/IndigenousExec.cpp)
 endif()
-add_library(batbox_process src/process/ExecFileNoThrow.cpp ${BATBOX_INDIGENOUS_EXEC_SOURCE})
+add_library(batbox_process src/core/process/ExecFileNoThrow.cpp ${BATBOX_INDIGENOUS_EXEC_SOURCE})
 target_link_libraries(batbox_process PUBLIC batbox_event_loop batbox_core)
 target_compile_options(batbox_process PRIVATE -Wall -Wextra -Wpedantic)
 # One git system, one target. src/git/ holds the subprocess/binding half,

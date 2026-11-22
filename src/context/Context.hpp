@@ -1,8 +1,8 @@
 #pragma once
-#include "instructions/project/ProjectDiscovery.hpp"
-#include "runtime/IndigenousTime.hpp"
-#include "runtime/JsonValue.hpp"
-#include "utils/envUtils.hpp"
+#include "lib/instructions/project/ProjectDiscovery.hpp"
+#include "core/runtime/IndigenousTime.hpp"
+#include "core/runtime/JsonValue.hpp"
+#include "util/envUtils.hpp"
 #include <chrono>
 #include <cstdio>
 #include <ctime>

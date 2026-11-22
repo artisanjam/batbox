@@ -1,5 +1,5 @@
 #include "history/ReaderIndigenous.hpp"
-#include "fs_operations/ReverseLines.hpp"
+#include "lib/fs_operations/ReverseLines.hpp"
 #include <cerrno>
 #include <filesystem>
 #include <stdexcept>

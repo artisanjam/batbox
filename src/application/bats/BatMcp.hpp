@@ -1,6 +1,6 @@
 #pragma once
 #include "bats/RunBat.hpp"
-#include "mcp/manager/IndigenousRuntime.hpp"
+#include "lib/mcp/manager/IndigenousRuntime.hpp"
 
 namespace batbox::application::bats {
 batbox::bats::BatMcpSetup initializeBatMcpServers(

@@ -1,6 +1,6 @@
 #pragma once
-#include "app_state/State.hpp"
-#include "event_loop/Loop.hpp"
+#include "core/app_state/State.hpp"
+#include "core/event_loop/Loop.hpp"
 #include "missions/roster/Roster.hpp"
 #include <functional>
 #include <memory>

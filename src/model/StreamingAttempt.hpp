@@ -1,7 +1,7 @@
 #pragma once
 
 #include "retry/Retry.hpp"
-#include "transport/Client.hpp"
+#include "lib/transport/Client.hpp"
 #include <cstdint>
 #include <functional>
 #include <optional>

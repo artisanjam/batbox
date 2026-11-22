@@ -1,11 +1,11 @@
 #include "interactive/presentation_providers/Chrome.hpp"
-#include "runtime/Version.hpp"
+#include "core/runtime/Version.hpp"
 #include "interactive/presentation_providers/MissionFooter.hpp"
 #include "interactive/presentation_providers/CardPalettes.hpp"
 #include "interactive/presentation_providers/StyleRoles.hpp"
 #include "interactive/gadget_views/GadgetViewProjection.hpp"
-#include "terminal_ftxui/TextFit.hpp"
-#include "runtime/Encoding.hpp"
+#include "ui/terminal_ftxui/TextFit.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/string.hpp>
 #include <algorithm>

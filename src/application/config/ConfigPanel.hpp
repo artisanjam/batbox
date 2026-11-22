@@ -2,7 +2,7 @@
 #include "application/Config.hpp"
 #include "application/compaction_settings/Policy.hpp"
 #include "application/model/LocalModelService.hpp"
-#include "app_state/State.hpp"
+#include "core/app_state/State.hpp"
 #include "interactive/conversation_shell/Shell.hpp"
 #include "user_input/UiCommandRouter.hpp"
 

@@ -1,5 +1,5 @@
 #include "interactive/markdown/Table.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <cmath>
 #include <regex>

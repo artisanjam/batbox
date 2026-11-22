@@ -1,10 +1,10 @@
 #pragma once
 
-#include "app_state/OnChange.hpp"
+#include "core/app_state/OnChange.hpp"
 #include "file_state_stash/FileStateStash.hpp"
 #include "interactive/CommandUi.hpp"
 #include "interactive/QueryTurn.hpp"
-#include "runtime/OrderedStringSet.hpp"
+#include "core/runtime/OrderedStringSet.hpp"
 #include "gadget_results/State.hpp"
 #include "gadgets/Gadget.hpp"
 

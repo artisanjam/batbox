@@ -1,5 +1,5 @@
 #include "application/hooks/Provider.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::application::hooks {

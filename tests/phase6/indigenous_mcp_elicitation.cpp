@@ -1,7 +1,7 @@
 #include "application/mcp_elicitation/Controller.hpp"
 #include "application/mcp_elicitation/Validation.hpp"
-#include "mcp/StdioClient.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/mcp/StdioClient.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <chrono>
 #include <future>
 #include <iostream>

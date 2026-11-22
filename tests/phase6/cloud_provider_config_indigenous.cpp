@@ -3,7 +3,7 @@
 #include "application/config/EndpointStore.hpp"
 #include "application/Config.hpp"
 #include "providers/cloud/CloudClients.hpp"
-#include "runtime/IndigenousPath.hpp"
+#include "core/runtime/IndigenousPath.hpp"
 #include <cassert>
 #include <chrono>
 #include <cstdlib>

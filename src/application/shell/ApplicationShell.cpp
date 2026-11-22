@@ -1,6 +1,6 @@
 #include "application/shell/ApplicationShell.hpp"
 #include "shell/CommandSplitter.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <regex>
 #include <stdexcept>
 #include <utility>

@@ -2,7 +2,7 @@
 
 #include "interactive/MessageGrouping.hpp"
 #include "interactive/GadgetClassification.hpp"
-#include "runtime/OrderedStringSet.hpp"
+#include "core/runtime/OrderedStringSet.hpp"
 #include <functional>
 #include <optional>
 #include <unordered_map>

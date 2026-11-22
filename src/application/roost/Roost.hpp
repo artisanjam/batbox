@@ -1,6 +1,6 @@
 #pragma once
-#include "event_loop/Loop.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/event_loop/Loop.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <filesystem>
 #include <functional>
 #include <memory>

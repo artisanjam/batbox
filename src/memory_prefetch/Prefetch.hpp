@@ -1,8 +1,8 @@
 #pragma once
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "file_state_stash/FileStateStash.hpp"
-#include "instructions/MemoryPath.hpp"
-#include "instructions/MemoryScan.hpp"
+#include "lib/instructions/MemoryPath.hpp"
+#include "lib/instructions/MemoryScan.hpp"
 #include "query/GadgetTurn.hpp"
 #include <stop_token>
 #include <unordered_set>

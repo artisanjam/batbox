@@ -2,7 +2,7 @@
 #include "execution/GadgetExecution.hpp"
 #include "messages/Messages.hpp"
 #include "query/SimpleQueriesBinding.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <atomic>
 #include <iostream>
 #include <stdexcept>

@@ -1,7 +1,7 @@
 #include "application/cli/Adapter.hpp"
 #include "cli/structured/OutputWrite.hpp"
 #include "messages/TextContent.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/Platform.hpp"
 #include <algorithm>
 #include <chrono>
 #include <cstdio>

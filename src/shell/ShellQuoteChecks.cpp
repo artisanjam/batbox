@@ -1,5 +1,5 @@
 #include "shell/ShellQuoteChecks.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 
 namespace batbox::shell_command {
 namespace {

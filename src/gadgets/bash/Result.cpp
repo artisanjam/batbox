@@ -1,5 +1,5 @@
 #include "gadgets/bash/BashGadget.hpp"
-#include "formatting/Format.hpp"
+#include "ui/formatting/Format.hpp"
 #include <algorithm>
 
 namespace batbox::bash_gadget {

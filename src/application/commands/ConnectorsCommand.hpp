@@ -1,9 +1,9 @@
 #pragma once
 #include "application/Config.hpp"
 #include "application/connectors/Status.hpp"
-#include "event_loop/Loop.hpp"
+#include "core/event_loop/Loop.hpp"
 #include "interactive/CommandUi.hpp"
-#include "mcp/manager/IndigenousRuntime.hpp"
+#include "lib/mcp/manager/IndigenousRuntime.hpp"
 #include "user_input/UiCommandRouter.hpp"
 #include <functional>
 #include <memory>

@@ -1,5 +1,5 @@
 #include "providers/cloud/ErrorShape.hpp"
-#include "transport/Errors.hpp"
+#include "lib/transport/Errors.hpp"
 #include <algorithm>
 
 namespace batbox::providers::cloud {

@@ -1,6 +1,6 @@
 #include "application/commands/PermissionCommand.hpp"
-#include "app_state/PermissionModeBridge.hpp"
-#include "app_state/provider/PermissionHelpers.hpp"
+#include "core/app_state/PermissionModeBridge.hpp"
+#include "core/app_state/provider/PermissionHelpers.hpp"
 #include <algorithm>
 #include <array>
 #include <stdexcept>

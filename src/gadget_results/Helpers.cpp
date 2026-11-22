@@ -1,5 +1,5 @@
 #include "gadget_results/Storage.hpp"
-#include "formatting/Format.hpp"
+#include "ui/formatting/Format.hpp"
 #include <cmath>
 
 namespace batbox::gadget_results {

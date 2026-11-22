@@ -1,9 +1,9 @@
-#include "instructions/project/ProjectDiscovery.hpp"
+#include "lib/instructions/project/ProjectDiscovery.hpp"
 #include "application/poetry/Provider.hpp"
 #include "application/poetry/Stamp.hpp"
 #include "cwd/Override.hpp"
-#include "runtime/IndigenousPath.hpp"
-#include "runtime/Platform.hpp"
+#include "core/runtime/IndigenousPath.hpp"
+#include "core/runtime/Platform.hpp"
 #include <cstdlib>
 #include <algorithm>
 #include <filesystem>

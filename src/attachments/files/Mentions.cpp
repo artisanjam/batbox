@@ -1,6 +1,6 @@
 #include "attachments/files/Mentions.hpp"
-#include "glob/Regex16.hpp"
-#include "runtime/JsonValue.hpp"
+#include "lib/glob/Regex16.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <unordered_set>
 
 namespace batbox::attachments::files {

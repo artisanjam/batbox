@@ -1,8 +1,8 @@
 #pragma once
 #include "application/Config.hpp"
 #include "application/model/LocalModelService.hpp"
-#include "app_state/State.hpp"
-#include "event_loop/Loop.hpp"
+#include "core/app_state/State.hpp"
+#include "core/event_loop/Loop.hpp"
 #include "interactive/CommandUi.hpp"
 #include "providers/LocalDiscovery.hpp"
 #include "providers/Onboarding.hpp"

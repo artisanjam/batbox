@@ -122,10 +122,10 @@ probes, never model work.
 | Retries of a failed model request | `src/retry/Policy.cpp:9`, `src/application_model/ServicesQuery.cpp:71` | 10, at most 2 for local and non-Anthropic endpoints; a timed-out request is not retried (was retried) | `max_retries` |
 | Wait between retries | `src/retry/Policy.cpp:10`, `src/retry/Machine.cpp:122`, `src/application_model/ServicesQuery.cpp:72` | 0.5 seconds doubling, at most 2 seconds (local and non-Anthropic) or 32 seconds | not configurable |
 | Compaction and its fallback request | `src/compaction/Summary.cpp` | no limit of its own; the model request limits above | `compactSummaryAttempts`, `autoCompactFailureLimit` |
-| Prompt hook (`"type": "prompt"`) | `src/instructions/hooks/runtime/PoetryHookExecutor.cpp:176` | 1 hour (was 30 seconds for the model call inside a 10 minute hook) | the hook's `timeout` |
-| Agent hook (`"type": "agent"`) | `src/instructions/hooks/runtime/BatHookExecutor.cpp:242`, `HookPerHook.hpp:10` | 1 hour (was 60 seconds) | the hook's `timeout` |
-| Command, HTTP and function hooks | `src/application_hooks/Provider.hpp:56`, `src/instructions/hooks/runtime/HttpHook.cpp:64` | 10 minutes | the hook's `timeout` |
-| Async hook | `src/instructions/hooks/runtime/AsyncHookRoster.cpp:34` | 15 seconds | the hook's `asyncTimeout` |
+| Prompt hook (`"type": "prompt"`) | `src/lib/instructions/hooks/runtime/PoetryHookExecutor.cpp:176` | 1 hour (was 30 seconds for the model call inside a 10 minute hook) | the hook's `timeout` |
+| Agent hook (`"type": "agent"`) | `src/lib/instructions/hooks/runtime/BatHookExecutor.cpp:242`, `HookPerHook.hpp:10` | 1 hour (was 60 seconds) | the hook's `timeout` |
+| Command, HTTP and function hooks | `src/application_hooks/Provider.hpp:56`, `src/lib/instructions/hooks/runtime/HttpHook.cpp:64` | 10 minutes | the hook's `timeout` |
+| Async hook | `src/lib/instructions/hooks/runtime/AsyncHookRoster.cpp:34` | 15 seconds | the hook's `asyncTimeout` |
 | SessionEnd hooks on `/clear` | `src/application_commands/Commands.cpp:134` | 10 minutes | not configurable |
 | TaskOutput wait on a Bat | `src/gadgets/mission_output/MissionOutput.cpp:13` | 1 hour; ends as "still running", not failed | TaskOutput `timeout` |
 | TaskOutput wait on a background shell command | `src/gadgets/mission_output/MissionOutput.cpp:15` | 30 seconds | TaskOutput `timeout` |
@@ -133,15 +133,15 @@ probes, never model work.
 | Wait for a free Bat slot | `src/application_bats/IndigenousBatCore.cpp:288` | no limit | `--max-concurrent-subagents` sets the slots |
 | Bash command | `src/application_shell/ApplicationShell.hpp:25` | 2 minutes, at most 10 minutes; unchanged | Bash `timeout` |
 | Bash auto-backgrounding | `src/application_shell/ApplicationShell.hpp:26` | off (15 seconds when on) | not configurable |
-| MCP server connect | `src/mcp/manager/IndigenousFactory.cpp:119,158` | 30 seconds | `MCP_TIMEOUT` |
-| MCP tool call | `src/mcp/manager/IndigenousFactory.cpp:118,159` | about 27.8 hours | `MCP_TOOL_TIMEOUT` |
-| MCP other requests (list tools and the like) | `src/mcp/manager/IndigenousFactory.cpp:119`, `src/mcp/remote/RemoteClient.hpp:19` | 60 seconds | not configurable |
-| MCP sign-in browser wait | `src/mcp/auth/Flow.cpp:111` | 5 minutes | not configurable |
-| MCP `headersHelper`, browser open | `src/mcp/manager/IndigenousFactory.cpp:134`, `src/mcp/auth/IndigenousServices.cpp:126` | 10 seconds | not configurable |
+| MCP server connect | `src/lib/mcp/manager/IndigenousFactory.cpp:119,158` | 30 seconds | `MCP_TIMEOUT` |
+| MCP tool call | `src/lib/mcp/manager/IndigenousFactory.cpp:118,159` | about 27.8 hours | `MCP_TOOL_TIMEOUT` |
+| MCP other requests (list tools and the like) | `src/lib/mcp/manager/IndigenousFactory.cpp:119`, `src/lib/mcp/remote/RemoteClient.hpp:19` | 60 seconds | not configurable |
+| MCP sign-in browser wait | `src/lib/mcp/auth/Flow.cpp:111` | 5 minutes | not configurable |
+| MCP `headersHelper`, browser open | `src/lib/mcp/manager/IndigenousFactory.cpp:134`, `src/lib/mcp/auth/IndigenousServices.cpp:126` | 10 seconds | not configurable |
 | LSP request, LSP server start | `src/lsp/Manager.cpp:177`, `src/lsp/Manager.hpp:17` | 15 seconds each | not configurable |
 | Shell snapshot | `src/shell/SnapshotRun.cpp:86` | 10 seconds | not configurable |
 | Cron gate refresh | `src/cron/config/CronConfiguration.hpp:9` | 5 minutes | not configurable; a scheduled turn itself has no limit |
-| Ripgrep (Grep, Glob, file search) | `src/filesystem/RipgrepProcess.hpp:12` | 20 seconds; short on purpose | not configurable |
+| Ripgrep (Grep, Glob, file search) | `src/lib/filesystem/RipgrepProcess.hpp:12` | 20 seconds; short on purpose | not configurable |
 | Web fetch | `src/connectors/Scrapling.hpp:59` | 2 hours | not configurable |
 | Web search | `src/gadgets/web/SearchCore.cpp:30`, `src/connectors/Searxng.cpp:168` | 2 minutes, connect 10 seconds | not configurable |
 | SearXNG and Scrapling status (`doctor`, `/connectors`) | `src/application_connectors/Status.hpp:61,66,78` | 5, 2 and 30 seconds; short on purpose | not configurable |

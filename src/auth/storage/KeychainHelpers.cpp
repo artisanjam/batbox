@@ -1,5 +1,5 @@
 #include "auth/storage/KeychainHelpers.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include <array>
 #include <iomanip>
 #include <openssl/sha.h>

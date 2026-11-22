@@ -1,5 +1,5 @@
 #include "interactive/cards/UserTextProjection.hpp"
-#include "runtime/Encoding.hpp"
+#include "core/runtime/Encoding.hpp"
 #include "ftxui/screen/screen.hpp"
 #include "ftxui/screen/string.hpp"
 #include <algorithm>

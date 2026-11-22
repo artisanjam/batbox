@@ -1,12 +1,12 @@
 #include "application/hooks/Provider.hpp"
 #include "application/hooks/PoetryArguments.hpp"
-#include "instructions/hooks/runtime/HookResponseSchema.hpp"
-#include "instructions/hooks/runtime/PoetryModelBinding.hpp"
+#include "lib/instructions/hooks/runtime/HookResponseSchema.hpp"
+#include "lib/instructions/hooks/runtime/PoetryModelBinding.hpp"
 #include "messages/Messages.hpp"
 #include "messages/TextContent.hpp"
 #include "shell/ShellQuote.hpp"
 #include "skills/Skill.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 
 namespace batbox::application::hooks {

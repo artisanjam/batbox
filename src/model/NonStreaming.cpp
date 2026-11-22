@@ -1,7 +1,7 @@
 #include "model/NonStreaming.hpp"
 #include "model/ModelWrappers.hpp"
 #include "requests/assembly.hpp"
-#include "transport/RetryAdapter.hpp"
+#include "lib/transport/RetryAdapter.hpp"
 #include <chrono>
 #include <stdexcept>
 

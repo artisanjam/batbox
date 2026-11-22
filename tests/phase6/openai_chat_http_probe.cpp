@@ -1,7 +1,7 @@
 #include "retry/Retry.hpp"
 #include "streaming/Reducer.hpp"
-#include "transport/RetryAdapter.hpp"
-#include "transport/openai_chat/OpenAIChatClient.hpp"
+#include "lib/transport/RetryAdapter.hpp"
+#include "lib/transport/openai_chat/OpenAIChatClient.hpp"
 #include <chrono>
 #include <cstdlib>
 #include <iostream>

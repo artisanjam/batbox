@@ -1,5 +1,5 @@
 #include "shell/HeredocInternal.hpp"
-#include "runtime/JsonValue.hpp"
+#include "core/runtime/JsonValue.hpp"
 #include <utility>
 
 namespace batbox::shell_heredoc::detail {

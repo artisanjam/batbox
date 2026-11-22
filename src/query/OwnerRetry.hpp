@@ -1,6 +1,6 @@
 #pragma once
 
-#include "event_loop/Deferred.hpp"
+#include "core/event_loop/Deferred.hpp"
 #include "retry/Retry.hpp"
 
 namespace batbox::query {
