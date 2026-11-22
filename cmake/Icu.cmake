@@ -16,9 +16,11 @@ if(APPLE AND NOT ICU_ROOT)
     list(APPEND _icu_candidates "$ENV{HOMEBREW_PREFIX}/opt/icu4c")
   endif()
   # Non-login shells (ssh commands, CI) export no HOMEBREW_PREFIX; honor any
-  # explicit CMAKE_PREFIX_PATH the caller passed for a custom brew prefix.
+  # explicit CMAKE_PREFIX_PATH the caller passed for a custom brew prefix --
+  # both as the brew root (prefix/opt/icu4c) and as a keg root itself (a
+  # versioned keg like icu4c@79 named directly in the prefix path).
   foreach(prefix ${CMAKE_PREFIX_PATH})
-    list(APPEND _icu_candidates "${prefix}/opt/icu4c")
+    list(APPEND _icu_candidates "${prefix}/opt/icu4c" "${prefix}")
   endforeach()
   foreach(prefix /opt/homebrew/opt/icu4c /usr/local/opt/icu4c)
     list(APPEND _icu_candidates "${prefix}")
@@ -32,6 +34,24 @@ if(APPLE AND NOT ICU_ROOT)
   endforeach()
 endif()
 find_package(ICU REQUIRED COMPONENTS uc i18n)
+# A stale cache or an unpinned search can resolve the headers to the macOS
+# SDK's stub set: it ships utext.h/uchar.h (so detection succeeds and the
+# version reads plausible) but not the component headers our sources include
+# (brkiter.h/dtptngen.h for i18n, unorm2.h for uc). When the discovered dir
+# lacks them, drop the cached path and re-discover -- the ICU_ROOT hint set
+# above then makes the keg win over the SDK. Warn loudly if even the re-search
+# lands on a stub: the build would fail downstream with confusing errors.
+if(APPLE AND NOT EXISTS "${ICU_INCLUDE_DIR}/unicode/brkiter.h"
+    AND NOT EXISTS "${ICU_INCLUDE_DIR}/unicode/unorm2.h")
+  unset(ICU_INCLUDE_DIR CACHE)
+  find_package(ICU REQUIRED COMPONENTS uc i18n)
+  if(NOT EXISTS "${ICU_INCLUDE_DIR}/unicode/brkiter.h")
+    message(WARNING
+      "ICU headers discovered at ${ICU_INCLUDE_DIR} lack unicode/brkiter.h -- "
+      "this looks like the macOS SDK stub set. Set ICU_ROOT (or "
+      "CMAKE_PREFIX_PATH) to a full icu4c keg.")
+  endif()
+endif()
 # Sources include <unicode/...> directly in targets that do not link ICU::
 # imported targets (batbox_intl, batbox_text_sdk), so propagate the discovered
 # include dir project-wide from this single discovery point. This FindICU
