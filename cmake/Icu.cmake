@@ -15,6 +15,11 @@ if(APPLE AND NOT ICU_ROOT)
   if(DEFINED ENV{HOMEBREW_PREFIX})
     list(APPEND _icu_candidates "$ENV{HOMEBREW_PREFIX}/opt/icu4c")
   endif()
+  # Non-login shells (ssh commands, CI) export no HOMEBREW_PREFIX; honor any
+  # explicit CMAKE_PREFIX_PATH the caller passed for a custom brew prefix.
+  foreach(prefix ${CMAKE_PREFIX_PATH})
+    list(APPEND _icu_candidates "${prefix}/opt/icu4c")
+  endforeach()
   foreach(prefix /opt/homebrew/opt/icu4c /usr/local/opt/icu4c)
     list(APPEND _icu_candidates "${prefix}")
   endforeach()
