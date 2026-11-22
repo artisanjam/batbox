@@ -46,6 +46,11 @@ GadgetResult callGrep(const Json& input,const GadgetCallContext& context,const G
   std::vector<std::string> args={"--hidden"};
   for(const auto& dir:vcs){args.push_back("--glob");args.push_back("!"+dir);}
   args.push_back("--max-columns");args.push_back("500");
+  // Without the preview flag ripgrep replaces over-long match lines entirely
+  // with "[Omitted long matching line]"; weak-model readers confabulate quotes
+  // of text they never saw. A truncated preview keeps the context cap but
+  // shows the real opening of the line.
+  args.push_back("--max-columns-preview");
   if(input.value("multiline",false)){args.push_back("-U");args.push_back("--multiline-dotall");}
   if(input.value("-i",false))args.push_back("-i");
   if(mode=="files_with_matches")args.push_back("-l");
