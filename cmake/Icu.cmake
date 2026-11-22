@@ -32,3 +32,9 @@ if(APPLE AND NOT ICU_ROOT)
   endforeach()
 endif()
 find_package(ICU REQUIRED COMPONENTS uc i18n)
+# Sources include <unicode/...> directly in targets that do not link ICU::
+# imported targets (batbox_intl, batbox_text_sdk), so propagate the discovered
+# include dir project-wide from this single discovery point.
+if(ICU_INCLUDE_DIRS)
+  include_directories(BEFORE SYSTEM ${ICU_INCLUDE_DIRS})
+endif()
