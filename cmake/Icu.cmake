@@ -16,10 +16,16 @@ if(APPLE AND NOT ICU_ROOT)
     list(APPEND _icu_candidates "$ENV{HOMEBREW_PREFIX}/opt/icu4c")
   endif()
   # Non-login shells (ssh commands, CI) export no HOMEBREW_PREFIX; honor any
-  # explicit CMAKE_PREFIX_PATH the caller passed for a custom brew prefix --
-  # both as the brew root (prefix/opt/icu4c) and as a keg root itself (a
-  # versioned keg like icu4c@79 named directly in the prefix path).
-  foreach(prefix ${CMAKE_PREFIX_PATH})
+  # explicit CMAKE_PREFIX_PATH for a custom brew prefix -- both as the brew
+  # root (prefix/opt/icu4c) and as a keg root itself (a versioned keg like
+  # icu4c@79 named directly in the path). CMake consumes the env value only
+  # inside find commands -- the variable itself stays unset unless passed
+  # with -D -- so read the environment directly and split it.
+  set(_cpp "${CMAKE_PREFIX_PATH}")
+  if(NOT _cpp AND DEFINED ENV{CMAKE_PREFIX_PATH})
+    string(REPLACE ":" ";" _cpp "$ENV{CMAKE_PREFIX_PATH}")
+  endif()
+  foreach(prefix ${_cpp})
     list(APPEND _icu_candidates "${prefix}/opt/icu4c" "${prefix}")
   endforeach()
   foreach(prefix /opt/homebrew/opt/icu4c /usr/local/opt/icu4c)
