@@ -34,7 +34,10 @@ endif()
 find_package(ICU REQUIRED COMPONENTS uc i18n)
 # Sources include <unicode/...> directly in targets that do not link ICU::
 # imported targets (batbox_intl, batbox_text_sdk), so propagate the discovered
-# include dir project-wide from this single discovery point.
-if(ICU_INCLUDE_DIRS)
-  include_directories(BEFORE SYSTEM ${ICU_INCLUDE_DIRS})
+# include dir project-wide from this single discovery point. This FindICU
+# publishes the include dir on the imported targets (and only the singular
+# ICU_INCLUDE_DIR), not in ICU_INCLUDE_DIRS -- read the target property.
+get_target_property(_icu_include ICU::uc INTERFACE_INCLUDE_DIRECTORIES)
+if(_icu_include)
+  include_directories(BEFORE SYSTEM ${_icu_include})
 endif()
