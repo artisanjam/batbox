@@ -176,7 +176,7 @@ poetryEntries::AsyncSystemPoetryServices Provider::poetryServices(){
         if(inputs_.logDiagnostic)
           inputs_.logDiagnostic("debug",message,std::nullopt);
       };
-      output.resolve(instructions::loadMemoryPoetry(memory,memoryPathStash_));
+      output.resolve(instructions::loadMemoryPoetry(memory,*memoryPathStash_));
     }catch(...){output.reject(std::current_exception());}
     return output;
   };

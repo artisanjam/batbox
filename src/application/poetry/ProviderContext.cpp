@@ -1,4 +1,6 @@
 #include "application/poetry/Provider.hpp"
+#include "cwd/Override.hpp"
+#include "runtime/IndigenousPath.hpp"
 #include "glob/DiscoveryMatcherBinding.hpp"
 #include "git/GitBindings.hpp"
 #include "instructions/project/async/ContextBinding.hpp"
@@ -32,13 +34,32 @@ void Provider::bindDiscovery(){
   memoryPaths_.environment=inputs_.environment;
   memoryPaths_.initialSettings=settings();
   memoryPaths_.settingsBySource["userSettings"]=memoryPaths_.initialSettings;
-  memoryPaths_.findCanonicalGitRoot=[this](const std::string& path){
-    return canonicalRoot_->find(path);
+  // The canonical root is a shared tree owned here; callbacks capture the
+  // handle, not `this`, so they stay valid after Provider teardown.
+  const auto boundCanonicalRoot=canonicalRoot_;
+  memoryPaths_.findCanonicalGitRoot=[boundCanonicalRoot](const std::string& path){
+    return boundCanonicalRoot->find(path);
   };
-  const auto* self=this;
-  discovery_.parse.paths.getCwd=[self]{return self->cwd();};
-  discovery_.parse.paths.homeDirectory=[self]{
-    return self->memoryPaths_.homeDirectory;};
+  // Snapshots for the discovery bindings below: async MemoryRun continuations
+  // may run on a non-owner loop thread under load, and after a retired
+  // workspace shutdown the Provider itself can be destroyed while queued
+  // continuation callbacks still hold copies of these functions -- calling
+  // memoryPathServices()/settings()/cwd() through `this` there either trips
+  // the owner guard, races owner-thread writes, or reads freed memory. Every
+  // field read here is fixed for a provider's lifetime, so the snapshot
+  // equals any later live read, and no callback borrows Provider state.
+  const auto boundMemoryPaths=memoryPaths_;
+  const auto boundConfig=inputs_.config;
+  // cwd() keeps the cwd-override stack live; only the base path is copied,
+  // so override behavior is preserved without borrowing the Provider.
+  const auto boundCwd=[boundConfig] {
+    return cwd::pwd([&]{return runtime::pathToUtf8(boundConfig.cwd);});
+  };
+  const auto boundHomeDirectory=memoryPaths_.homeDirectory;
+  const auto boundLogDiagnostic=inputs_.logDiagnostic;
+  discovery_.parse.paths.getCwd=boundCwd;
+  discovery_.parse.paths.homeDirectory=[boundHomeDirectory]{
+    return boundHomeDirectory;};
   discovery_.parse.paths.platform=[] {
 #if defined(_WIN32)
     return std::string("windows");
@@ -49,66 +70,80 @@ void Provider::bindDiscovery(){
 #endif
   };
   discovery_.parse.paths.normalizeNFC=value::normalizeNFC;
-  discovery_.parse.logDebug=[this](const std::string& message){
-    if(inputs_.logDiagnostic)
-      inputs_.logDiagnostic("debug",message,std::nullopt);
+  discovery_.parse.logDebug=[boundLogDiagnostic](const std::string& message){
+    if(boundLogDiagnostic)
+      boundLogDiagnostic("debug",message,std::nullopt);
   };
-  discovery_.excludePatterns=[this]{
-    return stringArray(value::property(settings(),"memoryExcludePatterns"));
+  const auto boundExcludePatterns=
+    stringArray(value::property(settings(),"memoryExcludePatterns"));
+  discovery_.excludePatterns=[boundExcludePatterns]{
+    return boundExcludePatterns;
   };
   glob::bindDiscoveryMatchers(discovery_);
   discovery_.pathInWorkingPath=inPath;
-  discovery_.originalCwd=[this]{return cwd();};
-  discovery_.memoryPath=[this](const std::string& type){
-    if(type=="Managed")return (inputs_.config.stateDirectory/
+  discovery_.originalCwd=boundCwd;
+  discovery_.memoryPath=[boundConfig](const std::string& type){
+    if(type=="Managed")return (boundConfig.stateDirectory/
       "instructions/managed/BATBOX.md").string();
-    if(type=="User")return (application::configurationDirectory(inputs_.config)/
+    if(type=="User")return (application::configurationDirectory(boundConfig)/
       "BATBOX.md").string();
     throw std::invalid_argument("Unknown instruction source: "+type);
   };
-  discovery_.managedRulesDir=[this]{return (inputs_.config.stateDirectory/
+  discovery_.managedRulesDir=[boundConfig]{return (boundConfig.stateDirectory/
     "instructions/managed/rules").string();};
-  discovery_.userRulesDir=[this]{return (application::configurationDirectory(
-    inputs_.config)/"rules").string();};
-  discovery_.settingSourceEnabled=[this](const std::string& source){
-    const auto current=settings();
-    const auto& configured=value::property(
-      value::property(current,"settingSources"),source);
+  discovery_.userRulesDir=[boundConfig]{return (application::configurationDirectory(
+    boundConfig)/"rules").string();};
+  const auto boundSettingSources=value::property(settings(),"settingSources");
+  discovery_.settingSourceEnabled=[boundSettingSources](const std::string& source){
+    const auto& configured=value::property(boundSettingSources,source);
     return configured.is_null()||value::truthy(configured);
   };
-  discovery_.externalIncludesApproved=[this]{
-    return value::truthy(value::property(settings(),"allowExternalInstructions"));
+  const auto boundExternalIncludesApproved=value::truthy(
+    value::property(settings(),"allowExternalInstructions"));
+  discovery_.externalIncludesApproved=[boundExternalIncludesApproved]{
+    return boundExternalIncludesApproved;
   };
-  discovery_.additionalDirectoriesEnabled=[this]{
-    return !inputs_.additionalDirectories.empty();
+  const auto boundAdditionalDirectories=inputs_.additionalDirectories;
+  discovery_.additionalDirectoriesEnabled=[boundAdditionalDirectories]{
+    return !boundAdditionalDirectories.empty();
   };
-  discovery_.additionalDirectories=[this]{return inputs_.additionalDirectories;};
-  discovery_.findGitRoot=[this](const std::string& path){
-    return canonicalRoot_->nearest(path);
+  discovery_.additionalDirectories=[boundAdditionalDirectories]{
+    return boundAdditionalDirectories;
   };
-  discovery_.findCanonicalGitRoot=[this](const std::string& path){
-    return canonicalRoot_->find(path);
+  discovery_.findGitRoot=[boundCanonicalRoot](const std::string& path){
+    return boundCanonicalRoot->nearest(path);
   };
-  discovery_.autoMemoryEnabled=[this]{
-    memoryPaths_=memoryPathServices();
-    return instructions::isAutoMemoryEnabled(memoryPaths_);
+  discovery_.findCanonicalGitRoot=[boundCanonicalRoot](const std::string& path){
+    return boundCanonicalRoot->find(path);
   };
-  discovery_.autoMemoryEntrypoint=[this]{
-    return instructions::getAutoMemEntrypoint(memoryPaths_,memoryPathStash_);
+  discovery_.autoMemoryEnabled=[boundMemoryPaths]{
+    return instructions::isAutoMemoryEnabled(boundMemoryPaths);
   };
-  discovery_.hasInstructionsLoadedHook=[this]{
-    return bool(inputs_.instructionsLoadedHook);
+  // The stash is shared, not borrowed from Provider: the entrypoint callback
+  // can outlive the Provider after a retired workspace shutdown.
+  const auto boundMemoryPathStash=memoryPathStash_;
+  discovery_.autoMemoryEntrypoint=[boundMemoryPaths,boundMemoryPathStash]()mutable{
+    return instructions::getAutoMemEntrypoint(boundMemoryPaths,
+      *boundMemoryPathStash);
   };
-  discovery_.instructionsLoadedHook=[this](const auto& file,
+  const auto boundInstructionsLoadedHook=inputs_.instructionsLoadedHook;
+  discovery_.hasInstructionsLoadedHook=[boundInstructionsLoadedHook]{
+    return bool(boundInstructionsLoadedHook);
+  };
+  discovery_.instructionsLoadedHook=[boundInstructionsLoadedHook](const auto& file,
       const auto& reason){
-    if(inputs_.instructionsLoadedHook)
-      inputs_.instructionsLoadedHook(file,reason);
+    if(boundInstructionsLoadedHook)
+      boundInstructionsLoadedHook(file,reason);
   };
-  discovery_.skipAutoMemoryIndex=[this]{
-    return value::truthy(value::property(settings(),"skipAutoMemoryIndex"));
+  const auto boundSkipAutoMemoryIndex=value::truthy(
+    value::property(settings(),"skipAutoMemoryIndex"));
+  discovery_.skipAutoMemoryIndex=[boundSkipAutoMemoryIndex]{
+    return boundSkipAutoMemoryIndex;
   };
-  discovery_.skipProjectInstructions=[this]{
-    return value::truthy(value::property(settings(),"skipProjectInstructions"));
+  const auto boundSkipProjectInstructions=value::truthy(
+    value::property(settings(),"skipProjectInstructions"));
+  discovery_.skipProjectInstructions=[boundSkipProjectInstructions]{
+    return boundSkipProjectInstructions;
   };
   discoveryAsync_=instructions::project::async::indigenousAsyncFs(owner_,discovery_);
 }

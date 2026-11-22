@@ -40,10 +40,23 @@ Provider::Provider(event_loop::Loop& owner,Inputs inputs):owner_(owner),
   bindGit();bindDiscovery();bindContext();
 }
 Json Provider::settings()const{
+  // Async MemoryRun continuations can run on a non-owner loop thread. The
+  // settings source (inputs_.initialSettings -> app state) is owner-serialized,
+  // so an off-owner live read races owner-thread mutation of the same Json.
+  // The owner computes and caches each value under the mutex; an off-owner
+  // caller receives the last owner-thread snapshot instead.
+  if(!owner_.isOwnerThread()){
+    std::lock_guard<std::mutex> lock(settingsMutex_);
+    return settingsCache_;
+  }
   const auto value=inputs_.initialSettings
     ?inputs_.initialSettings():Json::object();
   if(!value.is_object())
     throw std::invalid_argument("Initial settings must be an object");
+  {
+    std::lock_guard<std::mutex> lock(settingsMutex_);
+    settingsCache_=value;
+  }
   return value;
 }
 std::string Provider::cwd()const{
@@ -78,31 +91,49 @@ event_loop::Deferred<Json> Provider::userContext(){
 event_loop::Deferred<context::MemoryFiles> Provider::memoryFiles(){
   refreshMemoryFilesIfChanged();
   event_loop::Deferred<context::MemoryFiles> output(owner_);
-  auto* self=this;
-  discoveryStash_.getMemoryFiles(discoveryAsync_).then([self,output](
-      const context::MemoryFiles* files,const std::exception_ptr& error){
+  // Lifetime: retired-workspace teardown can drop the Provider's last
+  // external reference while this continuation is still queued; the
+  // keepalive holds the provider until the observer has run.
+  // Serialization: the continuation can resolve on a worker-completion
+  // thread under load, while the owner thread runs refreshMemoryFilesIfChanged()
+  // over the same bookkeeping state. The tracking loop below --
+  // observedInstructionFiles_, memoryFileStamps_, headFiles_ -- runs only on
+  // the owner thread (postMission from any thread), so it cannot race the
+  // owner-side refresh.
+  const auto dispatcher=owner_.dispatcher();
+  auto keepalive=shared_from_this();
+  discoveryStash_.getMemoryFiles(discoveryAsync_).then([dispatcher,
+      keepalive=std::move(keepalive),output](const context::MemoryFiles* files,
+      const std::exception_ptr& error){
     if(error){output.reject(error);return;}
-    try{
-      for(const auto& file:*files){
-        if(std::find(self->observedInstructionFiles_.begin(),
-            self->observedInstructionFiles_.end(),file.path)!=
-            self->observedInstructionFiles_.end())continue;
-        self->observedInstructionFiles_.push_back(file.path);
-        if(!instructions::project::getLargeMemoryFiles({file}).empty()&&
-            self->inputs_.logDiagnostic)
-          self->inputs_.logDiagnostic("instructions",file.path+" is "+
-            std::to_string(value::utf16CodeUnits(file.content).size())+
-            " characters; it is sent whole with every request",std::nullopt);
-        self->memoryFileStamps_[file.path]=memoryStamp(file.path);
-        if(self->stablePromptPrefix())self->trackHeadFile(file.path);
-      }
-      output.resolve(*files);
-    }catch(...){output.reject(std::current_exception());}
+    const auto discovered=*files;
+    auto track=[provider=keepalive,discovered,output] {
+      try{
+        for(const auto& file:discovered){
+          if(std::find(provider->observedInstructionFiles_.begin(),
+              provider->observedInstructionFiles_.end(),file.path)!=
+              provider->observedInstructionFiles_.end())continue;
+          provider->observedInstructionFiles_.push_back(file.path);
+          if(!instructions::project::getLargeMemoryFiles({file}).empty()&&
+              provider->inputs_.logDiagnostic)
+            provider->inputs_.logDiagnostic("instructions",file.path+" is "+
+              std::to_string(value::utf16CodeUnits(file.content).size())+
+              " characters; it is sent whole with every request",std::nullopt);
+          provider->memoryFileStamps_[file.path]=memoryStamp(file.path);
+          if(provider->stablePromptPrefix())provider->trackHeadFile(file.path);
+        }
+        output.resolve(discovered);
+      }catch(...){output.reject(std::current_exception());}
+    };
+    if(dispatcher.isOwnerThread())track();
+    else if(dispatcher.valid())dispatcher.postMission(std::move(track));
+    else output.resolve(discovered);
   });
   return output;
 }
 instructions::MemoryPathServices Provider::memoryPathServices(){
-  if(!owner_.isOwnerThread())throw std::logic_error("Memory paths require owner loop");
+  if(!owner_.isOwnerThread())
+    throw std::logic_error("Memory paths require owner loop");
   auto result=memoryPaths_;
   result.initialSettings=settings();
   const auto& bySource=value::property(result.initialSettings,"settingsBySource");
@@ -111,7 +142,8 @@ instructions::MemoryPathServices Provider::memoryPathServices(){
   return result;
 }
 void Provider::refreshMemoryFilesIfChanged(){
-  if(!owner_.isOwnerThread())throw std::logic_error("Memory refresh requires owner loop");
+  if(!owner_.isOwnerThread())
+    throw std::logic_error("Memory refresh requires owner loop");
   const bool stable=stablePromptPrefix();
   // A stable head is tracked once per snapshot; later instruction files are
   // tracked as memoryFiles() discovers them.
@@ -164,7 +196,7 @@ void Provider::clearProjectInstructions(){
   resetHeadSnapshot();
   projectRecoveryStash_.reset();
   discoveryStash_.clearMemoryFileStashes();
-  memoryPathStash_.byProjectRoot.clear();
+  memoryPathStash_->byProjectRoot.clear();
   contextStash_.clearUserContextStash();
 }
 void Provider::resetProjectInstructionsAfterCompact(){

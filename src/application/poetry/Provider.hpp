@@ -12,6 +12,8 @@
 #include "poetryEntries/Guidance.hpp"
 #include "poetryEntries/SystemPoetryFile.hpp"
 
+#include <mutex>
+
 namespace batbox::application::poetry {
 struct Inputs {
   application::Config config;
@@ -84,7 +86,11 @@ private:
   poetryEntries::AsyncSectionStash poetrySections_;
   context::AsyncContextStash contextStash_;
   instructions::project::async::MemoryDiscoveryStash discoveryStash_;
-  instructions::MemoryPathStash memoryPathStash_;
+  // Shared so discovery callbacks bound at startup keep a valid stash after
+  // Provider teardown (retired workspace shutdown drops queued continuations
+  // while their captured callbacks still run).
+  std::shared_ptr<instructions::MemoryPathStash> memoryPathStash_=
+    std::make_shared<instructions::MemoryPathStash>();
   instructions::MemoryPathServices memoryPaths_;
   instructions::project::DiscoveryServices discovery_;
   instructions::project::async::Services discoveryAsync_;
@@ -97,6 +103,11 @@ private:
   poetryEntries::SystemPoetryFile systemPoetryFile_;
   std::map<std::string,std::string> memoryFileStamps_;
   std::vector<std::string> observedInstructionFiles_;
+  // settings() is called by async continuations off the owner thread; its
+  // source (app state) is owner-serialized, so off-owner calls read this
+  // mutex-guarded snapshot of the last owner-thread value instead.
+  mutable std::mutex settingsMutex_;
+  mutable Json settingsCache_=Json::object();
   std::optional<event_loop::Deferred<std::string>> projectRecoveryStash_;
   std::string projectRecoveryStamp_;
   std::size_t activeRecoveryLoads_=0;
