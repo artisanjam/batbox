@@ -8,9 +8,20 @@
 #include <algorithm>
 #include <filesystem>
 #include <stdexcept>
+#include <cstdio>
+#include <thread>
+#include <execinfo.h>
 
 namespace batbox::application::poetry {
 namespace {
+void threadTrace(const char* tag,const event_loop::Loop& owner){
+  std::fprintf(stderr,"[trace] %s current=%zu ownerThread=%d\n",tag,
+    std::hash<std::thread::id>{}(std::this_thread::get_id()),
+    owner.isOwnerThread()?1:0);
+  void* frames[32];
+  const int count=backtrace(frames,32);
+  backtrace_symbols_fd(frames,count,2);
+}
 std::string memoryStamp(const std::string& file){
   return fileStamp(batbox::runtime::pathFromUtf8(file));
 }
@@ -40,10 +51,23 @@ Provider::Provider(event_loop::Loop& owner,Inputs inputs):owner_(owner),
   bindGit();bindDiscovery();bindContext();
 }
 Json Provider::settings()const{
+  // Async MemoryRun continuations can run on a non-owner loop thread. The
+  // settings source (inputs_.initialSettings -> app state) is owner-serialized,
+  // so an off-owner live read races owner-thread mutation of the same Json.
+  // The owner computes and caches each value under the mutex; an off-owner
+  // caller receives the last owner-thread snapshot instead.
+  if(!owner_.isOwnerThread()){
+    std::lock_guard<std::mutex> lock(settingsMutex_);
+    return settingsCache_;
+  }
   const auto value=inputs_.initialSettings
     ?inputs_.initialSettings():Json::object();
   if(!value.is_object())
     throw std::invalid_argument("Initial settings must be an object");
+  {
+    std::lock_guard<std::mutex> lock(settingsMutex_);
+    settingsCache_=value;
+  }
   return value;
 }
 std::string Provider::cwd()const{
@@ -82,6 +106,8 @@ event_loop::Deferred<context::MemoryFiles> Provider::memoryFiles(){
   discoveryStash_.getMemoryFiles(discoveryAsync_).then([self,output](
       const context::MemoryFiles* files,const std::exception_ptr& error){
     if(error){output.reject(error);return;}
+    if(!self->owner_.isOwnerThread())
+      threadTrace("memoryFiles continuation off-owner",self->owner_);
     try{
       for(const auto& file:*files){
         if(std::find(self->observedInstructionFiles_.begin(),
@@ -97,12 +123,21 @@ event_loop::Deferred<context::MemoryFiles> Provider::memoryFiles(){
         if(self->stablePromptPrefix())self->trackHeadFile(file.path);
       }
       output.resolve(*files);
+    }catch(const std::exception& error){
+      {
+        std::fprintf(stderr,"[trace] memoryFiles continuation threw %s\n",error.what());
+        void* frames[32];const int count=backtrace(frames,32);
+        backtrace_symbols_fd(frames,count,2);}
+      output.reject(std::current_exception());
     }catch(...){output.reject(std::current_exception());}
   });
   return output;
 }
 instructions::MemoryPathServices Provider::memoryPathServices(){
-  if(!owner_.isOwnerThread())throw std::logic_error("Memory paths require owner loop");
+  if(!owner_.isOwnerThread()){
+    threadTrace("memoryPathServices off-owner",owner_);
+    throw std::logic_error("Memory paths require owner loop");
+  }
   auto result=memoryPaths_;
   result.initialSettings=settings();
   const auto& bySource=value::property(result.initialSettings,"settingsBySource");
@@ -111,7 +146,10 @@ instructions::MemoryPathServices Provider::memoryPathServices(){
   return result;
 }
 void Provider::refreshMemoryFilesIfChanged(){
-  if(!owner_.isOwnerThread())throw std::logic_error("Memory refresh requires owner loop");
+  if(!owner_.isOwnerThread()){
+    threadTrace("refreshMemoryFiles off-owner",owner_);
+    throw std::logic_error("Memory refresh requires owner loop");
+  }
   const bool stable=stablePromptPrefix();
   // A stable head is tracked once per snapshot; later instruction files are
   // tracked as memoryFiles() discovers them.

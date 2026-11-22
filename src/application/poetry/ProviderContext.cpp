@@ -35,6 +35,12 @@ void Provider::bindDiscovery(){
   memoryPaths_.findCanonicalGitRoot=[this](const std::string& path){
     return canonicalRoot_->find(path);
   };
+  // Snapshots for the discovery bindings below: async MemoryRun continuations
+  // may run on a non-owner loop thread under load, and calling
+  // memoryPathServices()/settings()/mutating memoryPaths_ from there either
+  // trips the owner guard or races owner-thread writes. These fields are fixed
+  // for a provider's lifetime, so the snapshot equals any later live read.
+  const auto boundMemoryPaths=memoryPaths_;
   const auto* self=this;
   discovery_.parse.paths.getCwd=[self]{return self->cwd();};
   discovery_.parse.paths.homeDirectory=[self]{
@@ -53,8 +59,10 @@ void Provider::bindDiscovery(){
     if(inputs_.logDiagnostic)
       inputs_.logDiagnostic("debug",message,std::nullopt);
   };
-  discovery_.excludePatterns=[this]{
-    return stringArray(value::property(settings(),"memoryExcludePatterns"));
+  const auto boundExcludePatterns=
+    stringArray(value::property(settings(),"memoryExcludePatterns"));
+  discovery_.excludePatterns=[boundExcludePatterns]{
+    return boundExcludePatterns;
   };
   glob::bindDiscoveryMatchers(discovery_);
   discovery_.pathInWorkingPath=inPath;
@@ -82,19 +90,23 @@ void Provider::bindDiscovery(){
   discovery_.additionalDirectoriesEnabled=[this]{
     return !inputs_.additionalDirectories.empty();
   };
-  discovery_.additionalDirectories=[this]{return inputs_.additionalDirectories;};
+  const auto boundAdditionalDirectories=inputs_.additionalDirectories;
+  discovery_.additionalDirectories=[boundAdditionalDirectories]{
+    return boundAdditionalDirectories;
+  };
   discovery_.findGitRoot=[this](const std::string& path){
     return canonicalRoot_->nearest(path);
   };
   discovery_.findCanonicalGitRoot=[this](const std::string& path){
     return canonicalRoot_->find(path);
   };
-  discovery_.autoMemoryEnabled=[this]{
-    memoryPaths_=memoryPathServices();
-    return instructions::isAutoMemoryEnabled(memoryPaths_);
+  discovery_.autoMemoryEnabled=[boundMemoryPaths]{
+    return instructions::isAutoMemoryEnabled(boundMemoryPaths);
   };
-  discovery_.autoMemoryEntrypoint=[this]{
-    return instructions::getAutoMemEntrypoint(memoryPaths_,memoryPathStash_);
+  auto* const selfForEntrypoint=this;
+  discovery_.autoMemoryEntrypoint=[selfForEntrypoint,boundMemoryPaths]() mutable {
+    return instructions::getAutoMemEntrypoint(boundMemoryPaths,
+      selfForEntrypoint->memoryPathStash_);
   };
   discovery_.hasInstructionsLoadedHook=[this]{
     return bool(inputs_.instructionsLoadedHook);
