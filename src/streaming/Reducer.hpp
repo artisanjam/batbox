@@ -96,6 +96,9 @@ class Reducer {
   ReducerConfig config_;
   std::vector<MessageRef> newMessages_;
   std::vector<std::optional<Json>> contentBlocks_;
+  // Carries for ChatML marker scrubbing: an unfinished marker prefix held
+  // between deltas, one per content block index (see Reducer.cpp).
+  std::vector<std::string> markerCarry_;
   Json partialMessage_ = nullptr;
   Json usage_;
   Json stopReason_ = nullptr;

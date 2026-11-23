@@ -29,6 +29,63 @@ void appendString(Json& block, const char* name, const Json& fragment) {
   block[name].get_ref<Json::string_t&>().append(
     fragment.get_ref<const Json::string_t&>());
 }
+/* Interim harness-side mitigation for the ChatML marker trap (wake/chatml-strip,
+ * Mon 2026-11-23). When the model writes one of the serving template's reserved
+ * special tokens as literal text -- the turn-marker shape (less-than, pipe, a
+ * lowercase name, pipe, greater-than) -- inside streamed text or thinking, the
+ * stored history re-renders into later ChatML prompts where the literal reads
+ * as a turn boundary: continuation and compaction prompts break on it. Scrub
+ * markers as deltas stream: the pipes become fullwidth bars (U+FF5C) -- same
+ * display for a human, never a reassemblable boundary. A marker split across
+ * delta boundaries is held as a carry and rejoined on the next delta, flushed
+ * verbatim at block close if it never completes (an unfinished prefix is not a
+ * boundary either). Durable fix rides upstream: strip markers at generation. */
+std::string scrubChatMlMarkers(std::string& carry, const std::string& fragment) {
+  static const std::string fullwidthBar = "\xef\xbd\x9c";  // U+FF5C
+  std::string combined;
+  combined.reserve(carry.size() + fragment.size());
+  combined.append(carry);
+  combined.append(fragment);
+  carry.clear();
+  std::string out;
+  out.reserve(combined.size());
+  std::size_t pos = 0;
+  while (pos < combined.size()) {
+    const std::size_t open = combined.find("<|", pos);
+    if (open == std::string::npos) {
+      out.append(combined, pos, std::string::npos);
+      break;
+    }
+    out.append(combined, pos, open - pos);
+    std::size_t mid = open + 2;
+    while (mid < combined.size() && ((combined[mid] >= 'a' && combined[mid] <= 'z') ||
+                                     combined[mid] == '_'))
+      ++mid;
+    if (mid == combined.size()) {  // marker may continue in later deltas
+      carry = combined.substr(open);
+      break;
+    }
+    if (combined[mid] == '|' && mid + 1 == combined.size()) {
+      if (mid > open + 2) {  // "|>" incomplete: only ">" can still arrive
+        carry = combined.substr(open);
+        break;
+      }
+    } else if (combined[mid] == '|' && mid + 1 < combined.size() &&
+               combined[mid + 1] == '>' && mid > open + 2) {
+      out.append("<");
+      out.append(fullwidthBar);
+      out.append(combined, open + 2, mid - (open + 2));
+      out.append(fullwidthBar);
+      out.append(">");
+      pos = mid + 2;
+      continue;
+    }
+    // Not a marker shape: keep the opener as literal text.
+    out.append("<|");
+    pos = open + 2;
+  }
+  return out;
+}
 std::int64_t currentMillis() {
   return std::chrono::duration_cast<std::chrono::milliseconds>(
     std::chrono::system_clock::now().time_since_epoch()).count();
@@ -211,19 +268,34 @@ Emissions Reducer::consumeUnphased(const Json& part) {
       appendString(block, "input", field(delta, "partial_json"));
     } else if (deltaType == "text_delta") {
       if (blockType != "text") throw StreamError(StreamErrorKind::TypeMismatch, "Content block is not a text block");
-      appendString(block, "text", field(delta, "text"));
+      if (markerCarry_.size() <= index) markerCarry_.resize(index + 1);
+      block["text"].get_ref<Json::string_t&>().append(
+        scrubChatMlMarkers(markerCarry_[index], stringField(delta, "text")));
     } else if (deltaType == "signature_delta") {
       if (blockType != "thinking") throw StreamError(StreamErrorKind::TypeMismatch, "Content block is not a thinking block");
       block["signature"] = field(delta, "signature");
     } else if (deltaType == "thinking_delta") {
       if (blockType != "thinking") throw StreamError(StreamErrorKind::TypeMismatch, "Content block is not a thinking block");
-      appendString(block, "thinking", field(delta, "thinking"));
+      if (markerCarry_.size() <= index) markerCarry_.resize(index + 1);
+      block["thinking"].get_ref<Json::string_t&>().append(
+        scrubChatMlMarkers(markerCarry_[index], stringField(delta, "thinking")));
     }
     // Ignore citations_delta and unknown delta types.
   } else if (type == "content_block_stop") {
     const auto index = field(part, "index").get<std::size_t>();
     if (index >= contentBlocks_.size() || !contentBlocks_[index])
       throw StreamError(StreamErrorKind::MissingBlock, "Content block not found");
+    if (index < markerCarry_.size() && !markerCarry_[index].empty()) {
+      // A marker prefix that never completed is not a boundary: flush it
+      // verbatim into the closing block so no generated text is lost.
+      Json& block = *contentBlocks_[index];
+      const std::string& blockType = stringField(block, "type");
+      const char* name = blockType == "text" ? "text"
+                       : blockType == "thinking" ? "thinking" : nullptr;
+      if (name && value::property(block, name).is_string())
+        block[name].get_ref<Json::string_t&>().append(markerCarry_[index]);
+      markerCarry_[index].clear();
+    }
     if (!value::truthy(partialMessage_)) throw StreamError(StreamErrorKind::MissingMessage, "Message not found");
     Json message = partialMessage_;
     Json singleBlock = Json::array({*contentBlocks_[index]});
