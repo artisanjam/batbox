@@ -1,4 +1,4 @@
-#include "shell/ManagedShell.hpp"
+#include "lib/shell/ManagedShell.hpp"
 #include <algorithm>
 #include <atomic>
 #include <cerrno>

@@ -1,4 +1,4 @@
-target_sources(batbox_diagnostics PRIVATE src/diagnostics/LogDates.cpp)
+target_sources(batbox_diagnostics PRIVATE src/app/diagnostics/LogDates.cpp)
 add_library(batbox_fs_operations src/lib/fs_operations/PathChecks.cpp
   src/lib/fs_operations/IndigenousPathChecks.cpp)
 target_link_libraries(batbox_fs_operations PUBLIC batbox_core batbox_event_loop)

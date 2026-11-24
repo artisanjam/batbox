@@ -1,9 +1,9 @@
 #include "cloud_check.hpp"
-#include "providers/aws/BedrockClient.hpp"
-#include "providers/cloud/Clock.hpp"
-#include "providers/cloud/Crypto.hpp"
-#include "providers/cloud/ErrorShape.hpp"
-#include "providers/gcp/VertexClient.hpp"
+#include "services/providers/aws/BedrockClient.hpp"
+#include "services/providers/cloud/Clock.hpp"
+#include "services/providers/cloud/Crypto.hpp"
+#include "services/providers/cloud/ErrorShape.hpp"
+#include "services/providers/gcp/VertexClient.hpp"
 #include "lib/transport/Errors.hpp"
 #include <openssl/evp.h>
 #include <openssl/pem.h>

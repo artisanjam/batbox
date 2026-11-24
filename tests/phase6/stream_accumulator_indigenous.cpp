@@ -1,5 +1,5 @@
-#include "interactive/PresentationState.hpp"
-#include "interactive/StreamReducer.hpp"
+#include "ui/PresentationState.hpp"
+#include "ui/StreamReducer.hpp"
 #include <cassert>
 #include <iostream>
 #include <string>

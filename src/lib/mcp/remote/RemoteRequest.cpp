@@ -2,7 +2,7 @@
 #include "lib/mcp/remote/EventStream.hpp"
 #include "lib/mcp/StdioClient.hpp"
 #include "lib/mcp/auth/Discovery.hpp"
-#include "connectors/Abort.hpp"
+#include "services/connectors/Abort.hpp"
 #include <algorithm>
 #include <cctype>
 #include <stdexcept>

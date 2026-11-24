@@ -1,8 +1,8 @@
-#include "application/config/ConfigPanelInternal.hpp"
-#include "application/config/Discovery.hpp"
-#include "application/config/EndpointStore.hpp"
-#include "application/Config.hpp"
-#include "providers/cloud/CloudClients.hpp"
+#include "app/config/ConfigPanelInternal.hpp"
+#include "app/config/Discovery.hpp"
+#include "app/config/EndpointStore.hpp"
+#include "app/config/Config.hpp"
+#include "services/providers/cloud/CloudClients.hpp"
 #include "core/runtime/IndigenousPath.hpp"
 #include <cassert>
 #include <chrono>

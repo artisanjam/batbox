@@ -111,7 +111,7 @@ Not measured. From reading the code; step 0 exists to check it.
   block, nine sections, full code snippets and every user message. Writing is
   far slower than reading on a local model.
 - The first attempt shares the conversation's prompt. If it returns no text or
-  throws, the error is swallowed (`src/compaction/Summary.cpp:18-20`) and a
+  throws, the error is swallowed (`src/core/compaction/Summary.cpp:18-20`) and a
   second kind of call runs.
 - That second call uses a different system prompt and Gadget list
   (`Summary.cpp:46-48`). Nothing is cached for it on any server, so the whole
@@ -189,7 +189,7 @@ The whole conversation as it stands, plus one instruction message. The
 instruction names the first kept message and tells the model to summarize only
 what comes before it. This is today's fork with a new instruction, not the
 dormant head-only path, because of rule 1 in section 2.3. The bookkeeping from
-the dormant path (`src/compaction/Partial.cpp`, `src/flights/Relink.cpp`) is
+the dormant path (`src/core/compaction/Partial.cpp`, `src/core/flights/Relink.cpp`) is
 reused for what is kept and for resume.
 
 ### 5.2 The prompt
@@ -341,8 +341,8 @@ was taken out of main in the cleanup. It is all in git history.
 
 - Last present at commit `f0a4f02` on `cleanup/ai-slop`.
 - Removed by commit `7e00e2d` on `cleanup/flights-memory`.
-- Files: `src/compaction/Partial.cpp`, `src/compaction/poetryEntries/Partial.cpp`,
-  `src/compaction/poetryEntries/Prefix.cpp`.
+- Files: `src/core/compaction/Partial.cpp`, `src/core/compaction/poetryEntries/Partial.cpp`,
+  `src/core/compaction/poetryEntries/Prefix.cpp`.
 - Functions and fields: `partialCompactConversation`, `getPartialCompactPoetry`,
   `annotateBoundaryWithPreservedSegment`, `poetryEntries::partial` and `prefix`,
   the `recentMessagesPreserved` parameter of `getCompactUserSummaryMessage`,

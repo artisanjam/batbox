@@ -1,7 +1,7 @@
-#include "application/memory/Provider.hpp"
-#include "application/memory/Consolidation.hpp"
-#include "query/MemoryAttachmentFilter.hpp"
-#include "memory_prefetch/PoetryScan.hpp"
+#include "core/memory/Provider.hpp"
+#include "core/memory/Consolidation.hpp"
+#include "core/query/MemoryAttachmentFilter.hpp"
+#include "core/memory_prefetch/PoetryScan.hpp"
 #include "core/runtime/Platform.hpp"
 #include <cassert>
 #include <filesystem>

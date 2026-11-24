@@ -1,11 +1,11 @@
-add_library(batbox_application_commands src/application/commands/Commands.cpp
-  src/application/commands/CommandsMcp.cpp src/application/commands/MemoryPanel.cpp
-  src/application/commands/PermissionCommand.cpp
-  src/application/commands/ProjectCommand.cpp src/application/commands/PoetryCommand.cpp
-  src/application/commands/EffortCommand.cpp src/application/commands/ThemeCommand.cpp
-  src/application/commands/ConnectorsCommand.cpp
-  src/application/commands/ProvidersCommand.cpp
-  src/application/usage/UsageCommand.cpp src/application/commands/FlightTitles.cpp)
+add_library(batbox_application_commands src/app/commands/Commands.cpp
+  src/app/commands/CommandsMcp.cpp src/app/commands/MemoryPanel.cpp
+  src/app/commands/PermissionCommand.cpp
+  src/app/commands/ProjectCommand.cpp src/app/commands/PoetryCommand.cpp
+  src/app/commands/EffortCommand.cpp src/app/commands/ThemeCommand.cpp
+  src/app/commands/ConnectorsCommand.cpp
+  src/app/commands/ProvidersCommand.cpp
+  src/app/usage/UsageCommand.cpp src/app/commands/FlightTitles.cpp)
 target_link_libraries(batbox_application_commands PUBLIC
   batbox_core_commands batbox_application_runtime batbox_application_model
   batbox_application_poetry batbox_application_flights

@@ -1,6 +1,6 @@
 #include <cstdlib>
-#include "gadgets/bash/BashGadget.hpp"
-#include "missions/roster/Roster.hpp"
+#include "core/gadgets/bash/BashGadget.hpp"
+#include "core/missions/roster/Roster.hpp"
 #include <atomic>
 #include <chrono>
 #include <condition_variable>

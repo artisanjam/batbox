@@ -1,7 +1,7 @@
 #pragma once
 #include "lib/instructions/hooks/runtime/CombinedAbort.hpp"
 #include "lib/instructions/hooks/runtime/HookBlockingMessages.hpp"
-#include "core/event_loop/Deferred.hpp"
+#include "lib/runtime/Deferred.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <map>
 #include <optional>

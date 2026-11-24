@@ -1,5 +1,5 @@
-#include "query/OwnerModelCursor.hpp"
-#include "query/OwnerSegmentInvoker.hpp"
+#include "core/query/OwnerModelCursor.hpp"
+#include "core/query/OwnerSegmentInvoker.hpp"
 #include <cassert>
 #include <future>
 #include <thread>

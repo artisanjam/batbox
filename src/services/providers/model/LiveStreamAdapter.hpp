@@ -1,0 +1,20 @@
+#pragma once
+
+#include "services/providers/model/StreamingAttempt.hpp"
+#include "lib/transport/WireClient.hpp"
+#include "ui/streaming/Reducer.hpp"
+#include "services/providers/model/Watchdog.hpp"
+
+namespace batbox::model {
+class StreamObservation;
+
+OpenedStream openLiveStream(transport::WireClient& client, Json streamingParams,
+                            std::stop_token signal,
+                            const std::optional<std::string>& clientRequestId = std::nullopt);
+void consumeLiveStream(OpenedStream& opened, streaming::Reducer& reducer,
+                       const std::function<void(const streaming::MessageRef&)>& yield,
+                       StreamWatchdog* watchdog = nullptr,
+                       const std::function<void()>& onFirstChunk = {},
+                       StreamObservation* observation=nullptr);
+
+} // namespace batbox::model

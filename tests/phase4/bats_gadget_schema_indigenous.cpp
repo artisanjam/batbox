@@ -1,4 +1,4 @@
-#include "bats/BatGadgetSchema.hpp"
+#include "core/bats/BatGadgetSchema.hpp"
 #include <cassert>
 #include <iostream>
 

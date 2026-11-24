@@ -1,4 +1,4 @@
-#include "query/IndigenousModelCursor.hpp"
+#include "core/query/IndigenousModelCursor.hpp"
 #include "query_async_e2e_model_fixture.hpp"
 #include <chrono>
 #include <iostream>

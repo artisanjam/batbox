@@ -1,6 +1,6 @@
-#include "interactive/cards_collapsed/CollapsedProjection.hpp"
-#include "interactive/cards_collapsed/CollapsedBinding.hpp"
-#include "interactive/cards_collapsed/VerboseGadgetUseProjection.hpp"
+#include "ui/cards_collapsed/CollapsedProjection.hpp"
+#include "ui/cards_collapsed/CollapsedBinding.hpp"
+#include "ui/cards_collapsed/VerboseGadgetUseProjection.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

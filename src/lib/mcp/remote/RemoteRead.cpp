@@ -1,7 +1,7 @@
 #include "lib/mcp/remote/RemoteClient.hpp"
 #include "lib/mcp/remote/EventStream.hpp"
 #include "lib/mcp/StdioClient.hpp"
-#include "connectors/Abort.hpp"
+#include "services/connectors/Abort.hpp"
 #include <stdexcept>
 
 namespace batbox::mcp {

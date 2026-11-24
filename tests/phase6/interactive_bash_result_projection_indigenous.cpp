@@ -1,5 +1,5 @@
-#include "interactive/cards/BashResultProjection.hpp"
-#include "interactive/cards/UserBashOutputProjection.hpp"
+#include "ui/cards/BashResultProjection.hpp"
+#include "ui/cards/UserBashOutputProjection.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

@@ -1,8 +1,8 @@
-#include "bats/BatGadgetForegroundProgress.hpp"
-#include "bats/BatMissionForeground.hpp"
-#include "bats/BatMissionRegistration.hpp"
-#include "bats/BatMissionState.hpp"
-#include "application/bats/StreamPublishThrottle.hpp"
+#include "core/bats/BatGadgetForegroundProgress.hpp"
+#include "core/bats/BatMissionForeground.hpp"
+#include "core/bats/BatMissionRegistration.hpp"
+#include "core/bats/BatMissionState.hpp"
+#include "core/bats/StreamPublishThrottle.hpp"
 #include <iostream>
 #include <stdexcept>
 

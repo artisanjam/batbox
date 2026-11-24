@@ -1,10 +1,10 @@
 // Optional web helpers: lazy Scrapling, fetch tool discovery, clear unavailable
 // errors, SearXNG discovery without personal fallbacks, the startup availability
 // line, the doctor's Scrapling handshake and the SearXNG answer shape.
-#include "application/connectors/Bootstrap.hpp"
-#include "application/connectors/Status.hpp"
-#include "connectors/Executable.hpp"
-#include "gadgets/web/Web.hpp"
+#include "app/connectors/Bootstrap.hpp"
+#include "app/connectors/Status.hpp"
+#include "services/connectors/Executable.hpp"
+#include "core/gadgets/web/Web.hpp"
 #include <cstdlib>
 #include <fstream>
 #include <iostream>

@@ -1,7 +1,7 @@
 #include "lib/mcp/auth/IndigenousServices.hpp"
-#include "application/Async.hpp"
-#include "auth/storage/IndigenousSecurity.hpp"
-#include "core/process/ExecFileNoThrow.hpp"
+#include "app/entry/Async.hpp"
+#include "services/providers/auth/storage/IndigenousSecurity.hpp"
+#include "lib/runtime/ExecFileNoThrow.hpp"
 #include "core/runtime/Platform.hpp"
 #include "core/runtime/IndigenousPath.hpp"
 #include <cctype>

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "interactive/PresentationState.hpp"
+#include "ui/PresentationState.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/color.hpp"
 #include "ftxui/screen/terminal.hpp"

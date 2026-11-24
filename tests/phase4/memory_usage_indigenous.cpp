@@ -1,4 +1,4 @@
-#include "profiler/Indigenous.hpp"
+#include "app/profiler/Indigenous.hpp"
 #include "core/runtime/Platform.hpp"
 #include <cassert>
 #include <iostream>

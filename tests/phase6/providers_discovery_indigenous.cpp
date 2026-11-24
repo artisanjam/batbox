@@ -1,6 +1,6 @@
 // Probe driver for providers_fake_servers.py: each argument is preset:port.
 // Prints the discovered servers as JSON plus the wall time of the probe.
-#include "providers/LocalDiscovery.hpp"
+#include "services/providers/LocalDiscovery.hpp"
 #include <chrono>
 #include <iostream>
 

@@ -1,0 +1,135 @@
+#include "core/query/AsyncGadgetTurnInternal.hpp"
+#include "core/query/MemoryAttachmentFilter.hpp"
+#include <stdexcept>
+
+namespace batbox::query::async_gadget_turn {
+void Run::startAttachments(){
+  bool sleepRan=false;
+  for(const Json& block:modelResult->gadgetUseBlocks)
+    if(field(block,"name")==services.sync.sleepGadgetName){sleepRan=true;break;}
+  const bool mainThread=params.querySource.starts_with("repl_main_thread")||
+    params.querySource=="sdk";
+  const Json& batId=field(prepared->gadgetUseContext.data,"agentId");
+  need(services.sync.getCommandsByMaxPriority,"getCommandsByMaxPriority");
+  need(services.sync.isSlashCommand,"isSlashCommand");
+  const Json queued=services.sync.getCommandsByMaxPriority(sleepRan?"later":"next");
+  queuedCommands=Json::array();
+  if(queued.is_array())for(const Json& command:queued){
+    if(services.sync.isSlashCommand(command))continue;
+    if(mainThread){
+      if(!command.is_object()||!command.contains("agentId"))
+        queuedCommands.push_back(command);
+    }else if(field(command,"mode")=="task-notification"&&
+             field(command,"agentId")==batId)queuedCommands.push_back(command);
+  }
+  attachmentHistory=historyThroughGadgetResults(false);
+  attachmentHistoryResults=modelResult->gadgetResults.size();
+  need(services.getAttachmentMessages,"getAttachmentMessages");
+  attachmentCursor=services.getAttachmentMessages(queuedCommands,updatedContext,
+    *attachmentHistory,params.querySource);
+  need(attachmentCursor.next,"getAttachmentMessages cursor.next");
+  pullAttachment();
+}
+void Run::pullAttachment(){
+  auto pending=attachmentCursor.next();
+  if(!loop.dispatcher().sameLoop(pending.dispatcher()))
+    throw std::invalid_argument("Async attachments belong to another event loop");
+  stage=Stage::AttachmentAwait;
+  auto self=shared_from_this();
+  pending.then([self](const std::optional<model::MessageRef>* value,
+      const std::exception_ptr& error){
+    if(self->stage==Stage::Done)return;
+    if(error){self->fail(error);return;}
+    try{
+      if(!*value){self->stage=Stage::MemoryStart;self->pump();return;}
+      self->currentAttachment=**value;
+      self->emit(self->currentAttachment,Stage::AfterAttachmentYield);
+    }catch(...){self->fail(std::current_exception());}
+  });
+}
+void Run::afterAttachmentYield(){
+  modelResult->gadgetResults.push_back(*currentAttachment);
+  currentAttachment.reset();pullAttachment();
+}
+void Run::startMemory(){
+  if(!memoryPrefetch||memoryPrefetch->consumedOnIteration!=-1||
+     !memoryPrefetch->isSettled||!memoryPrefetch->isSettled()){
+    stage=Stage::Commands;return;
+  }
+  need(services.readMemoryPrefetch,"readMemoryPrefetch");
+  auto pending=services.readMemoryPrefetch(*memoryPrefetch);
+  if(!loop.dispatcher().sameLoop(pending.dispatcher()))
+    throw std::invalid_argument("Async memory prefetch belongs to another event loop");
+  stage=Stage::MemoryAwait;
+  auto self=shared_from_this();
+  pending.then([self](const Json* value,const std::exception_ptr& error){
+    if(self->stage==Stage::Done)return;
+    if(error){self->fail(error);return;}
+    try{
+      if(self->prepared->gadgetUseContext.readFileState)
+        self->memoryAttachments=filterDuplicateMemoryAttachments(*value,
+          *self->prepared->gadgetUseContext.readFileState);
+      else{
+        need(self->services.sync.filterDuplicateMemoryAttachments,
+          "filterDuplicateMemoryAttachments");
+        self->memoryAttachments=self->services.sync.filterDuplicateMemoryAttachments(
+          *value,field(self->prepared->gadgetUseContext.data,"readFileState"));
+      }
+      if(!self->memoryAttachments.is_array())
+        throw std::invalid_argument("Memory attachments must be an array");
+      self->attachmentIndex=0;self->stage=Stage::MemoryYield;self->pump();
+    }catch(...){self->fail(std::current_exception());}
+  });
+}
+void Run::yieldMemory(){
+  if(attachmentIndex<memoryAttachments.size()){
+    need(services.sync.createAttachmentMessage,"createAttachmentMessage");
+    currentAttachment=std::make_shared<Json>(services.sync.createAttachmentMessage(
+      memoryAttachments[attachmentIndex++]));
+    emit(currentAttachment,Stage::AfterMemoryYield);
+  }else{
+    memoryPrefetch->consumedOnIteration=state.turnCount-1;
+    stage=Stage::Commands;
+  }
+}
+void Run::afterMemoryYield(){
+  modelResult->gadgetResults.push_back(*currentAttachment);
+  currentAttachment.reset();stage=Stage::MemoryYield;
+}
+} // namespace batbox::query::async_gadget_turn
+namespace batbox::query {
+Json filterDuplicateMemoryAttachments(const Json& attachments,
+  file_state_stash::FileStateStash& readFileState){
+  if(!attachments.is_array())
+    throw std::invalid_argument("Memory attachments must be an array");
+  Json output=Json::array();
+  for(const Json& attachment:attachments){
+    if(value::property(attachment,"type")!="relevant_memories"){
+      output.push_back(attachment);continue;
+    }
+    const Json& memories=attachment.at("memories");
+    if(!memories.is_array())
+      throw std::invalid_argument("Relevant memories must be an array");
+    Json filtered=Json::array();
+    for(const Json& memory:memories)
+      if(!readFileState.has(memory.at("path").get<std::string>()))
+        filtered.push_back(memory);
+    // Mark after filtering the whole attachment: repeated paths within that
+    // attachment survive, while later attachments see the newly marked path.
+    for(const Json& memory:filtered){
+      file_state_stash::FileState state;
+      state.content=memory.at("content").get<std::string>();
+      state.timestamp=memory.at("mtimeMs").get<double>();
+      const Json& limit=value::property(memory,"limit");
+      if(limit.is_number())state.limit=limit.get<double>();
+      readFileState.set(memory.at("path").get<std::string>(),std::move(state));
+    }
+    if(!filtered.empty()){
+      Json kept=attachment;
+      kept["memories"]=std::move(filtered);
+      output.push_back(std::move(kept));
+    }
+  }
+  return output;
+}
+} // namespace batbox::query

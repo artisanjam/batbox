@@ -1,4 +1,4 @@
-#include "application/lsp/Runtime.hpp"
+#include "app/lsp/Runtime.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

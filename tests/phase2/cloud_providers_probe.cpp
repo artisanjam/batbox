@@ -1,7 +1,7 @@
-#include "providers/aws/BedrockClient.hpp"
-#include "providers/aws/EventStream.hpp"
-#include "providers/cloud/CloudClients.hpp"
-#include "providers/gcp/VertexClient.hpp"
+#include "services/providers/aws/BedrockClient.hpp"
+#include "services/providers/aws/EventStream.hpp"
+#include "services/providers/cloud/CloudClients.hpp"
+#include "services/providers/gcp/VertexClient.hpp"
 #include "lib/transport/Errors.hpp"
 #include <openssl/bn.h>
 #include <openssl/core_names.h>

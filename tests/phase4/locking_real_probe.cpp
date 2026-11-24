@@ -1,5 +1,5 @@
-#include "locking/ProperLock.hpp"
-#include "locking/FileOps.hpp"
+#include "core/locking/ProperLock.hpp"
+#include "core/locking/FileOps.hpp"
 #include <cassert>
 #include <cstdlib>
 #include <iostream>

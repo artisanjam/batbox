@@ -1,10 +1,10 @@
 #include <cstdlib>
-#include "application/gadgets/ApplicationGadgets.hpp"
-#include "application/gadgets/IndigenousFileHelpers.hpp"
-#include "interactive/context/ContextFactory.hpp"
+#include "app/gadgets/ApplicationGadgets.hpp"
+#include "app/gadgets/IndigenousFileHelpers.hpp"
+#include "ui/context/ContextFactory.hpp"
 #include "lib/mcp/ProcessResult.hpp"
 #include "lib/mcp/StdioClient.hpp"
-#include "core/event_loop/Loop.hpp"
+#include "lib/runtime/Loop.hpp"
 #include <filesystem>
 #include <fstream>
 #include <future>

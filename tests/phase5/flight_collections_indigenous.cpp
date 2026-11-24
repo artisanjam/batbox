@@ -1,4 +1,4 @@
-#include "flights/Transcript.hpp"
+#include "core/flights/Transcript.hpp"
 #include <cassert>
 using namespace batbox;
 int main(){

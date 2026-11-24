@@ -1,7 +1,7 @@
-#include "paste_store/Indigenous.hpp"
-#include "history/PasteStoreBinding.hpp"
-#include "history/WriterIndigenous.hpp"
-#include "core/event_loop/Loop.hpp"
+#include "lib/paste_store/Indigenous.hpp"
+#include "core/history/PasteStoreBinding.hpp"
+#include "core/history/WriterIndigenous.hpp"
+#include "lib/runtime/Loop.hpp"
 #include <cassert>
 #include <chrono>
 #include <filesystem>

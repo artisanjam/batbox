@@ -1,4 +1,4 @@
-#include "bats/BatResultBindings.hpp"
+#include "core/bats/BatResultBindings.hpp"
 #include <cassert>
 using namespace batbox;
 int main(){

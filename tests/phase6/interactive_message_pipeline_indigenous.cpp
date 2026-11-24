@@ -1,4 +1,4 @@
-#include "interactive/MessageListPipeline.hpp"
+#include "ui/MessageListPipeline.hpp"
 #include <cassert>
 #include <iomanip>
 #include <iostream>

@@ -1,4 +1,4 @@
-#include "gadgets/bash/Hints.hpp"
+#include "core/gadgets/bash/Hints.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <cassert>
 #include <clocale>

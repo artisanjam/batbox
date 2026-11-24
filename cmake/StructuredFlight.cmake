@@ -1,2 +1,2 @@
-target_sources(batbox_structured_io PRIVATE src/cli/structured/StructuredFlight.cpp)
+target_sources(batbox_structured_io PRIVATE src/app/cli/structured/StructuredFlight.cpp)
 target_link_libraries(batbox_structured_io PUBLIC batbox_instruction_async)

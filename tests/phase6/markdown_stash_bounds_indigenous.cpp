@@ -1,4 +1,4 @@
-#include "interactive/markdown/Renderer.hpp"
+#include "ui/markdown/Renderer.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
 #include <cassert>

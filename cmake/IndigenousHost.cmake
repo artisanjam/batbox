@@ -1,10 +1,10 @@
 add_library(batbox_indigenous_host STATIC
-  src/application/HostCore.cpp
-  src/application/HostBackend.cpp src/application/HostFrontend.cpp
-  src/application/ModelBinding.cpp src/application/HostMaintenance.cpp
-  src/application/HostShutdown.cpp src/application/ErrorReport.cpp
-  src/application/HostCron.cpp src/application/HostShellSnapshot.cpp
-  src/application/HostRetention.cpp)
+  src/app/host/HostCore.cpp
+  src/app/host/HostBackend.cpp src/app/host/HostFrontend.cpp
+  src/app/host/ModelBinding.cpp src/app/host/HostMaintenance.cpp
+  src/app/host/HostShutdown.cpp src/app/entry/ErrorReport.cpp
+  src/app/host/HostCron.cpp src/app/host/HostShellSnapshot.cpp
+  src/app/host/HostRetention.cpp)
 target_link_libraries(batbox_indigenous_host PUBLIC
   batbox_application_config batbox_application_model
   batbox_application_engine batbox_application_flights
@@ -20,14 +20,14 @@ target_compile_options(batbox_indigenous_host PRIVATE -Wall -Wextra -Wpedantic)
 set(BATBOX_SETUP_WEB_SOURCE ${CMAKE_SOURCE_DIR}/gadgets/setup-web.sh)
 set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS ${BATBOX_SETUP_WEB_SOURCE})
 file(READ ${BATBOX_SETUP_WEB_SOURCE} BATBOX_SETUP_WEB_SCRIPT)
-configure_file(src/application/SetupWebScript.hpp.in
-  ${CMAKE_BINARY_DIR}/generated/application/SetupWebScript.hpp @ONLY)
-add_library(batbox_subcommands STATIC src/application/Subcommands.cpp)
+configure_file(src/app/entry/SetupWebScript.hpp.in
+  ${CMAKE_BINARY_DIR}/generated/app/entry/SetupWebScript.hpp @ONLY)
+add_library(batbox_subcommands STATIC src/app/entry/Subcommands.cpp)
 target_include_directories(batbox_subcommands PRIVATE ${CMAKE_BINARY_DIR}/generated)
 target_link_libraries(batbox_subcommands PUBLIC batbox_application_config
   batbox_application_connectors batbox_providers batbox_poetryEntries batbox_instructions)
 target_compile_options(batbox_subcommands PRIVATE -Wall -Wextra)
-add_executable(batbox src/application/main.cpp)
+add_executable(batbox src/Main.cpp)
 target_link_libraries(batbox PRIVATE batbox_indigenous_host batbox_subcommands)
 # `batbox version` also names the commit and day the build was configured.
 # A checkout asks git; a release archive has no history, so `git archive`

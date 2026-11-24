@@ -1,0 +1,8 @@
+#pragma once
+#include "core/gadgets/Gadget.hpp"
+#include <string>
+
+namespace batbox::gadgets::synthetic_output {
+Gadget makeSyntheticOutputGadget(const std::string& protocolName);
+Gadget makeHookStructuredOutputGadget(const Gadget& base);
+} // namespace batbox::gadgets::synthetic_output

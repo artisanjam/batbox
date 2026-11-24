@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "auth/storage/Storage.hpp"
+#include "services/providers/auth/storage/Storage.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <filesystem>
 #include <fstream>

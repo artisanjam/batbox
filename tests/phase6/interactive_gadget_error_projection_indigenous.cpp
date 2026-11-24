@@ -1,4 +1,4 @@
-#include "interactive/cards_gadget_result/GadgetErrorProjection.hpp"
+#include "ui/cards_gadget_result/GadgetErrorProjection.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

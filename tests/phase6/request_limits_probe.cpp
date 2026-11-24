@@ -1,10 +1,10 @@
-#include "application/config/EndpointStore.hpp"
-#include "application/model/LocalModelService.hpp"
-#include "messages/Messages.hpp"
-#include "model/Lifecycle.hpp"
-#include "providers/ModelRequestSettings.hpp"
-#include "query/Recovery.hpp"
-#include "query/SimpleQueriesBinding.hpp"
+#include "app/config/EndpointStore.hpp"
+#include "core/model/LocalModelService.hpp"
+#include "core/messages/Messages.hpp"
+#include "services/providers/model/Lifecycle.hpp"
+#include "services/providers/ModelRequestSettings.hpp"
+#include "core/query/Recovery.hpp"
+#include "core/query/SimpleQueriesBinding.hpp"
 #include "core/runtime/Platform.hpp"
 #include <iostream>
 #include <stdexcept>

@@ -1,0 +1,11 @@
+#pragma once
+#include "app/settings/schema/Main.hpp"
+#include "app/settings/schema/imports/Bindings.hpp"
+#include "core/runtime/Url.hpp"
+
+namespace batbox::settings::schema {
+inline std::function<SchemaResult(const Json&)> bindIndigenousSettingsSchema(
+  const MainConfig& config,const PermissionRuleServices& rules){
+  return imports::bindSettingsSchema(config,rules,runtime::canonicalUrl);
+}
+}

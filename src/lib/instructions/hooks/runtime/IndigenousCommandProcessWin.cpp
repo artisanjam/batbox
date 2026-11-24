@@ -1,6 +1,6 @@
 #include "lib/instructions/hooks/runtime/IndigenousCommandProcess.hpp"
-#include "connectors/Abort.hpp"
-#include "core/process/IndigenousJsonlProcess.hpp"
+#include "services/connectors/Abort.hpp"
+#include "lib/runtime/IndigenousJsonlProcess.hpp"
 #include "core/runtime/AsyncLaunch.hpp"
 #include "core/runtime/Encoding.hpp"
 #include <chrono>

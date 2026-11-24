@@ -1,7 +1,7 @@
 #include <cstdlib>
-#include "shell/ManagedShell.hpp"
-#include "shell/BashProvider.hpp"
-#include "shell/ShellCwdCompletion.hpp"
+#include "lib/shell/ManagedShell.hpp"
+#include "lib/shell/BashProvider.hpp"
+#include "lib/shell/ShellCwdCompletion.hpp"
 #include <filesystem>
 #include <fstream>
 #include <iostream>

@@ -1,6 +1,6 @@
 #include "lib/mcp/manager/IndigenousRuntime.hpp"
-#include "auth/oauth_listener/IndigenousServer.hpp"
-#include "application/Async.hpp"
+#include "services/providers/auth/oauth_listener/IndigenousServer.hpp"
+#include "app/entry/Async.hpp"
 #include "core/runtime/Platform.hpp"
 #include <cstdlib>
 #include <uv.h>

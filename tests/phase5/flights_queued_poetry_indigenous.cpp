@@ -1,6 +1,6 @@
 // Poetry the user sent mid-turn reaches the model as a queued_command
 // attachment; the Flight keeps it so a resume shows the message.
-#include "flights/Transcript.hpp"
+#include "core/flights/Transcript.hpp"
 #include <iostream>
 #include <stdexcept>
 

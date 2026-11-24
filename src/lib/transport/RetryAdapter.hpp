@@ -1,6 +1,6 @@
 #pragma once
-#include "api_errors/ApiErrors.hpp"
-#include "retry/Retry.hpp"
+#include "core/api_errors/ApiErrors.hpp"
+#include "lib/http/Retry.hpp"
 #include <exception>
 namespace batbox::transport {
 retry::ErrorRecord errorRecordFromException(std::exception_ptr failure);

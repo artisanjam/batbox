@@ -1,5 +1,5 @@
-#include "interactive/submit/PoetrySubmit.hpp"
-#include "interactive/submit/Workload.hpp"
+#include "ui/submit/PoetrySubmit.hpp"
+#include "ui/submit/Workload.hpp"
 #include <iostream>
 #include <stdexcept>
 

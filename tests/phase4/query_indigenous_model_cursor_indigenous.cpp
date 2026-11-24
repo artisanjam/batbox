@@ -1,4 +1,4 @@
-#include "query/IndigenousModelCursor.hpp"
+#include "core/query/IndigenousModelCursor.hpp"
 #include <atomic>
 #include <cassert>
 #include <chrono>

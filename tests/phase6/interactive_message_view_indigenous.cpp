@@ -1,7 +1,7 @@
 #include "message_view_fixture.hpp"
 #include "message_view_services.hpp"
-#include "interactive/message_list_view/Projection.hpp"
-#include "interactive/viewport/Controller.hpp"
+#include "ui/message_list_view/Projection.hpp"
+#include "ui/viewport/Controller.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

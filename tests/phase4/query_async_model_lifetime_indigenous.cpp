@@ -1,5 +1,5 @@
-#include "query/AsyncModelPass.hpp"
-#include "retry/Retry.hpp"
+#include "core/query/AsyncModelPass.hpp"
+#include "lib/http/Retry.hpp"
 #include <cassert>
 #include <memory>
 

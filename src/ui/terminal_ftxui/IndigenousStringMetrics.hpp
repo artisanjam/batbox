@@ -1,7 +1,7 @@
 #pragma once
 
-#include "intl/Intl.hpp"
-#include "text_sdk/width/StringWidth.hpp"
+#include "lib/intl/Intl.hpp"
+#include "lib/text_sdk/width/StringWidth.hpp"
 #include <memory>
 #include <string>
 #include <string_view>

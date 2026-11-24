@@ -1,5 +1,5 @@
-#include "query/IndigenousModelCursor.hpp"
-#include "query/OwnerStreamConsume.hpp"
+#include "core/query/IndigenousModelCursor.hpp"
+#include "core/query/OwnerStreamConsume.hpp"
 #include <atomic>
 #include <cassert>
 #include <optional>

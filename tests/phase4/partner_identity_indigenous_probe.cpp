@@ -1,4 +1,4 @@
-#include "bat_context/PartnerIdentity.hpp"
+#include "core/bat_context/PartnerIdentity.hpp"
 #include <cstdlib>
 #include <iostream>
 #include <memory>

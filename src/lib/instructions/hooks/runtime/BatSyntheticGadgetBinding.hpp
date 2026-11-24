@@ -1,6 +1,6 @@
 #pragma once
 #include "lib/instructions/hooks/runtime/BatOwnerQueryBinding.hpp"
-#include "gadgets/synthetic_output/SyntheticOutput.hpp"
+#include "core/gadgets/synthetic_output/SyntheticOutput.hpp"
 
 namespace batbox::instructions::hooks::runtime {
 void bindBatSyntheticOutputGadget(BatHookServices& bat,

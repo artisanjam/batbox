@@ -1,4 +1,4 @@
-#include "query/SimpleQueriesBinding.hpp"
+#include "core/query/SimpleQueriesBinding.hpp"
 #include <cassert>
 #include <iostream>
 

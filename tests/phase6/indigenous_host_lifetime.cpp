@@ -1,4 +1,4 @@
-#include "application/HostInternal.hpp"
+#include "app/host/HostInternal.hpp"
 #include "core/runtime/Platform.hpp"
 #include <chrono>
 #include <filesystem>

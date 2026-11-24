@@ -1,5 +1,5 @@
 #pragma once
-#include "interactive/message_view/Projection.hpp"
+#include "ui/message_view/Projection.hpp"
 #include <cassert>
 namespace message_view_fixture {
 inline batbox::interactive::message_view::ProjectionServices services(){

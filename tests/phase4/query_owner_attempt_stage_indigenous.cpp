@@ -1,5 +1,5 @@
-#include "model/StreamingAttempt.hpp"
-#include "query/OwnerSegmentInvoker.hpp"
+#include "services/providers/model/StreamingAttempt.hpp"
+#include "core/query/OwnerSegmentInvoker.hpp"
 #include <cassert>
 #include <chrono>
 #include <future>

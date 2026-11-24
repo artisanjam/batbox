@@ -4,17 +4,17 @@
 # registry and its gadget bindings). It includes shell headers
 # (ManagedShell, the output poller); the shell declares the cycle back.
 add_library(batbox_missions
-  src/missions/roster/Roster.cpp
-  src/missions/output/MissionOutput.cpp
-  src/missions/output/Formatting.cpp
-  src/missions/output/Data.cpp
-  src/missions/stop/MissionStop.cpp
-  src/missions/stop/Result.cpp
-  src/missions/store/Store.cpp
-  src/missions/store/PoetryEntries.cpp
-  src/missions/store/CreateGet.cpp
-  src/missions/store/Update.cpp
-  src/missions/store/List.cpp)
+  src/core/missions/roster/Roster.cpp
+  src/core/missions/output/MissionOutput.cpp
+  src/core/missions/output/Formatting.cpp
+  src/core/missions/output/Data.cpp
+  src/core/missions/stop/MissionStop.cpp
+  src/core/missions/stop/Result.cpp
+  src/core/missions/store/Store.cpp
+  src/core/missions/store/PoetryEntries.cpp
+  src/core/missions/store/CreateGet.cpp
+  src/core/missions/store/Update.cpp
+  src/core/missions/store/List.cpp)
 target_link_libraries(batbox_missions PUBLIC batbox_core batbox_event_loop)
 target_compile_options(batbox_missions PRIVATE -Wall -Wextra -Wpedantic)
 

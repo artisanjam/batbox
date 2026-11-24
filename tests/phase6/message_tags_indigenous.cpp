@@ -1,6 +1,6 @@
 // Tag extraction for user text cards: same answers as the regex, with the
 // regex skipped when the closing tag cannot occur.
-#include "interactive/MessageTags.hpp"
+#include "ui/MessageTags.hpp"
 #include <iostream>
 #include <stdexcept>
 

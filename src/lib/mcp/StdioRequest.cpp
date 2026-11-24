@@ -1,6 +1,6 @@
 #include "lib/mcp/StdioClient.hpp"
-#include "core/process/IndigenousJsonlProcess.hpp"
-#include "connectors/Abort.hpp"
+#include "lib/runtime/IndigenousJsonlProcess.hpp"
+#include "services/connectors/Abort.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <cerrno>
 #include <climits>

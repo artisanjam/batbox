@@ -1,4 +1,4 @@
-#include "bats/BatGadgetPoetryDescriptor.hpp"
+#include "core/bats/BatGadgetPoetryDescriptor.hpp"
 #include <cassert>
 #include <chrono>
 #include <iostream>

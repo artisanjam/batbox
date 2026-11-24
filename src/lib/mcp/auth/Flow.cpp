@@ -1,7 +1,7 @@
 #include "lib/mcp/auth/Flow.hpp"
 #include "lib/mcp/auth/Discovery.hpp"
-#include "application/Async.hpp"
-#include "auth/oauth_client/FormUrl.hpp"
+#include "app/entry/Async.hpp"
+#include "services/providers/auth/oauth_client/FormUrl.hpp"
 #include "core/runtime/Url.hpp"
 #include <condition_variable>
 #include <cstdlib>

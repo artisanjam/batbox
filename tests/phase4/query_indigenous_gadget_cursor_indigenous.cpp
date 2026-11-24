@@ -1,4 +1,4 @@
-#include "query/IndigenousGadgetCursor.hpp"
+#include "core/query/IndigenousGadgetCursor.hpp"
 #include <atomic>
 #include <cassert>
 #include <future>

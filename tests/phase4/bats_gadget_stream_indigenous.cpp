@@ -1,4 +1,4 @@
-#include "bats/BatGadgetStream.hpp"
+#include "core/bats/BatGadgetStream.hpp"
 #include "core/runtime/MessageSnapshot.hpp"
 #include <cassert>
 #include <chrono>

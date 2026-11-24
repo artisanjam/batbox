@@ -1,7 +1,7 @@
-#include "attachment_triggers/Attachments.hpp"
+#include "core/attachment_triggers/Attachments.hpp"
 #include "lib/glob/DiscoveryMatcherBinding.hpp"
-#include "gadgets/files/ActiveStash.hpp"
-#include "gadgets/files/ActiveTriggers.hpp"
+#include "core/gadgets/files/ActiveStash.hpp"
+#include "core/gadgets/files/ActiveTriggers.hpp"
 #include <cassert>
 #include <chrono>
 #include <filesystem>

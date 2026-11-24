@@ -1,5 +1,5 @@
-#include "retry/Retry.hpp"
-#include "streaming/Reducer.hpp"
+#include "lib/http/Retry.hpp"
+#include "ui/streaming/Reducer.hpp"
 #include "lib/transport/RawHttp.hpp"
 #include "lib/transport/RetryAdapter.hpp"
 #include "lib/transport/SSE.hpp"

@@ -1,10 +1,10 @@
 #include "lib/mcp/manager/IndigenousRuntime.hpp"
 #include "lib/mcp/remote/RemoteClient.hpp"
 #include "lib/mcp/StdioClient.hpp"
-#include "application/Async.hpp"
-#include "core/process/ExecFileNoThrow.hpp"
+#include "app/entry/Async.hpp"
+#include "lib/runtime/ExecFileNoThrow.hpp"
 #include "core/runtime/IndigenousPath.hpp"
-#include "connectors/Abort.hpp"
+#include "services/connectors/Abort.hpp"
 #include <cstdlib>
 #include <mutex>
 #include <set>

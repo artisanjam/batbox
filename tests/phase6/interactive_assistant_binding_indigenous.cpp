@@ -1,4 +1,4 @@
-#include "interactive/cards_assistant/AssistantBinding.hpp"
+#include "ui/cards_assistant/AssistantBinding.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

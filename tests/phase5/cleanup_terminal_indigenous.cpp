@@ -1,4 +1,4 @@
-#include "cleanup/Terminal.hpp"
+#include "app/cleanup/Terminal.hpp"
 #include <cassert>
 #include <cerrno>
 #include <csignal>

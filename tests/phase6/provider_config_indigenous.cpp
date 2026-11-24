@@ -1,6 +1,6 @@
-#include "application/config/ConfigPanelInternal.hpp"
-#include "application/config/EndpointStore.hpp"
-#include "application/Config.hpp"
+#include "app/config/ConfigPanelInternal.hpp"
+#include "app/config/EndpointStore.hpp"
+#include "app/config/Config.hpp"
 #include "core/runtime/IndigenousPath.hpp"
 #include "lib/transport/WireClient.hpp"
 #include <cassert>

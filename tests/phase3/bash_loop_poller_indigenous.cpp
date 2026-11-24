@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "shell/LoopMissionOutput.hpp"
+#include "lib/shell/LoopMissionOutput.hpp"
 #include <chrono>
 #include <filesystem>
 #include <fstream>

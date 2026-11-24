@@ -1,5 +1,5 @@
 #include "core/runtime/MessageSnapshot.hpp"
-#include "streaming/Reducer.hpp"
+#include "ui/streaming/Reducer.hpp"
 #include <atomic>
 #include <cassert>
 #include <exception>

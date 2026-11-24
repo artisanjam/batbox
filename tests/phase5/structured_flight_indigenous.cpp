@@ -1,4 +1,4 @@
-#include "cli/structured/StructuredFlight.hpp"
+#include "app/cli/structured/StructuredFlight.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <stdexcept>
 #include <string>

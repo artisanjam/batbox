@@ -1,9 +1,9 @@
-#include "application/usage/UsageCommand.hpp"
-#include "application/commands/PermissionCommand.hpp"
-#include "application/commands/EffortCommand.hpp"
-#include "bats/ForkedBat.hpp"
-#include "application/engine/AutoPolicy.hpp"
-#include "project_recovery/Recovery.hpp"
+#include "app/usage/UsageCommand.hpp"
+#include "app/commands/PermissionCommand.hpp"
+#include "app/commands/EffortCommand.hpp"
+#include "core/bats/ForkedBat.hpp"
+#include "core/engine/AutoPolicy.hpp"
+#include "services/project_recovery/Recovery.hpp"
 #include "core/runtime/Platform.hpp"
 #include <filesystem>
 #include <fstream>

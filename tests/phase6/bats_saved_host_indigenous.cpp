@@ -1,8 +1,8 @@
-#include "application/HostInternal.hpp"
-#include "flights/SavedBats.hpp"
-#include "interactive/presentation_providers/MissionFooter.hpp"
+#include "app/host/HostInternal.hpp"
+#include "core/flights/SavedBats.hpp"
+#include "ui/presentation_providers/MissionFooter.hpp"
 #include "core/runtime/Platform.hpp"
-#include "user_input/SlashInternal.hpp"
+#include "ui/user_input/SlashInternal.hpp"
 #include <algorithm>
 #include <chrono>
 #include <filesystem>

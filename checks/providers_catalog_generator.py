@@ -3,7 +3,7 @@
 
 1. The generator is deterministic: two runs over the sample give identical bytes.
 2. Kinds, trimming and filters follow the rules for the sample providers.
-3. The committed src/providers/Catalog.generated.cpp parses and carries the
+3. The committed src/services/providers/Catalog.generated.cpp parses and carries the
    providers the /providers dialog promises.
 """
 import json
@@ -78,7 +78,7 @@ def main():
     check([row["id"] for row in document["providers"]][:3] == ["opencode", "anthropic", "openrouter"],
           "priority order")
 
-    committed = catalog_from_cpp((root / "src/providers/Catalog.generated.cpp").read_text("utf-8"))
+    committed = catalog_from_cpp((root / "src/services/providers/Catalog.generated.cpp").read_text("utf-8"))
     ids = {row["id"] for row in committed["providers"]}
     missing = [pid for pid in REQUIRED if pid not in ids]
     check(not missing, "committed catalog lacks " + ", ".join(missing))

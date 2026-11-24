@@ -1,4 +1,4 @@
-#include "application/Config.hpp"
+#include "app/config/Config.hpp"
 #include "core/runtime/IndigenousPath.hpp"
 #include <chrono>
 #include <cstdlib>

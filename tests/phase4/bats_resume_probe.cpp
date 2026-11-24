@@ -1,4 +1,4 @@
-#include "bats/ResumeBat.hpp"
+#include "core/bats/ResumeBat.hpp"
 #include <iostream>
 using batbox::Json;
 namespace ba=batbox::bats;

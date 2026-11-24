@@ -1,5 +1,5 @@
 #pragma once
-#include "auth/storage/Storage.hpp"
+#include "services/providers/auth/storage/Storage.hpp"
 #include "lib/mcp/http/Http.hpp"
 #include <functional>
 #include <memory>

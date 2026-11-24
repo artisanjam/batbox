@@ -1,5 +1,5 @@
 #include "lib/mcp/StdioClient.hpp"
-#include "core/process/IndigenousJsonlProcess.hpp"
+#include "lib/runtime/IndigenousJsonlProcess.hpp"
 #include "core/runtime/IndigenousPath.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <cerrno>

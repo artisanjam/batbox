@@ -1,5 +1,5 @@
-#include "query/AsyncSetup.hpp"
-#include "gadget_results/Budget.hpp"
+#include "core/query/AsyncSetup.hpp"
+#include "ui/gadget_results/Budget.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <unordered_set>

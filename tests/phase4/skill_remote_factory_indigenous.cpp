@@ -1,5 +1,5 @@
-#include "skills/SkillGadgetFactory.hpp"
-#include "connectors/Abort.hpp"
+#include "core/skills/SkillGadgetFactory.hpp"
+#include "services/connectors/Abort.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <iostream>
 #include <stdexcept>

@@ -1,8 +1,8 @@
 // Analysis blocks are stripped from assistant text exactly as before when a
 // tag is present; text without one skips the regex and is only trimmed.
-#include "interactive/PoetryXmlTags.hpp"
-#include "interactive/cards_assistant/AssistantTextCard.hpp"
-#include "interactive/markdown/Format.hpp"
+#include "ui/PoetryXmlTags.hpp"
+#include "ui/cards_assistant/AssistantTextCard.hpp"
+#include "ui/markdown/Format.hpp"
 #include <iostream>
 #include <stdexcept>
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "interactive/message_view/RowPlan.hpp"
+#include "ui/message_view/RowPlan.hpp"
 #include <algorithm>
 namespace message_view_fixture {
 using namespace batbox::interactive;

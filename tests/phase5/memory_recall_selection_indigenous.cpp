@@ -1,5 +1,5 @@
-#include "application/memory/Provider.hpp"
-#include "memory_prefetch/Prefetch.hpp"
+#include "core/memory/Provider.hpp"
+#include "core/memory_prefetch/Prefetch.hpp"
 #include "core/runtime/Platform.hpp"
 #include <chrono>
 #include <filesystem>

@@ -1,7 +1,7 @@
 #pragma once
 #include "lib/mcp/auth/Discovery.hpp"
-#include "auth/storage/KeychainHelpers.hpp"
-#include "locking/ProperLock.hpp"
+#include "services/providers/auth/storage/KeychainHelpers.hpp"
+#include "core/locking/ProperLock.hpp"
 #include <filesystem>
 
 namespace batbox::mcp::auth {

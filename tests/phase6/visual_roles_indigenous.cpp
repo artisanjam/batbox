@@ -1,15 +1,15 @@
 // Behavior of the visual layer below the golden frames: color-depth
 // detection, theme resolution, the role table, Gadget view building,
 // terminal-safe text, syntax highlighting, markdown blocks, /theme and /help.
-#include "application/commands/ThemeCommand.hpp"
-#include "commands_indigenous/UiCommands.hpp"
-#include "interactive/gadget_views/GadgetViewProjection.hpp"
-#include "interactive/markdown/AnsiProjection.hpp"
-#include "interactive/markdown/Blocks.hpp"
-#include "interactive/markdown/Highlight.hpp"
-#include "interactive/markdown/Renderer.hpp"
-#include "interactive/presentation_providers/StyleRoles.hpp"
-#include "interactive/presentation_providers/ThemeData.hpp"
+#include "app/commands/ThemeCommand.hpp"
+#include "core/commands_indigenous/UiCommands.hpp"
+#include "ui/gadget_views/GadgetViewProjection.hpp"
+#include "ui/markdown/AnsiProjection.hpp"
+#include "ui/markdown/Blocks.hpp"
+#include "ui/markdown/Highlight.hpp"
+#include "ui/markdown/Renderer.hpp"
+#include "ui/presentation_providers/StyleRoles.hpp"
+#include "ui/presentation_providers/ThemeData.hpp"
 #include "ui/terminal_ftxui/TextFit.hpp"
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/screen/terminal.hpp>

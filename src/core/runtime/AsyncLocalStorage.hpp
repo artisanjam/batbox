@@ -1,5 +1,5 @@
 #pragma once
-#include "core/event_loop/AsyncContext.hpp"
+#include "lib/runtime/AsyncContext.hpp"
 namespace batbox::runtime {
 // Indigenous asynchronous-local storage with run/getStore operations.
 // Continuation registration captures a snapshot; stores retain object identity.

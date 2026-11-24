@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "gadgets/bash/AsyncBashPersistence.hpp"
+#include "core/gadgets/bash/AsyncBashPersistence.hpp"
 #include <filesystem>
 #include <fstream>
 #include <stdexcept>

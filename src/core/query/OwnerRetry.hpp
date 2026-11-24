@@ -1,0 +1,19 @@
+#pragma once
+
+#include "lib/runtime/Deferred.hpp"
+#include "lib/http/Retry.hpp"
+
+namespace batbox::query {
+
+struct OwnerRetryAwaits {
+  std::function<event_loop::Deferred<event_loop::Unit>(double,std::stop_token)>
+    sleep;
+};
+
+// Drives the shared retry transition machine on the query owner. Only actual
+// awaited client/operation/sleep work and yielded values run on its worker.
+Json withRetryOwnerSegments(event_loop::Loop& loop,
+  const retry::RetryOptions& options,retry::Dependencies& deps,
+  const OwnerRetryAwaits& awaits={},std::stop_token cursorClose={});
+
+} // namespace batbox::query

@@ -5,7 +5,7 @@ Naming: in this codebase "poetry" means prompt, "Flight" means session, "Gadget"
 ## 1. Compaction
 
 **Trigger**
-- **Settings:** the threshold is `compactAt`, default 100000 (`src/application/Config.hpp:54`). It is set by `--compact-at` (`Config.cpp:273`), `BATBOX_COMPACT_AT` (`:206`), `compact_at` in native-client.json (`:59`), or `/context` and `/config` (`application_compaction_settings/Policy.cpp`). `autoCompactEnabled` is a separate toggle.
+- **Settings:** the threshold is `compactAt`, default 100000 (`src/app/config/Config.hpp:54`). It is set by `--compact-at` (`Config.cpp:273`), `BATBOX_COMPACT_AT` (`:206`), `compact_at` in native-client.json (`:59`), or `/context` and `/config` (`application_compaction_settings/Policy.cpp`). `autoCompactEnabled` is a separate toggle.
 - **Conversion to a percent:** `application_engine/AutoPolicy.hpp:39-51` turns `compactAt` into a `BATBOX_AUTOCOMPACT_PCT_OVERRIDE` percentage of the effective window.
 - **Window math:** `services/compact/autoCompact.cpp:11-33`.
   - Effective window = contextWindow − min(maxOutput, 20000).

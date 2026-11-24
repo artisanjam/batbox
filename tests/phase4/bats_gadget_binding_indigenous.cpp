@@ -1,6 +1,6 @@
-#include "bats/BatGadgetBinding.hpp"
-#include "bats/BatGadgetDescriptor.hpp"
-#include "bats/BatGadgetSchema.hpp"
+#include "core/bats/BatGadgetBinding.hpp"
+#include "core/bats/BatGadgetDescriptor.hpp"
+#include "core/bats/BatGadgetSchema.hpp"
 #include <cassert>
 #include <iostream>
 #include <stdexcept>

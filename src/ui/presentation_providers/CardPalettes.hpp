@@ -1,0 +1,28 @@
+#pragma once
+
+#include "ui/cards/OutputLineProjection.hpp"
+#include "ui/cards/UserTextProjection.hpp"
+#include "ui/cards_assistant/AssistantProjection.hpp"
+#include "ui/cards_remaining/AttachmentProjection.hpp"
+#include "ui/cards_remaining/MessageLeavesProjection.hpp"
+#include "ui/cards_system/SystemTextProjection.hpp"
+#include "ui/cards_gadget_result/GadgetErrorProjection.hpp"
+#include "ui/presentation_providers/ThemeState.hpp"
+#include "ui/presentation_providers/StyleRoles.hpp"
+#include "ui/gadget_views/GadgetViewProjection.hpp"
+#include "ui/terminal_ftxui/PresentationView.hpp"
+
+namespace batbox::interactive::presentation_providers {
+cards::OutputLinePalette outputLinePalette(const ThemeState&);
+cards::UserCardPalette userCardPalette(const ThemeState&);
+cards::PoetryPalette poetryPalette(const ThemeState&);
+cards_assistant::Palette assistantPalette(const ThemeState&);
+cards_system::SystemPalette systemPalette(const ThemeState&);
+cards_gadget_result::GadgetErrorPalette gadgetErrorPalette(const ThemeState&);
+cards_remaining::AttachmentPalette attachmentPalette(const ThemeState&);
+cards_remaining::LeafPalette leafPalette(const ThemeState&,
+    std::function<bool(bool)> isBlinking);
+gadget_views::GadgetViewStyle gadgetViewStyle(const StyleRoles& roles,
+    std::string expandKey);
+terminal_ftxui::InlinePalette inlinePalette(const ThemeState&);
+} // namespace batbox::interactive::presentation_providers

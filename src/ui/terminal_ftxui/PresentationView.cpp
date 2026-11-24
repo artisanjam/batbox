@@ -1,5 +1,5 @@
 #include "ui/terminal_ftxui/PresentationView.hpp"
-#include "interactive/TranscriptRows.hpp"
+#include "ui/TranscriptRows.hpp"
 #include "ftxui/screen/color.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <algorithm>

@@ -1,6 +1,6 @@
 #include <cstdlib>
-#include "flights/async_project/AsyncProject.hpp"
-#include "flights/MetadataReappend.hpp"
+#include "core/flights/async_project/AsyncProject.hpp"
+#include "core/flights/MetadataReappend.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

@@ -1,6 +1,6 @@
 #include <cstdlib>
-#include "git/filesystem/GitFilesystem.hpp"
-#include "git/CanonicalRoot.hpp"
+#include "lib/git/filesystem/GitFilesystem.hpp"
+#include "lib/git/CanonicalRoot.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

@@ -1,8 +1,8 @@
-#include "core/process/StandardDescriptors.hpp"
+#include "lib/runtime/StandardDescriptors.hpp"
 #include "core/runtime/Version.hpp"
 #include "core/runtime/AsyncLaunch.hpp"
 #include "lib/mcp/StdioClient.hpp"
-#include "core/process/IndigenousJsonlProcess.hpp"
+#include "lib/runtime/IndigenousJsonlProcess.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <cerrno>
 #include <algorithm>

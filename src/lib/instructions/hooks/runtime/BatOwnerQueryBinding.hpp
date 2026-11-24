@@ -1,6 +1,6 @@
 #pragma once
 #include "lib/instructions/hooks/runtime/BatHookExecutor.hpp"
-#include "query/AsyncEngine.hpp"
+#include "core/query/AsyncEngine.hpp"
 
 namespace batbox::instructions::hooks::runtime {
 struct BatOwnerQueryBindings {

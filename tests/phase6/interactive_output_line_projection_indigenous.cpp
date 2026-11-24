@@ -1,4 +1,4 @@
-#include "interactive/cards/OutputLineProjection.hpp"
+#include "ui/cards/OutputLineProjection.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

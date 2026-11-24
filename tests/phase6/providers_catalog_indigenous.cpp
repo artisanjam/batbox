@@ -1,9 +1,9 @@
 // The embedded provider catalog parses, carries the promised presets, and
 // every supported entry turns into an endpoint record the store accepts.
-#include "application/config/EndpointStore.hpp"
-#include "providers/Catalog.hpp"
-#include "providers/Onboarding.hpp"
-#include "providers/WireClients.hpp"
+#include "app/config/EndpointStore.hpp"
+#include "services/providers/Catalog.hpp"
+#include "services/providers/Onboarding.hpp"
+#include "services/providers/WireClients.hpp"
 #include "lib/transport/Errors.hpp"
 #include <filesystem>
 #include <fstream>

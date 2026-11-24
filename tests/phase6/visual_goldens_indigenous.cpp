@@ -2,17 +2,17 @@
 // uses the production providers: presentation bindings, chrome, the
 // permission provider and the default Gadget view builders.
 #include "GoldenFrame.hpp"
-#include "application/commands/ConnectorsCommand.hpp"
-#include "application/commands/ProvidersCommand.hpp"
-#include "application/gadgets/DefaultInputs.hpp"
-#include "application/permissions/PermissionProvider.hpp"
-#include "application/presentation/Bindings.hpp"
-#include "interactive/conversation_shell/PoetryViewport.hpp"
-#include "interactive/gadget_views/GadgetViewProjection.hpp"
-#include "interactive/message_view/RetainedViews.hpp"
-#include "interactive/presentation_providers/MissionFooter.hpp"
-#include "interactive/presentation_providers/StyleRoles.hpp"
-#include "interactive/presentation_providers/CardPalettes.hpp"
+#include "app/commands/ConnectorsCommand.hpp"
+#include "app/commands/ProvidersCommand.hpp"
+#include "app/gadgets/DefaultInputs.hpp"
+#include "app/permissions/PermissionProvider.hpp"
+#include "app/presentation/Bindings.hpp"
+#include "ui/conversation_shell/PoetryViewport.hpp"
+#include "ui/gadget_views/GadgetViewProjection.hpp"
+#include "ui/message_view/RetainedViews.hpp"
+#include "ui/presentation_providers/MissionFooter.hpp"
+#include "ui/presentation_providers/StyleRoles.hpp"
+#include "ui/presentation_providers/CardPalettes.hpp"
 #include "ui/terminal_ftxui/PresentationView.hpp"
 #include <ftxui/screen/terminal.hpp>
 #include <chrono>

@@ -1,5 +1,5 @@
-#include "flights/Load.hpp"
-#include "flights/Paths.hpp"
+#include "core/flights/Load.hpp"
+#include "core/flights/Paths.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

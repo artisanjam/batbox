@@ -2,11 +2,11 @@
 """Build Batbox's bundled provider catalog from a models.dev api.json.
 
 Usage:
-  python3 gadgets/providers_catalog.py SOURCE [--output src/providers/Catalog.generated.cpp]
+  python3 gadgets/providers_catalog.py SOURCE [--output src/services/providers/Catalog.generated.cpp]
 
 SOURCE is a path to api.json or an https:// URL (https://models.dev/api.json).
 The output is a C++ file holding a compact JSON document split into string
-literals, read by src/providers/Catalog.cpp. The same input always produces
+literals, read by src/services/providers/Catalog.cpp. The same input always produces
 the same bytes, so the generated file can be committed and diffed.
 
 Each provider's wire kind comes from what is known about its endpoints:
@@ -401,7 +401,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("source", help="path or https URL of a models.dev api.json")
     parser.add_argument("--output", default=str(Path(__file__).resolve().parent.parent /
-                                                "src/providers/Catalog.generated.cpp"))
+                                                "src/services/providers/Catalog.generated.cpp"))
     parser.add_argument("--stdout", action="store_true", help="write the C++ to stdout")
     arguments = parser.parse_args()
     document = build(load(arguments.source))

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "text_sdk/ansi_tokenize/Types.hpp"
+#include "lib/text_sdk/ansi_tokenize/Types.hpp"
 #include "ftxui/screen/cell.hpp"
 #include <stdexcept>
 

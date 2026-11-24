@@ -1,5 +1,5 @@
 #include "lib/mcp/auth/Provider.hpp"
-#include "auth/oauth_client/FormUrl.hpp"
+#include "services/providers/auth/oauth_client/FormUrl.hpp"
 #include "core/runtime/Url.hpp"
 #include <stdexcept>
 

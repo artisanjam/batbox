@@ -2,8 +2,8 @@
 // For random Markdown streamed in random fragments, stacking the pieces must
 // draw exactly what the whole element draws: every cell, color and attribute.
 #include "GoldenFrame.hpp"
-#include "application/presentation/Bindings.hpp"
-#include "interactive/presentation_providers/StyleRoles.hpp"
+#include "app/presentation/Bindings.hpp"
+#include "ui/presentation_providers/StyleRoles.hpp"
 #include <ftxui/screen/terminal.hpp>
 #include <iostream>
 #include <random>

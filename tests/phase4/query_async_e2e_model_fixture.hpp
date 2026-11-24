@@ -1,6 +1,6 @@
 #pragma once
-#include "model/QueryModel.hpp"
-#include "core/event_loop/Loop.hpp"
+#include "services/providers/model/QueryModel.hpp"
+#include "lib/runtime/Loop.hpp"
 #include <utility>
 #include <vector>
 

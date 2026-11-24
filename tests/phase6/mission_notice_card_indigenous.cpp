@@ -2,12 +2,12 @@
 // as one compact card, whether it started a turn or arrived mid-turn as a
 // queued attachment. The message keeps the whole block for the model.
 #include "GoldenFrame.hpp"
-#include "application/presentation/Bindings.hpp"
-#include "bats/BatMissionNotification.hpp"
-#include "interactive/gadget_views/GadgetViewProjection.hpp"
-#include "interactive/message_view/RetainedViews.hpp"
-#include "interactive/presentation_providers/StyleRoles.hpp"
-#include "normalization/Attachments.hpp"
+#include "app/presentation/Bindings.hpp"
+#include "core/bats/BatMissionNotification.hpp"
+#include "ui/gadget_views/GadgetViewProjection.hpp"
+#include "ui/message_view/RetainedViews.hpp"
+#include "ui/presentation_providers/StyleRoles.hpp"
+#include "core/normalization/Attachments.hpp"
 #include <ftxui/screen/terminal.hpp>
 #include <iostream>
 #include <stdexcept>

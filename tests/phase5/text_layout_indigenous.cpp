@@ -1,5 +1,5 @@
-#include "text_sdk/width/IndigenousLayout.hpp"
-#include "text_sdk/bun_text_width/Wrap.hpp"
+#include "lib/text_sdk/width/IndigenousLayout.hpp"
+#include "lib/text_sdk/bun_text_width/Wrap.hpp"
 #include <cassert>
 #include <iostream>
 int main(){using namespace batbox;

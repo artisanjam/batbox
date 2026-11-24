@@ -1,5 +1,5 @@
-#include "connectors/Scrapling.hpp"
-#include "connectors/Searxng.hpp"
+#include "services/connectors/Scrapling.hpp"
+#include "services/connectors/Searxng.hpp"
 #include <chrono>
 #include <iostream>
 #include <thread>

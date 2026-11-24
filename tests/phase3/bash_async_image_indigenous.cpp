@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "gadgets/bash/AsyncBashImage.hpp"
+#include "core/gadgets/bash/AsyncBashImage.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

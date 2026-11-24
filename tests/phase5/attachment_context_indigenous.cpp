@@ -1,4 +1,4 @@
-#include "attachments/context/ContextCollectors.hpp"
+#include "core/attachments/context/ContextCollectors.hpp"
 #include <stdexcept>
 
 using namespace batbox;

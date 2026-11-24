@@ -1,5 +1,5 @@
 #pragma once
-#include "gadgets/Gadget.hpp"
+#include "core/gadgets/Gadget.hpp"
 #include <cstdint>
 #include <exception>
 #include <functional>

@@ -1,6 +1,6 @@
-#include "lsp/Protocol.hpp"
-#include "lsp/Diagnostics.hpp"
-#include "application/lsp/Format.hpp"
+#include "services/lsp/Protocol.hpp"
+#include "services/lsp/Diagnostics.hpp"
+#include "app/lsp/Format.hpp"
 #include <cassert>
 #include <filesystem>
 #include <iostream>

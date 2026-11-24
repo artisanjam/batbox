@@ -1,7 +1,7 @@
-#include "interactive/MessageListMemo.hpp"
+#include "ui/MessageListMemo.hpp"
 #include "core/runtime/MessageMutation.hpp"
 #include "core/runtime/MessageSnapshot.hpp"
-#include "streaming/Reducer.hpp"
+#include "ui/streaming/Reducer.hpp"
 #include <cassert>
 #include <iostream>
 

@@ -1,7 +1,7 @@
 #pragma once
-#include "gadgets/bash/AsyncBashCall.hpp"
-#include "shell/CommandSplitter.hpp"
-#include "missions/roster/Roster.hpp"
+#include "core/gadgets/bash/AsyncBashCall.hpp"
+#include "lib/shell/CommandSplitter.hpp"
+#include "core/missions/roster/Roster.hpp"
 #include <atomic>
 #include <filesystem>
 #include <future>

@@ -1,0 +1,14 @@
+#pragma once
+#include "ui/presentation_providers/Shortcut.hpp"
+#include <functional>
+#include <string>
+namespace batbox::interactive::presentation_providers {
+struct DefaultBindingOptions {
+  std::string platform;
+  bool terminalVtMode=true;
+};
+std::vector<BindingBlock> defaultBindingBlocks(const DefaultBindingOptions&);
+std::vector<Binding> defaultBindings(const DefaultBindingOptions&);
+ShortcutProvider makeShortcutProvider(DefaultBindingOptions,
+    std::function<std::vector<Binding>()> loadUserBindings);
+} // namespace batbox::interactive::presentation_providers

@@ -2,7 +2,7 @@
 // incrementally. Fed in random fragments, the lines must equal wrapping the
 // whole row at once, and a cached layout must equal an uncached one.
 #include "ui/terminal_ftxui/ScrollbackProjection.hpp"
-#include "interactive/TranscriptRows.hpp"
+#include "ui/TranscriptRows.hpp"
 #include <iostream>
 #include <random>
 #include <stdexcept>

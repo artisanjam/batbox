@@ -1,4 +1,4 @@
-#include "shell/ShellBootstrap.hpp"
+#include "lib/shell/ShellBootstrap.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

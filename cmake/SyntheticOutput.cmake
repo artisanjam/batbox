@@ -1,6 +1,6 @@
 add_library(batbox_hook_schema src/lib/instructions/hooks/runtime/HookResponseSchema.cpp)
 target_link_libraries(batbox_hook_schema PUBLIC batbox_core)
 target_compile_options(batbox_hook_schema PRIVATE -Wall -Wextra -Wpedantic)
-add_library(batbox_synthetic_output src/gadgets/synthetic_output/SyntheticOutput.cpp)
+add_library(batbox_synthetic_output src/core/gadgets/synthetic_output/SyntheticOutput.cpp)
 target_link_libraries(batbox_synthetic_output PUBLIC batbox_core batbox_hook_schema)
 target_compile_options(batbox_synthetic_output PRIVATE -Wall -Wextra -Wpedantic)

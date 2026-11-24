@@ -113,23 +113,23 @@ probes, never model work.
 
 | What it limits | Where | Default | Setting |
 | --- | --- | --- | --- |
-| Model request, total (Anthropic, OpenAI-chat, Bedrock, Vertex; main Flight, Bats, compaction, memory recall, Flight title, hooks) | `src/providers/RequestSettings.hpp:10` | none (was 4 hours, none when local) | `request_timeout_ms` |
-| Model stream, no bytes received | `src/providers/RequestSettings.hpp:11` | 6 hours (was 2 hours) | `stream_idle_timeout_ms` |
-| Model connection opening | `src/providers/RequestSettings.hpp:12` | 2 minutes (was 10 seconds) | `connect_timeout_ms` |
-| Non-streaming resend after a failed stream | `src/providers/RequestSettings.cpp:86` | off (was on unless local) | `nonstreaming_fallback` |
-| That resend, total | `src/providers/RequestSettings.hpp:13` | none (was 5 minutes, none when local) | `nonstreaming_timeout_ms` |
-| Stream watchdog in the model layer | `src/model/Lifecycle.hpp:13` | off, no duration (was off, 90 seconds if enabled) | not configurable |
-| Retries of a failed model request | `src/retry/Policy.cpp:9`, `src/application_model/ServicesQuery.cpp:71` | 10, at most 2 for local and non-Anthropic endpoints; a timed-out request is not retried (was retried) | `max_retries` |
-| Wait between retries | `src/retry/Policy.cpp:10`, `src/retry/Machine.cpp:122`, `src/application_model/ServicesQuery.cpp:72` | 0.5 seconds doubling, at most 2 seconds (local and non-Anthropic) or 32 seconds | not configurable |
-| Compaction and its fallback request | `src/compaction/Summary.cpp` | no limit of its own; the model request limits above | `compactSummaryAttempts`, `autoCompactFailureLimit` |
+| Model request, total (Anthropic, OpenAI-chat, Bedrock, Vertex; main Flight, Bats, compaction, memory recall, Flight title, hooks) | `src/services/providers/RequestSettings.hpp:10` | none (was 4 hours, none when local) | `request_timeout_ms` |
+| Model stream, no bytes received | `src/services/providers/RequestSettings.hpp:11` | 6 hours (was 2 hours) | `stream_idle_timeout_ms` |
+| Model connection opening | `src/services/providers/RequestSettings.hpp:12` | 2 minutes (was 10 seconds) | `connect_timeout_ms` |
+| Non-streaming resend after a failed stream | `src/services/providers/RequestSettings.cpp:86` | off (was on unless local) | `nonstreaming_fallback` |
+| That resend, total | `src/services/providers/RequestSettings.hpp:13` | none (was 5 minutes, none when local) | `nonstreaming_timeout_ms` |
+| Stream watchdog in the model layer | `src/services/providers/model/Lifecycle.hpp:13` | off, no duration (was off, 90 seconds if enabled) | not configurable |
+| Retries of a failed model request | `src/lib/http/Policy.cpp:9`, `src/application_model/ServicesQuery.cpp:71` | 10, at most 2 for local and non-Anthropic endpoints; a timed-out request is not retried (was retried) | `max_retries` |
+| Wait between retries | `src/lib/http/Policy.cpp:10`, `src/lib/http/Machine.cpp:122`, `src/application_model/ServicesQuery.cpp:72` | 0.5 seconds doubling, at most 2 seconds (local and non-Anthropic) or 32 seconds | not configurable |
+| Compaction and its fallback request | `src/core/compaction/Summary.cpp` | no limit of its own; the model request limits above | `compactSummaryAttempts`, `autoCompactFailureLimit` |
 | Prompt hook (`"type": "prompt"`) | `src/lib/instructions/hooks/runtime/PoetryHookExecutor.cpp:176` | 1 hour (was 30 seconds for the model call inside a 10 minute hook) | the hook's `timeout` |
 | Agent hook (`"type": "agent"`) | `src/lib/instructions/hooks/runtime/BatHookExecutor.cpp:242`, `HookPerHook.hpp:10` | 1 hour (was 60 seconds) | the hook's `timeout` |
 | Command, HTTP and function hooks | `src/application_hooks/Provider.hpp:56`, `src/lib/instructions/hooks/runtime/HttpHook.cpp:64` | 10 minutes | the hook's `timeout` |
 | Async hook | `src/lib/instructions/hooks/runtime/AsyncHookRoster.cpp:34` | 15 seconds | the hook's `asyncTimeout` |
 | SessionEnd hooks on `/clear` | `src/application_commands/Commands.cpp:134` | 10 minutes | not configurable |
-| TaskOutput wait on a Bat | `src/gadgets/mission_output/MissionOutput.cpp:13` | 1 hour; ends as "still running", not failed | TaskOutput `timeout` |
-| TaskOutput wait on a background shell command | `src/gadgets/mission_output/MissionOutput.cpp:15` | 30 seconds | TaskOutput `timeout` |
-| TaskOutput longest wait | `src/gadgets/mission_output/MissionOutput.cpp:14` | 24 hours (was 1 hour) | not configurable |
+| TaskOutput wait on a Bat | `src/core/gadgets/mission_output/MissionOutput.cpp:13` | 1 hour; ends as "still running", not failed | TaskOutput `timeout` |
+| TaskOutput wait on a background shell command | `src/core/gadgets/mission_output/MissionOutput.cpp:15` | 30 seconds | TaskOutput `timeout` |
+| TaskOutput longest wait | `src/core/gadgets/mission_output/MissionOutput.cpp:14` | 24 hours (was 1 hour) | not configurable |
 | Wait for a free Bat slot | `src/application_bats/IndigenousBatCore.cpp:288` | no limit | `--max-concurrent-subagents` sets the slots |
 | Bash command | `src/application_shell/ApplicationShell.hpp:25` | 2 minutes, at most 10 minutes; unchanged | Bash `timeout` |
 | Bash auto-backgrounding | `src/application_shell/ApplicationShell.hpp:26` | off (15 seconds when on) | not configurable |
@@ -138,16 +138,16 @@ probes, never model work.
 | MCP other requests (list tools and the like) | `src/lib/mcp/manager/IndigenousFactory.cpp:119`, `src/lib/mcp/remote/RemoteClient.hpp:19` | 60 seconds | not configurable |
 | MCP sign-in browser wait | `src/lib/mcp/auth/Flow.cpp:111` | 5 minutes | not configurable |
 | MCP `headersHelper`, browser open | `src/lib/mcp/manager/IndigenousFactory.cpp:134`, `src/lib/mcp/auth/IndigenousServices.cpp:126` | 10 seconds | not configurable |
-| LSP request, LSP server start | `src/lsp/Manager.cpp:177`, `src/lsp/Manager.hpp:17` | 15 seconds each | not configurable |
-| Shell snapshot | `src/shell/SnapshotRun.cpp:86` | 10 seconds | not configurable |
-| Cron gate refresh | `src/cron/config/CronConfiguration.hpp:9` | 5 minutes | not configurable; a scheduled turn itself has no limit |
+| LSP request, LSP server start | `src/services/lsp/Manager.cpp:177`, `src/services/lsp/Manager.hpp:17` | 15 seconds each | not configurable |
+| Shell snapshot | `src/lib/shell/SnapshotRun.cpp:86` | 10 seconds | not configurable |
+| Cron gate refresh | `src/services/cron/config/CronConfiguration.hpp:9` | 5 minutes | not configurable; a scheduled turn itself has no limit |
 | Ripgrep (Grep, Glob, file search) | `src/lib/filesystem/RipgrepProcess.hpp:12` | 20 seconds; short on purpose | not configurable |
-| Web fetch | `src/connectors/Scrapling.hpp:59` | 2 hours | not configurable |
-| Web search | `src/gadgets/web/SearchCore.cpp:30`, `src/connectors/Searxng.cpp:168` | 2 minutes, connect 10 seconds | not configurable |
+| Web fetch | `src/services/connectors/Scrapling.hpp:59` | 2 hours | not configurable |
+| Web search | `src/core/gadgets/web/SearchCore.cpp:30`, `src/services/connectors/Searxng.cpp:168` | 2 minutes, connect 10 seconds | not configurable |
 | SearXNG and Scrapling status (`doctor`, `/connectors`) | `src/application_connectors/Status.hpp:61,66,78` | 5, 2 and 30 seconds; short on purpose | not configurable |
-| Local-server discovery probe | `src/providers/LocalDiscovery.hpp:31` | 300 milliseconds; short on purpose | not configurable |
-| Model list and connection test | `src/providers/WireClients.hpp:30`, `src/application_config/Discovery.cpp:25` | 8 seconds (12 in `/config`), connect at most 5 seconds; short on purpose | not configurable |
-| Cloud credentials (GCP token, metadata server, AWS STS, Bedrock model list) | `src/providers/gcp/GoogleAuth.cpp:59,114`, `src/providers/aws/Credentials.cpp:166`, `src/providers/aws/BedrockClient.cpp:217` | 30, 3, 30 and 20 seconds | not configurable |
+| Local-server discovery probe | `src/services/providers/LocalDiscovery.hpp:31` | 300 milliseconds; short on purpose | not configurable |
+| Model list and connection test | `src/services/providers/WireClients.hpp:30`, `src/application_config/Discovery.cpp:25` | 8 seconds (12 in `/config`), connect at most 5 seconds; short on purpose | not configurable |
+| Cloud credentials (GCP token, metadata server, AWS STS, Bedrock model list) | `src/services/providers/gcp/GoogleAuth.cpp:59,114`, `src/services/providers/aws/Credentials.cpp:166`, `src/services/providers/aws/BedrockClient.cpp:217` | 30, 3, 30 and 20 seconds | not configurable |
 | `batbox -p "text"` waiting on stdin | `src/application_cli/Adapter.cpp:264,302` | no wait when a prompt argument is given and stdin has nothing ready (was 3 seconds); 3 seconds without a prompt argument | not configurable |
-| Clipboard image, message copy | `src/application_media/ClipboardImage.cpp:35`, `src/interactive/navigation/MessageCopy.hpp:8` | 3 and 2 seconds | not configurable |
+| Clipboard image, message copy | `src/application_media/ClipboardImage.cpp:35`, `src/ui/navigation/MessageCopy.hpp:8` | 3 and 2 seconds | not configurable |
 | Git branch and worktree lookups | `src/application_flights/Flight.cpp:81`, `src/application_flights/RestoreCommand.cpp:69` | 10 seconds | not configurable |

@@ -1,6 +1,6 @@
 #pragma once
 #include "lib/poetryEntries/Sections.hpp"
-#include "core/event_loop/Deferred.hpp"
+#include "lib/runtime/Deferred.hpp"
 #include <variant>
 
 namespace batbox::poetryEntries {

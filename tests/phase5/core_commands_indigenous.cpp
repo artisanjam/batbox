@@ -1,6 +1,6 @@
-#include "commands_indigenous/Clear.hpp"
-#include "commands_indigenous/Compact.hpp"
-#include "commands_indigenous/UiCommands.hpp"
+#include "core/commands_indigenous/Clear.hpp"
+#include "core/commands_indigenous/Compact.hpp"
+#include "core/commands_indigenous/UiCommands.hpp"
 #include <iostream>
 #include <stdexcept>
 

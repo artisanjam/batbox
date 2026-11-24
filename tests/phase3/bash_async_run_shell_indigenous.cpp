@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "gadgets/bash/AsyncRunShellCommand.hpp"
+#include "core/gadgets/bash/AsyncRunShellCommand.hpp"
 #include <algorithm>
 #include <chrono>
 #include <filesystem>

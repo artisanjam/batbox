@@ -1,6 +1,6 @@
 #include <cstdlib>
-#include "shell/ManagedShell.hpp"
-#include "shell/CommandSplitter.hpp"
+#include "lib/shell/ManagedShell.hpp"
+#include "lib/shell/CommandSplitter.hpp"
 #include <atomic>
 #include <chrono>
 #include <filesystem>

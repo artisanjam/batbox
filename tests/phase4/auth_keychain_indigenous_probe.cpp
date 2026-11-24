@@ -1,5 +1,5 @@
-#include "auth/storage/MacKeychain.hpp"
-#include "auth/storage/IndigenousSecurity.hpp"
+#include "services/providers/auth/storage/MacKeychain.hpp"
+#include "services/providers/auth/storage/IndigenousSecurity.hpp"
 #include <cassert>
 #include <cstdlib>
 #include <filesystem>

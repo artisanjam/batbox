@@ -1,6 +1,6 @@
-#include "application/presentation/Bindings.hpp"
-#include "api_errors/ApiErrors.hpp"
-#include "interactive/message_view/RetainedViews.hpp"
+#include "app/presentation/Bindings.hpp"
+#include "core/api_errors/ApiErrors.hpp"
+#include "ui/message_view/RetainedViews.hpp"
 #include <ftxui/screen/screen.hpp>
 #include <cassert>
 #include <iostream>

@@ -1,5 +1,5 @@
-#include "application/commands/PoetryCommand.hpp"
-#include "application/poetry/Provider.hpp"
+#include "app/commands/PoetryCommand.hpp"
+#include "core/poetry/Provider.hpp"
 #include "core/runtime/Platform.hpp"
 #include <chrono>
 #include <filesystem>

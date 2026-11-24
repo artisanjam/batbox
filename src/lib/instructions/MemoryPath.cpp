@@ -2,7 +2,7 @@
 #include "core/runtime/PathSanitization.hpp"
 #include "core/runtime/IndigenousTime.hpp"
 #include "core/runtime/Unicode.hpp"
-#include "shell/PosixPath.hpp"
+#include "lib/shell/PosixPath.hpp"
 #include "util/envUtils.hpp"
 #include <unicode/unorm2.h>
 #include <algorithm>

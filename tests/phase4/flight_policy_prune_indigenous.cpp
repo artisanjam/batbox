@@ -1,5 +1,5 @@
-#include "compaction/Compaction.hpp"
-#include "compaction/FlightPolicy.hpp"
+#include "core/compaction/Compaction.hpp"
+#include "core/compaction/FlightPolicy.hpp"
 #include <iostream>
 using namespace batbox;
 using namespace batbox::compaction;

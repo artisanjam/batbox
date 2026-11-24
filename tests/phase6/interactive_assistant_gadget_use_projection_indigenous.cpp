@@ -1,4 +1,4 @@
-#include "interactive/cards_gadget_use/GadgetUseProjection.hpp"
+#include "ui/cards_gadget_use/GadgetUseProjection.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

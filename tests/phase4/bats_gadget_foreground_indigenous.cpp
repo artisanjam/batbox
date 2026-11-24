@@ -1,4 +1,4 @@
-#include "bats/BatGadgetForeground.hpp"
+#include "core/bats/BatGadgetForeground.hpp"
 #include "core/runtime/MessageSnapshot.hpp"
 #include <cassert>
 #include <chrono>

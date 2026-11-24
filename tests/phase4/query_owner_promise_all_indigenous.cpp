@@ -1,4 +1,4 @@
-#include "query/OwnerPromiseAll.hpp"
+#include "core/query/OwnerPromiseAll.hpp"
 #include <cassert>
 #include <vector>
 

@@ -1,7 +1,7 @@
-#include "git/CanonicalRoot.hpp"
-#include "git/GitBasics.hpp"
-#include "git/GitBindings.hpp"
-#include "git/filesystem/GitFilesystem.hpp"
+#include "lib/git/CanonicalRoot.hpp"
+#include "lib/git/GitBasics.hpp"
+#include "lib/git/GitBindings.hpp"
+#include "lib/git/filesystem/GitFilesystem.hpp"
 #include <cassert>
 #include <cstdlib>
 #include <filesystem>

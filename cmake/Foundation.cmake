@@ -6,8 +6,8 @@ target_sources(batbox_instructions PRIVATE
   src/lib/instructions/project/ProjectIncludes.cpp src/lib/instructions/project/ProjectPaths.cpp
   src/lib/instructions/project/ProjectContext.cpp)
 target_link_libraries(batbox_instructions PUBLIC PkgConfig::CMARK_GFM ICU::i18n)
-add_library(batbox_context src/context/AsyncContextStash.cpp src/context/AsyncGitStatus.cpp
-  src/context/AsyncSystemContext.cpp src/context/AsyncUserContext.cpp)
+add_library(batbox_context src/core/context/AsyncContextStash.cpp src/core/context/AsyncGitStatus.cpp
+  src/core/context/AsyncSystemContext.cpp src/core/context/AsyncUserContext.cpp)
 target_link_libraries(batbox_context PUBLIC batbox_instructions batbox_event_loop)
 target_compile_options(batbox_context PRIVATE -Wall -Wextra -Wpedantic)
 # The default system prompt is poetry/system.md, embedded as bytes so the
@@ -32,36 +32,36 @@ add_library(batbox_poetryEntries
 target_link_libraries(batbox_poetryEntries PUBLIC batbox_context batbox_core)
 target_compile_options(batbox_poetryEntries PRIVATE -Wall -Wextra -Wpedantic)
 if(WIN32)
-  set(BATBOX_INDIGENOUS_EXEC_SOURCE src/core/process/IndigenousExecUv.cpp)
+  set(BATBOX_INDIGENOUS_EXEC_SOURCE src/lib/runtime/IndigenousExecUv.cpp)
 else()
-  set(BATBOX_INDIGENOUS_EXEC_SOURCE src/core/process/IndigenousExec.cpp)
+  set(BATBOX_INDIGENOUS_EXEC_SOURCE src/lib/runtime/IndigenousExec.cpp)
 endif()
-add_library(batbox_process src/core/process/ExecFileNoThrow.cpp ${BATBOX_INDIGENOUS_EXEC_SOURCE})
+add_library(batbox_process src/lib/runtime/ExecFileNoThrow.cpp ${BATBOX_INDIGENOUS_EXEC_SOURCE})
 target_link_libraries(batbox_process PUBLIC batbox_event_loop batbox_core)
 target_compile_options(batbox_process PRIVATE -Wall -Wextra -Wpedantic)
-# One git system, one target. src/git/ holds the subprocess/binding half,
-# src/git/filesystem/ the filesystem/state half; GitBindings.hpp bridges
+# One git system, one target. src/lib/git/ holds the subprocess/binding half,
+# src/lib/git/filesystem/ the filesystem/state half; GitBindings.hpp bridges
 # the two halves, so one target is the honest shape.
-add_library(batbox_git src/git/filesystem/Paths.cpp src/git/filesystem/Refs.cpp
-  src/git/filesystem/Computations.cpp src/git/filesystem/Watcher.cpp
-  src/git/filesystem/IndigenousFs.cpp
-  src/git/GitBasics.cpp src/git/IndigenousBasics.cpp
-  src/git/GitBindings.cpp src/git/CanonicalRoot.cpp src/git/IndigenousCanonicalRoot.cpp)
+add_library(batbox_git src/lib/git/filesystem/Paths.cpp src/lib/git/filesystem/Refs.cpp
+  src/lib/git/filesystem/Computations.cpp src/lib/git/filesystem/Watcher.cpp
+  src/lib/git/filesystem/IndigenousFs.cpp
+  src/lib/git/GitBasics.cpp src/lib/git/IndigenousBasics.cpp
+  src/lib/git/GitBindings.cpp src/lib/git/CanonicalRoot.cpp src/lib/git/IndigenousCanonicalRoot.cpp)
 target_link_libraries(batbox_git PUBLIC batbox_event_loop batbox_core ICU::i18n
   batbox_context batbox_process OpenSSL::Crypto ICU::uc)
 target_compile_options(batbox_git PRIVATE -Wall -Wextra -Wpedantic)
-target_sources(batbox_shell PRIVATE src/gadgets/bash/AsyncBashPersistence.cpp
-  src/gadgets/bash/AsyncBashImage.cpp)
-add_library(batbox_shell_media src/gadgets/bash/IndigenousBashImage.cpp)
+target_sources(batbox_shell PRIVATE src/core/gadgets/bash/AsyncBashPersistence.cpp
+  src/core/gadgets/bash/AsyncBashImage.cpp)
+add_library(batbox_shell_media src/core/gadgets/bash/IndigenousBashImage.cpp)
 target_link_libraries(batbox_shell_media PUBLIC batbox_shell batbox_media)
 target_compile_options(batbox_shell_media PRIVATE -Wall -Wextra -Wpedantic)
 target_sources(batbox_query PRIVATE
-  src/query/AsyncCompletionStart.cpp
-  src/query/AsyncCompletionStop.cpp src/query/AsyncGadgetTurnStart.cpp
-  src/query/AsyncGadgetTurnAbort.cpp src/query/AsyncGadgetTurnAttachments.cpp
-  src/query/AsyncGadgetTurnFinish.cpp src/query/IndigenousModelCursor.cpp
-  src/query/IndigenousGadgetCursor.cpp src/query/AsyncOperationQueue.cpp
-  src/query/AsyncEntry.cpp
-  src/query/AsyncEngineClose.cpp src/query/AsyncModelClose.cpp
-  src/query/AsyncDecisionClose.cpp src/query/OwnerPreflight.cpp
-  src/query/OwnerModelCursor.cpp src/query/OwnerStreamConsume.cpp src/query/OwnerRetry.cpp)
+  src/core/query/AsyncCompletionStart.cpp
+  src/core/query/AsyncCompletionStop.cpp src/core/query/AsyncGadgetTurnStart.cpp
+  src/core/query/AsyncGadgetTurnAbort.cpp src/core/query/AsyncGadgetTurnAttachments.cpp
+  src/core/query/AsyncGadgetTurnFinish.cpp src/core/query/IndigenousModelCursor.cpp
+  src/core/query/IndigenousGadgetCursor.cpp src/core/query/AsyncOperationQueue.cpp
+  src/core/query/AsyncEntry.cpp
+  src/core/query/AsyncEngineClose.cpp src/core/query/AsyncModelClose.cpp
+  src/core/query/AsyncDecisionClose.cpp src/core/query/OwnerPreflight.cpp
+  src/core/query/OwnerModelCursor.cpp src/core/query/OwnerStreamConsume.cpp src/core/query/OwnerRetry.cpp)

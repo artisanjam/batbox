@@ -1,4 +1,4 @@
-#include "bats/BatGadgetPresentation.hpp"
+#include "core/bats/BatGadgetPresentation.hpp"
 #include <cassert>
 #include <iostream>
 

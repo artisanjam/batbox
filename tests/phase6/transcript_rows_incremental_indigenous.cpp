@@ -1,5 +1,5 @@
-#include "interactive/PresentationState.hpp"
-#include "interactive/TranscriptRows.hpp"
+#include "ui/PresentationState.hpp"
+#include "ui/TranscriptRows.hpp"
 #include "core/runtime/MessageMutation.hpp"
 #include "core/runtime/MessageSnapshot.hpp"
 #include "ui/terminal_ftxui/PresentationView.hpp"

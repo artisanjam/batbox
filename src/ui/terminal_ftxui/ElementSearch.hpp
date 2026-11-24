@@ -1,5 +1,5 @@
 #pragma once
-#include "text_sdk/scan/Scan.hpp"
+#include "lib/text_sdk/scan/Scan.hpp"
 #include <ftxui/dom/node.hpp>
 #include <optional>
 

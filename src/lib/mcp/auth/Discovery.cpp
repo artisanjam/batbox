@@ -1,6 +1,6 @@
 #include "lib/mcp/auth/Discovery.hpp"
 #include "lib/mcp/auth/TokenSchema.hpp"
-#include "auth/oauth_client/FormUrl.hpp"
+#include "services/providers/auth/oauth_client/FormUrl.hpp"
 #include "core/runtime/Url.hpp"
 #include <openssl/evp.h>
 #include <algorithm>

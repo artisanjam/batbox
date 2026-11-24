@@ -1,0 +1,73 @@
+#include "ui/conversation_shell/PoetryViewport.hpp"
+#include "ui/text_input/Cursor.hpp"
+#include "core/runtime/Encoding.hpp"
+#include <ftxui/dom/elements.hpp>
+#include <ftxui/screen/screen.hpp>
+#include <algorithm>
+#include <cmath>
+
+namespace batbox::interactive::conversation_shell {
+namespace {
+class PoetryNode final:public ftxui::Node {
+public:
+  PoetryNode(const InputState& input,int columns,int maxRows,
+      const text_input::MetricsServices& metrics,bool visible,
+      const PoetryDecor* decor):visible_(visible){
+    const auto cursor=text_input::Cursor::fromText(input.text,
+      poetryEditorColumns(input,columns,metrics),metrics,input.caretUtf16);
+    const auto lines=cursor.measuredText()->getWrappedText();
+    const auto count=static_cast<std::size_t>(std::max(1,maxRows));
+    const auto start=cursor.getViewportStartLine(count);
+    const auto end=std::min(lines.size(),start+count);
+    const int prefixWidth=static_cast<int>(std::ceil(metrics.stringWidth(input.poetry)));
+    ftxui::Elements rows;
+    const auto prompt=[&](std::string glyph){
+      auto element=ftxui::text(value::encodeUtf8(glyph));
+      if(decor&&!(decor->prompt==ftxui::Color::Default))
+        element=element|ftxui::color(decor->prompt)|ftxui::bold;
+      return element;
+    };
+    for(auto line=start;line<end;++line){
+      const auto prefix=line==0?input.poetry:std::string(prefixWidth,' ');
+      if(!decor){
+        rows.push_back(ftxui::text(value::encodeUtf8(prefix+lines[line])));
+        continue;
+      }
+      rows.push_back(ftxui::hbox({prompt(prefix),
+        ftxui::text(value::encodeUtf8(lines[line]))}));
+    }
+    if(rows.empty())rows.push_back(decor?prompt(input.poetry):ftxui::text(input.poetry));
+    if(decor&&input.text.empty()&&!decor->placeholder.empty()&&!rows.empty()){
+      // The caret sits on the placeholder's first cell, as in a native field.
+      auto hint=ftxui::text(value::encodeUtf8(decor->placeholder));
+      hint=decor->placeholderColor==ftxui::Color::Default?hint|ftxui::dim:
+        hint|ftxui::color(decor->placeholderColor);
+      rows.front()=ftxui::hbox({prompt(input.poetry),std::move(hint)});
+    }
+    children_.push_back(ftxui::vbox(std::move(rows)));
+    const auto position=cursor.getPosition();
+    cursorX_=prefixWidth+static_cast<int>(std::floor(position.column));
+    cursorY_=static_cast<int>(position.line)-static_cast<int>(start);
+  }
+  void SetBox(ftxui::Box box)override{box_=box;children_[0]->SetBox(box);}
+  void Render(ftxui::Screen& screen)override{
+    children_[0]->Render(screen);
+    const int x=box_.x_min+cursorX_,y=box_.y_min+cursorY_;
+    if(visible_&&x>=box_.x_min&&x<=box_.x_max&&y>=box_.y_min&&y<=box_.y_max)
+      screen.SetCursor({x,y,ftxui::Screen::Cursor::Bar});
+  }
+private:
+  int cursorX_=0,cursorY_=0;
+  bool visible_=false;
+};
+}
+double poetryEditorColumns(const InputState& input,int columns,
+    const text_input::MetricsServices& metrics){
+  return std::max(2.0,static_cast<double>(columns)-metrics.stringWidth(input.poetry));
+}
+ftxui::Element poetryViewport(const InputState& input,int columns,int maxRows,
+    const text_input::MetricsServices& metrics,bool cursorVisible,
+    const PoetryDecor* decor){
+  return std::make_shared<PoetryNode>(input,columns,maxRows,metrics,cursorVisible,decor);
+}
+}

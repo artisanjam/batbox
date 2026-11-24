@@ -1,5 +1,5 @@
-#include "bats/ForkedBat.hpp"
-#include "query/Setup.hpp"
+#include "core/bats/ForkedBat.hpp"
+#include "core/query/Setup.hpp"
 #include <iostream>
 #include <stdexcept>
 

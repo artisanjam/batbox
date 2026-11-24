@@ -7,24 +7,24 @@
 # implementations keep their own directories so license provenance
 # files stay beside their code.
 add_library(batbox_text_sdk
-  src/text_sdk/ansi_tokenize/AnsiCodes.cpp src/text_sdk/ansi_tokenize/Reduce.cpp
-  src/text_sdk/ansi_tokenize/StyledChars.cpp src/text_sdk/ansi_tokenize/TokenizeParse.cpp
-  src/text_sdk/ansi_tokenize/Tokenize.cpp src/text_sdk/ansi_tokenize/Fullwidth.cpp
-  src/text_sdk/bun_text_width/WidthCore.cpp
-  src/text_sdk/bun_text_width/Grapheme.cpp src/text_sdk/bun_text_width/Classification.cpp
-  src/text_sdk/bun_text_width/Tables.cpp src/text_sdk/bun_text_width/WrapRows.cpp
-  src/text_sdk/bun_text_width/WrapTrim.cpp src/text_sdk/bun_text_width/WrapPreserve.cpp
-  src/text_sdk/bun_text_width/WrapCore.cpp src/text_sdk/bun_text_width/WrapSdk.cpp
-  src/text_sdk/npm_wrap_ansi/Wrap.cpp src/text_sdk/npm_wrap_ansi/WrapRows.cpp
-  src/text_sdk/npm_wrap_ansi/Preserve.cpp src/text_sdk/npm_wrap_ansi/Dependencies.cpp
-  src/text_sdk/npm_wrap_ansi/Data.cpp
-  src/text_sdk/width/StringWidth.cpp src/text_sdk/width/Classification.cpp
-  src/text_sdk/width/Indigenous.cpp src/text_sdk/width/Patterns.cpp
-  src/text_sdk/width/EastAsianWidth.cpp
-  src/text_sdk/width/AnsiSlice.cpp src/text_sdk/width/IndigenousLayout.cpp
-  src/text_sdk/truncate/Truncate.cpp
-  src/text_sdk/truncate/TruncateExtra.cpp
-  src/text_sdk/scan/Scan.cpp
+  src/lib/text_sdk/ansi_tokenize/AnsiCodes.cpp src/lib/text_sdk/ansi_tokenize/Reduce.cpp
+  src/lib/text_sdk/ansi_tokenize/StyledChars.cpp src/lib/text_sdk/ansi_tokenize/TokenizeParse.cpp
+  src/lib/text_sdk/ansi_tokenize/Tokenize.cpp src/lib/text_sdk/ansi_tokenize/Fullwidth.cpp
+  src/lib/text_sdk/bun_text_width/WidthCore.cpp
+  src/lib/text_sdk/bun_text_width/Grapheme.cpp src/lib/text_sdk/bun_text_width/Classification.cpp
+  src/lib/text_sdk/bun_text_width/Tables.cpp src/lib/text_sdk/bun_text_width/WrapRows.cpp
+  src/lib/text_sdk/bun_text_width/WrapTrim.cpp src/lib/text_sdk/bun_text_width/WrapPreserve.cpp
+  src/lib/text_sdk/bun_text_width/WrapCore.cpp src/lib/text_sdk/bun_text_width/WrapSdk.cpp
+  src/lib/text_sdk/npm_wrap_ansi/Wrap.cpp src/lib/text_sdk/npm_wrap_ansi/WrapRows.cpp
+  src/lib/text_sdk/npm_wrap_ansi/Preserve.cpp src/lib/text_sdk/npm_wrap_ansi/Dependencies.cpp
+  src/lib/text_sdk/npm_wrap_ansi/Data.cpp
+  src/lib/text_sdk/width/StringWidth.cpp src/lib/text_sdk/width/Classification.cpp
+  src/lib/text_sdk/width/Indigenous.cpp src/lib/text_sdk/width/Patterns.cpp
+  src/lib/text_sdk/width/EastAsianWidth.cpp
+  src/lib/text_sdk/width/AnsiSlice.cpp src/lib/text_sdk/width/IndigenousLayout.cpp
+  src/lib/text_sdk/truncate/Truncate.cpp
+  src/lib/text_sdk/truncate/TruncateExtra.cpp
+  src/lib/text_sdk/scan/Scan.cpp
 )
 target_link_libraries(batbox_text_sdk PUBLIC batbox_intl batbox_glob
   batbox_core batbox_termio)

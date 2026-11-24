@@ -2,7 +2,7 @@
 // always match a fresh measurement, including after the store fills up.
 #include "ui/terminal_ftxui/TextFit.hpp"
 #include "ui/terminal_ftxui/IndigenousStringMetrics.hpp"
-#include "text_sdk/width/StringWidth.hpp"
+#include "lib/text_sdk/width/StringWidth.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <string>

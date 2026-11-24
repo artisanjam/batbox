@@ -1,7 +1,7 @@
-#include "application/model/LocalModelService.hpp"
-#include "execution/GadgetExecution.hpp"
-#include "messages/Messages.hpp"
-#include "query/SimpleQueriesBinding.hpp"
+#include "core/model/LocalModelService.hpp"
+#include "app/execution/GadgetExecution.hpp"
+#include "core/messages/Messages.hpp"
+#include "core/query/SimpleQueriesBinding.hpp"
 #include "core/runtime/Platform.hpp"
 #include <atomic>
 #include <iostream>

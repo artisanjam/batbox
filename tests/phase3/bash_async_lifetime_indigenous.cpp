@@ -1,7 +1,7 @@
 #include <cstdlib>
-#include "gadgets/bash/AsyncRunShellCommand.hpp"
-#include "shell/CommandSplitter.hpp"
-#include "shell/LoopMissionOutput.hpp"
+#include "core/gadgets/bash/AsyncRunShellCommand.hpp"
+#include "lib/shell/CommandSplitter.hpp"
+#include "lib/shell/LoopMissionOutput.hpp"
 #include <atomic>
 #include <chrono>
 #include <filesystem>

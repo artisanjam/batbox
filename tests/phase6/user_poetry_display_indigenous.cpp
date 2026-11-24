@@ -1,6 +1,6 @@
 // Long poetry is cut to its head and tail for display; short poetry is shown
 // as typed without being converted to measure it.
-#include "interactive/cards/UserPoetryLeaf.hpp"
+#include "ui/cards/UserPoetryLeaf.hpp"
 #include <iostream>
 #include <stdexcept>
 

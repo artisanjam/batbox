@@ -1,6 +1,6 @@
 // Per-frame scans over the transcript list: the unseen-divider prefix match
 // and the latest shell output answer as before without copying every row.
-#include "interactive/message_list_view/Surface.hpp"
+#include "ui/message_list_view/Surface.hpp"
 #include <iostream>
 #include <stdexcept>
 

@@ -1,5 +1,5 @@
-#include "query/ModelPass.hpp"
-#include "retry/Retry.hpp"
+#include "core/query/ModelPass.hpp"
+#include "lib/http/Retry.hpp"
 #include <cassert>
 #include <iostream>
 

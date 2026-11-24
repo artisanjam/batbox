@@ -1,4 +1,4 @@
-#include "interactive/cards_system/SystemTextProjection.hpp"
+#include "ui/cards_system/SystemTextProjection.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

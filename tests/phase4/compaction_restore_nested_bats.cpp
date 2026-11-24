@@ -1,5 +1,5 @@
-#include "compaction/Restore.hpp"
-#include "normalization/Attachments.hpp"
+#include "core/compaction/Restore.hpp"
+#include "core/normalization/Attachments.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <string>

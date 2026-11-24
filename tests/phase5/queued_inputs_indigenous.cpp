@@ -1,7 +1,7 @@
 // Queued leader poetry: which commands get a row, how rows move from queued
 // to delivering to gone, and how the newest message comes back for editing.
-#include "interactive/submit/QueuedInputs.hpp"
-#include "interactive/TranscriptRows.hpp"
+#include "ui/submit/QueuedInputs.hpp"
+#include "ui/TranscriptRows.hpp"
 #include <iostream>
 #include <stdexcept>
 

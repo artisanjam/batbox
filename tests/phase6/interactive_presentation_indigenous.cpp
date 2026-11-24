@@ -1,5 +1,5 @@
-#include "interactive/PresentationState.hpp"
-#include "interactive/TranscriptRows.hpp"
+#include "ui/PresentationState.hpp"
+#include "ui/TranscriptRows.hpp"
 #include "ui/terminal_ftxui/PresentationView.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

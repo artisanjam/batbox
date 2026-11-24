@@ -2,7 +2,7 @@
  * literal words inside text/thinking must not reach stored content (they
  * re-read as turn boundaries when history is re-rendered), and a marker
  * split across deltas must not reassemble downstream as halves. */
-#include "streaming/Reducer.hpp"
+#include "ui/streaming/Reducer.hpp"
 #include <cassert>
 #include <iostream>
 #include <string>

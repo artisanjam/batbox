@@ -1,4 +1,4 @@
-#include "application/gadgets/DefaultInputs.hpp"
+#include "app/gadgets/DefaultInputs.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <string>

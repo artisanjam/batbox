@@ -1,4 +1,4 @@
-#include "application/ErrorReport.hpp"
+#include "app/entry/ErrorReport.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <iostream>
 #include <stdexcept>

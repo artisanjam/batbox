@@ -1,5 +1,5 @@
-#include "bat_context/PartnerContext.hpp"
-#include "core/event_loop/Deferred.hpp"
+#include "core/bat_context/PartnerContext.hpp"
+#include "lib/runtime/Deferred.hpp"
 #include <iostream>
 #include <memory>
 #include <stdexcept>

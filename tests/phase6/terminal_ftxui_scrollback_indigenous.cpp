@@ -1,5 +1,5 @@
 #include "ui/terminal_ftxui/ScrollbackProjection.hpp"
-#include "interactive/TranscriptRows.hpp"
+#include "ui/TranscriptRows.hpp"
 #include <cassert>
 #include <iostream>
 

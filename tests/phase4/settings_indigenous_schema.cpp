@@ -1,4 +1,4 @@
-#include "settings/schema/IndigenousBindings.hpp"
+#include "app/settings/schema/IndigenousBindings.hpp"
 #include <stdexcept>
 using namespace batbox;
 namespace {

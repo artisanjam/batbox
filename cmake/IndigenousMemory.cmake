@@ -1,9 +1,9 @@
 # Indigenous bindings for durable project memory, recall and maintenance.
 add_library(batbox_application_memory
-  src/application/memory/Provider.cpp src/application/memory/Sources.cpp
-  src/application/memory/Recall.cpp src/application/memory/Consolidation.cpp
-  src/application/memory/ConsolidationLock.cpp
-  src/application/memory/ConsolidationPoetry.cpp src/application/memory/Fork.cpp)
+  src/core/memory/Provider.cpp src/core/memory/Sources.cpp
+  src/core/memory/Recall.cpp src/core/memory/Consolidation.cpp
+  src/core/memory/ConsolidationLock.cpp
+  src/core/memory/ConsolidationPoetry.cpp src/core/memory/Fork.cpp)
 target_link_libraries(batbox_application_memory PUBLIC
   batbox_application_poetry batbox_application_model batbox_application_flights
   batbox_application_engine batbox_application_bats batbox_memory_prefetch)

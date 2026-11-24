@@ -1,6 +1,6 @@
 #pragma once
 #include "lib/mcp/auth/Provider.hpp"
-#include "auth/oauth_listener/CallbackServer.hpp"
+#include "services/providers/auth/oauth_listener/CallbackServer.hpp"
 #include <chrono>
 
 namespace batbox::mcp::auth {

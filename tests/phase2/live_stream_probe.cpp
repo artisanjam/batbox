@@ -1,5 +1,5 @@
-#include "model/LiveStream.hpp"
-#include "model/LiveStreamAdapter.hpp"
+#include "services/providers/model/LiveStream.hpp"
+#include "services/providers/model/LiveStreamAdapter.hpp"
 #include "lib/transport/Errors.hpp"
 #include "lib/transport/WireClient.hpp"
 #include <chrono>

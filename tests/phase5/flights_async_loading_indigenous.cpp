@@ -1,8 +1,8 @@
 #include <cstdlib>
-#include "flights/AsyncStash.hpp"
-#include "flights/AsyncLoad.hpp"
-#include "flights/MetadataReappend.hpp"
-#include "flights/async_project/AsyncProject.hpp"
+#include "core/flights/AsyncStash.hpp"
+#include "core/flights/AsyncLoad.hpp"
+#include "core/flights/MetadataReappend.hpp"
+#include "core/flights/async_project/AsyncProject.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

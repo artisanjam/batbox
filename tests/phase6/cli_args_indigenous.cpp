@@ -1,5 +1,5 @@
-#include "application/Config.hpp"
-#include "application/Subcommands.hpp"
+#include "app/config/Config.hpp"
+#include "app/entry/Subcommands.hpp"
 #include "core/runtime/IndigenousPath.hpp"
 #include <cassert>
 #include <chrono>

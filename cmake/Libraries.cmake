@@ -11,7 +11,7 @@ add_library(batbox_core
   src/core/runtime/PrettyJson.cpp
   src/core/runtime/PathSanitization.cpp src/util/hash.cpp
   src/core/runtime/Unicode.cpp
-  src/shell/PosixPath.cpp
+  src/lib/shell/PosixPath.cpp
   src/util/envUtils.cpp
   src/util/tokens.cpp
   src/util/messages.cpp
@@ -28,42 +28,42 @@ target_compile_options(batbox_core PRIVATE -Wall -Wextra -Wpedantic)
 # compiled into batbox_core, mixing L2 protocol code with the foundation.
 # batbox_core links this target PUBLIC so existing consumers keep resolving.
 add_library(batbox_protocol
-  src/messages/TextContent.cpp
-  src/messages/Construction.cpp
-  src/messages/Context.cpp
-  src/messages/Normalization.cpp
-  src/messages/Pairing.cpp
-  src/requests/assembly.cpp
-  src/requests/params.cpp
-  src/requests/RequestBuilder.cpp
-  src/requests/PoetryStash.cpp
-  src/streaming/Reducer.cpp
-  src/retry/Machine.cpp src/retry/MachineDirect.cpp
-  src/retry/ErrorDetails.cpp
-  src/retry/Policy.cpp
-  src/retry/Retry.cpp
-  src/retry/Sleep.cpp
-  src/api_errors/Messages.cpp
-  src/api_errors/Helpers.cpp
-  src/api_errors/Formatting.cpp
-  src/api_errors/RendererHelpers.cpp
-  src/api_errors/Renderer.cpp
-  src/normalization/AttachmentDeltas.cpp
-  src/normalization/AttachmentMore.cpp
-  src/normalization/AttachmentPlanText.cpp
-  src/normalization/AttachmentPlans.cpp
-  src/normalization/AttachmentGadgets.cpp
-  src/normalization/Attachments.cpp
-  src/normalization/Cleanup.cpp
-  src/normalization/Content.cpp
-  src/normalization/ImageValidation.cpp
-  src/normalization/Pipeline.cpp
-  src/normalization/References.cpp
-  src/model/ModelNames.cpp
+  src/core/messages/TextContent.cpp
+  src/core/messages/Construction.cpp
+  src/core/messages/Context.cpp
+  src/core/messages/Normalization.cpp
+  src/core/messages/Pairing.cpp
+  src/lib/http/assembly.cpp
+  src/lib/http/params.cpp
+  src/lib/http/RequestBuilder.cpp
+  src/lib/http/PoetryStash.cpp
+  src/ui/streaming/Reducer.cpp
+  src/lib/http/Machine.cpp src/lib/http/MachineDirect.cpp
+  src/lib/http/ErrorDetails.cpp
+  src/lib/http/Policy.cpp
+  src/lib/http/Retry.cpp
+  src/lib/http/Sleep.cpp
+  src/core/api_errors/Messages.cpp
+  src/core/api_errors/Helpers.cpp
+  src/core/api_errors/Formatting.cpp
+  src/core/api_errors/RendererHelpers.cpp
+  src/core/api_errors/Renderer.cpp
+  src/core/normalization/AttachmentDeltas.cpp
+  src/core/normalization/AttachmentMore.cpp
+  src/core/normalization/AttachmentPlanText.cpp
+  src/core/normalization/AttachmentPlans.cpp
+  src/core/normalization/AttachmentGadgets.cpp
+  src/core/normalization/Attachments.cpp
+  src/core/normalization/Cleanup.cpp
+  src/core/normalization/Content.cpp
+  src/core/normalization/ImageValidation.cpp
+  src/core/normalization/Pipeline.cpp
+  src/core/normalization/References.cpp
+  src/services/providers/model/ModelNames.cpp
   src/ui/formatting/Format.cpp
   # Tag-string scrubbing: message normalization living with the other
   # message transforms, reached through the core aggregate.
-  src/messages/Tags.cpp
+  src/core/messages/Tags.cpp
   # services/ helpers: token estimation, API usage, compaction grouping --
   # protocol-level helpers over messages, moved with the layer.
   src/services/tokenEstimation.cpp
@@ -81,8 +81,8 @@ target_compile_options(batbox_protocol PRIVATE -Wall -Wextra -Wpedantic)
 target_link_libraries(batbox_core PUBLIC batbox_protocol)
 include(cmake/FileGadgets.cmake)
 include(cmake/EventLoop.cmake)
-add_library(batbox_connectors src/connectors/Searxng.cpp src/connectors/Scrapling.cpp
-  src/connectors/Executable.cpp)
+add_library(batbox_connectors src/services/connectors/Searxng.cpp src/services/connectors/Scrapling.cpp
+  src/services/connectors/Executable.cpp)
 target_include_directories(batbox_connectors PUBLIC src)
 target_link_libraries(batbox_connectors PUBLIC batbox_core CURL::libcurl)
 target_compile_options(batbox_connectors PRIVATE -Wall -Wextra -Wpedantic)
@@ -98,8 +98,8 @@ target_include_directories(batbox_transport PUBLIC src)
 target_link_libraries(batbox_transport PUBLIC batbox_core CURL::libcurl)
 target_compile_options(batbox_transport PRIVATE -Wall -Wextra -Wpedantic)
 target_sources(batbox_core PRIVATE
-  src/accounting/Cost.cpp
-  src/accounting/Flight.cpp
+  src/core/accounting/Cost.cpp
+  src/core/accounting/Flight.cpp
 )
 # The gadget mechanism layer: the gadget interface, schema, input
 # normalization, catalog, and the app-state execution modifiers. Like the
@@ -107,12 +107,12 @@ target_sources(batbox_core PRIVATE
 # L2 execution/mechanism code, not foundation. batbox_core re-exposes it
 # PUBLIC so existing consumers keep resolving.
 add_library(batbox_gadget_execution
-  src/gadgets/Gadget.cpp
-  src/gadgets/Schema.cpp
-  src/gadgets/InputNormalization.cpp
-  src/gadgets/Catalog.cpp
-  src/execution/AppStateModifier.cpp
-  src/execution/TypedAppStateModifier.cpp
+  src/core/gadgets/Gadget.cpp
+  src/core/gadgets/Schema.cpp
+  src/core/gadgets/InputNormalization.cpp
+  src/core/gadgets/Catalog.cpp
+  src/app/execution/AppStateModifier.cpp
+  src/app/execution/TypedAppStateModifier.cpp
 )
 target_include_directories(batbox_gadget_execution PUBLIC src)
 target_link_libraries(batbox_gadget_execution PUBLIC batbox_core
@@ -120,97 +120,97 @@ target_link_libraries(batbox_gadget_execution PUBLIC batbox_core
 target_compile_options(batbox_gadget_execution PRIVATE -Wall -Wextra -Wpedantic)
 target_link_libraries(batbox_core PUBLIC batbox_gadget_execution)
 add_library(batbox_model
-  src/model/SimpleQueries.cpp
-  src/model/StreamObservation.cpp
-  src/model/Completion.cpp
-  src/model/PostStream.cpp
-  src/model/Lifecycle.cpp
-  src/model/LiveStream.cpp
-  src/model/LiveStreamAdapter.cpp
-  src/model/ModelWrappers.cpp
-  src/model/NonStreaming.cpp
-  src/model/Preflight.cpp
-  src/model/QueryModel.cpp
-  src/model/StreamingAttempt.cpp
-  src/model/Watchdog.cpp
+  src/services/providers/model/SimpleQueries.cpp
+  src/services/providers/model/StreamObservation.cpp
+  src/services/providers/model/Completion.cpp
+  src/services/providers/model/PostStream.cpp
+  src/services/providers/model/Lifecycle.cpp
+  src/services/providers/model/LiveStream.cpp
+  src/services/providers/model/LiveStreamAdapter.cpp
+  src/services/providers/model/ModelWrappers.cpp
+  src/services/providers/model/NonStreaming.cpp
+  src/services/providers/model/Preflight.cpp
+  src/services/providers/model/QueryModel.cpp
+  src/services/providers/model/StreamingAttempt.cpp
+  src/services/providers/model/Watchdog.cpp
 )
 target_link_libraries(batbox_model PUBLIC batbox_transport batbox_core batbox_event_loop)
 target_compile_options(batbox_model PRIVATE -Wall -Wextra -Wpedantic)
 add_library(batbox_compaction
-  src/compaction/Restore.cpp
-  src/compaction/Summary.cpp
-  src/compaction/Workflow.cpp
-  src/compaction/Auto.cpp src/compaction/FlightPolicy.cpp
-  src/compaction/Helpers.cpp src/compaction/Cleanup.cpp
-  src/compaction/Poetry.cpp src/compaction/poetryEntries/Base.cpp
-  src/compaction/poetryEntries/Boundary.cpp)
+  src/core/compaction/Restore.cpp
+  src/core/compaction/Summary.cpp
+  src/core/compaction/Workflow.cpp
+  src/core/compaction/Auto.cpp src/core/compaction/FlightPolicy.cpp
+  src/core/compaction/Helpers.cpp src/core/compaction/Cleanup.cpp
+  src/core/compaction/Poetry.cpp src/core/compaction/poetryEntries/Base.cpp
+  src/core/compaction/poetryEntries/Boundary.cpp)
 target_link_libraries(batbox_compaction PUBLIC batbox_core)
 target_compile_options(batbox_compaction PRIVATE -Wall -Wextra -Wpedantic)
 if(WIN32)
-  set(BATBOX_SHELL_SPAWN_SOURCE src/shell/SpawnWin.cpp)
-  set(BATBOX_SHELL_SNAPSHOT_SOURCE src/shell/SnapshotRunWin.cpp)
+  set(BATBOX_SHELL_SPAWN_SOURCE src/lib/shell/SpawnWin.cpp)
+  set(BATBOX_SHELL_SNAPSHOT_SOURCE src/lib/shell/SnapshotRunWin.cpp)
 else()
-  set(BATBOX_SHELL_SPAWN_SOURCE src/shell/Spawn.cpp)
-  set(BATBOX_SHELL_SNAPSHOT_SOURCE src/shell/SnapshotRun.cpp)
+  set(BATBOX_SHELL_SPAWN_SOURCE src/lib/shell/Spawn.cpp)
+  set(BATBOX_SHELL_SNAPSHOT_SOURCE src/lib/shell/SnapshotRun.cpp)
 endif()
 add_library(batbox_shell
-  src/shell/BashProvider.cpp src/shell/SnapshotIntegrations.cpp
-  src/shell/SnapshotUser.cpp src/shell/SnapshotScript.cpp ${BATBOX_SHELL_SNAPSHOT_SOURCE}
-  src/shell/ShellQuoteChecks.cpp src/shell/PipeCommand.cpp
-  src/shell/CommandQuoting.cpp src/shell/CommandQuotingSyntax.cpp
-  src/shell/CommandRedirects.cpp src/shell/CommandPrefix.cpp
-  src/shell/Heredoc.cpp src/shell/HeredocCollect.cpp src/shell/HeredocSyntax.cpp
-  src/shell/ShellQuoteParse.cpp src/shell/ShellQuoteQuote.cpp
-  src/shell/CommandSplitter.cpp src/shell/CommandSplitterRedirections.cpp
+  src/lib/shell/BashProvider.cpp src/lib/shell/SnapshotIntegrations.cpp
+  src/lib/shell/SnapshotUser.cpp src/lib/shell/SnapshotScript.cpp ${BATBOX_SHELL_SNAPSHOT_SOURCE}
+  src/lib/shell/ShellQuoteChecks.cpp src/lib/shell/PipeCommand.cpp
+  src/lib/shell/CommandQuoting.cpp src/lib/shell/CommandQuotingSyntax.cpp
+  src/lib/shell/CommandRedirects.cpp src/lib/shell/CommandPrefix.cpp
+  src/lib/shell/Heredoc.cpp src/lib/shell/HeredocCollect.cpp src/lib/shell/HeredocSyntax.cpp
+  src/lib/shell/ShellQuoteParse.cpp src/lib/shell/ShellQuoteQuote.cpp
+  src/lib/shell/CommandSplitter.cpp src/lib/shell/CommandSplitterRedirections.cpp
   # The mission roster, output and stop gadgets now compile in batbox_missions.
-  src/shell/ManagedShell.cpp ${BATBOX_SHELL_SPAWN_SOURCE} src/shell/WindowsPaths.cpp
-  src/shell/Output.cpp src/shell/ShellDiscovery.cpp
-  src/shell/CommandHandle.cpp src/shell/TailFile.cpp src/shell/MissionOutputPoller.cpp
-  src/shell/FormatDuration.cpp src/shell/ShellCwdCompletion.cpp
-  src/gadgets/bash/Helpers.cpp src/gadgets/bash/Result.cpp src/gadgets/bash/BashGadget.cpp
-  src/gadgets/bash/Schema.cpp src/gadgets/bash/Accumulator.cpp
-  src/gadgets/bash/Hints.cpp src/gadgets/bash/CwdPolicy.cpp)
-target_sources(batbox_shell PRIVATE src/gadgets/bash/RunShellCommand.cpp)
-target_sources(batbox_shell PRIVATE src/shell/AsyncCommandResult.cpp
-  src/shell/LoopMissionOutput.cpp)
+  src/lib/shell/ManagedShell.cpp ${BATBOX_SHELL_SPAWN_SOURCE} src/lib/shell/WindowsPaths.cpp
+  src/lib/shell/Output.cpp src/lib/shell/ShellDiscovery.cpp
+  src/lib/shell/CommandHandle.cpp src/lib/shell/TailFile.cpp src/lib/shell/MissionOutputPoller.cpp
+  src/lib/shell/FormatDuration.cpp src/lib/shell/ShellCwdCompletion.cpp
+  src/core/gadgets/bash/Helpers.cpp src/core/gadgets/bash/Result.cpp src/core/gadgets/bash/BashGadget.cpp
+  src/core/gadgets/bash/Schema.cpp src/core/gadgets/bash/Accumulator.cpp
+  src/core/gadgets/bash/Hints.cpp src/core/gadgets/bash/CwdPolicy.cpp)
+target_sources(batbox_shell PRIVATE src/core/gadgets/bash/RunShellCommand.cpp)
+target_sources(batbox_shell PRIVATE src/lib/shell/AsyncCommandResult.cpp
+  src/lib/shell/LoopMissionOutput.cpp)
 target_sources(batbox_shell PRIVATE
-  src/gadgets/bash/AsyncRunShellCommand.cpp src/gadgets/bash/AsyncRunBindings.cpp
-  src/gadgets/bash/AsyncShellBinding.cpp src/gadgets/bash/BashCompletion.cpp
-  src/gadgets/bash/AsyncBashCall.cpp src/gadgets/bash/AsyncBashFactory.cpp)
+  src/core/gadgets/bash/AsyncRunShellCommand.cpp src/core/gadgets/bash/AsyncRunBindings.cpp
+  src/core/gadgets/bash/AsyncShellBinding.cpp src/core/gadgets/bash/BashCompletion.cpp
+  src/core/gadgets/bash/AsyncBashCall.cpp src/core/gadgets/bash/AsyncBashFactory.cpp)
 # batbox_missions includes shell headers (ManagedShell, MissionOutputPoller);
 # the shell consumes the roster -- the declared cycle folds in the aggregate.
 target_link_libraries(batbox_shell PUBLIC batbox_core batbox_event_loop batbox_missions)
 target_compile_options(batbox_shell PRIVATE -Wall -Wextra -Wpedantic)
 add_library(batbox_query
-  src/execution/Dispatch.cpp src/execution/Call.cpp
-  src/execution/Orchestration.cpp
-  src/query/Recovery.cpp
-  src/query/Entry.cpp src/query/Setup.cpp src/query/ModelPass.cpp
-  src/query/Completion.cpp src/query/GadgetTurn.cpp src/query/Engine.cpp
-  src/query/StopHooks.cpp src/query/StopHooksPartner.cpp)
+  src/app/execution/Dispatch.cpp src/app/execution/Call.cpp
+  src/app/execution/Orchestration.cpp
+  src/core/query/Recovery.cpp
+  src/core/query/Entry.cpp src/core/query/Setup.cpp src/core/query/ModelPass.cpp
+  src/core/query/Completion.cpp src/core/query/GadgetTurn.cpp src/core/query/Engine.cpp
+  src/core/query/StopHooks.cpp src/core/query/StopHooksPartner.cpp)
 target_link_libraries(batbox_query PUBLIC batbox_model batbox_core)
 target_compile_options(batbox_query PRIVATE -Wall -Wextra -Wpedantic)
-target_sources(batbox_query PRIVATE src/query/AsyncSetupStart.cpp src/query/AsyncSetupFinish.cpp)
+target_sources(batbox_query PRIVATE src/core/query/AsyncSetupStart.cpp src/core/query/AsyncSetupFinish.cpp)
 target_sources(batbox_query PRIVATE
-  src/query/AsyncModelStart.cpp src/query/AsyncModelMessage.cpp
-  src/query/AsyncModelRecovery.cpp
-  src/query/AsyncEngineStart.cpp src/query/AsyncEngineModel.cpp src/query/AsyncEngineAbort.cpp)
+  src/core/query/AsyncModelStart.cpp src/core/query/AsyncModelMessage.cpp
+  src/core/query/AsyncModelRecovery.cpp
+  src/core/query/AsyncEngineStart.cpp src/core/query/AsyncEngineModel.cpp src/core/query/AsyncEngineAbort.cpp)
 target_link_libraries(batbox_query PUBLIC batbox_event_loop)
 add_library(batbox_bats
-  src/bats/RunBatPreflight.cpp
-  src/bats/RunBatHelpers.cpp
-  src/bats/RunBatSetup.cpp src/bats/RunBatLoop.cpp
-  src/bats/ResumeBat.cpp src/bats/BatGadgetResults.cpp src/bats/AsyncLifecycle.cpp
-  src/bats/BatGadgets.cpp src/bats/BatMissionProgress.cpp src/bats/BatMissionState.cpp
-  src/bats/BatMissionNotification.cpp src/bats/BatMissionBinding.cpp
-  src/bats/BatMissionRegistration.cpp src/bats/BatMissionRuntime.cpp
-  src/bats/BatMissionForeground.cpp
-  src/bats/BatGadgetPresentation.cpp
-  src/bats/BatGadgetPreflight.cpp
-  src/bats/BatGadgetWorktree.cpp
-  src/bats/StashSafe.cpp src/bats/SubagentContext.cpp
-  src/bats/SnapshotBridge.cpp
-  src/bats/TypedBatState.cpp)
+  src/core/bats/RunBatPreflight.cpp
+  src/core/bats/RunBatHelpers.cpp
+  src/core/bats/RunBatSetup.cpp src/core/bats/RunBatLoop.cpp
+  src/core/bats/ResumeBat.cpp src/core/bats/BatGadgetResults.cpp src/core/bats/AsyncLifecycle.cpp
+  src/core/bats/BatGadgets.cpp src/core/bats/BatMissionProgress.cpp src/core/bats/BatMissionState.cpp
+  src/core/bats/BatMissionNotification.cpp src/core/bats/BatMissionBinding.cpp
+  src/core/bats/BatMissionRegistration.cpp src/core/bats/BatMissionRuntime.cpp
+  src/core/bats/BatMissionForeground.cpp
+  src/core/bats/BatGadgetPresentation.cpp
+  src/core/bats/BatGadgetPreflight.cpp
+  src/core/bats/BatGadgetWorktree.cpp
+  src/core/bats/StashSafe.cpp src/core/bats/SubagentContext.cpp
+  src/core/bats/SnapshotBridge.cpp
+  src/core/bats/TypedBatState.cpp)
 target_link_libraries(batbox_bats PUBLIC batbox_query)
 target_compile_options(batbox_bats PRIVATE -Wall -Wextra -Wpedantic)
 include(cmake/BatGadgets.cmake)
@@ -233,5 +233,5 @@ include(cmake/CoreCommands.cmake)
 
 # Scoped context is shared by low-level timer/future adapters and the owner
 # loop: it belongs to the event-loop mechanism, not the foundation bundle.
-target_sources(batbox_event_loop PRIVATE src/core/event_loop/AsyncContext.cpp)
+target_sources(batbox_event_loop PRIVATE src/lib/runtime/AsyncContext.cpp)
 include(cmake/CloudProviders.cmake)

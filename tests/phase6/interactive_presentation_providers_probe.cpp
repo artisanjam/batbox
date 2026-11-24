@@ -1,9 +1,9 @@
-#include "interactive/presentation_providers/DefaultBindings.hpp"
-#include "interactive/presentation_providers/CardPalettes.hpp"
-#include "interactive/presentation_providers/Chrome.hpp"
-#include "interactive/presentation_providers/SystemTheme.hpp"
-#include "interactive/presentation_providers/ThemeData.hpp"
-#include "interactive/presentation_providers/ThemeState.hpp"
+#include "ui/presentation_providers/DefaultBindings.hpp"
+#include "ui/presentation_providers/CardPalettes.hpp"
+#include "ui/presentation_providers/Chrome.hpp"
+#include "ui/presentation_providers/SystemTheme.hpp"
+#include "ui/presentation_providers/ThemeData.hpp"
+#include "ui/presentation_providers/ThemeState.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <iostream>

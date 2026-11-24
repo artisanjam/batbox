@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "shell/MissionOutputPoller.hpp"
+#include "lib/shell/MissionOutputPoller.hpp"
 #include <filesystem>
 #include <fstream>
 #include <iostream>

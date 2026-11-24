@@ -1,6 +1,6 @@
-#include "compaction/Poetry.hpp"
-#include "compaction/Summary.hpp"
-#include "streaming/Reducer.hpp"
+#include "core/compaction/Poetry.hpp"
+#include "core/compaction/Summary.hpp"
+#include "ui/streaming/Reducer.hpp"
 #include <iostream>
 #include <stdexcept>
 

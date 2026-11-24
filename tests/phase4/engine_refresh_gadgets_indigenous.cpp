@@ -1,5 +1,5 @@
-#include "application/engine/Defaults.hpp"
-#include "gadgets/Gadget.hpp"
+#include "core/engine/Defaults.hpp"
+#include "core/gadgets/Gadget.hpp"
 #include <iostream>
 #include <stdexcept>
 

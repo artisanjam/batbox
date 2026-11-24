@@ -1,6 +1,6 @@
 #pragma once
 #include "lib/instructions/hooks/runtime/PoetryHookExecutor.hpp"
-#include "gadgets/Gadget.hpp"
+#include "core/gadgets/Gadget.hpp"
 #include <map>
 
 namespace batbox::instructions::hooks::runtime {

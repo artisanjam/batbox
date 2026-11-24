@@ -4,9 +4,9 @@
 // answer or long reasoning streams. With no arguments it runs a small
 // configuration so the suite keeps it compiling and working; pass
 // "--rows 2000 --stream-bytes 80000" for the numbers in the perf notes.
-#include "application/presentation/Bindings.hpp"
-#include "interactive/TranscriptRows.hpp"
-#include "interactive/presentation_providers/StyleRoles.hpp"
+#include "app/presentation/Bindings.hpp"
+#include "ui/TranscriptRows.hpp"
+#include "ui/presentation_providers/StyleRoles.hpp"
 #include "ui/terminal_ftxui/ScrollbackProjection.hpp"
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/screen/terminal.hpp>

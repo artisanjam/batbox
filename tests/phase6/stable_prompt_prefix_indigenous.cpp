@@ -1,5 +1,5 @@
-#include "application/poetry/Provider.hpp"
-#include "project_recovery/Recovery.hpp"
+#include "core/poetry/Provider.hpp"
+#include "services/project_recovery/Recovery.hpp"
 #include "core/runtime/IndigenousPath.hpp"
 #include "core/runtime/Platform.hpp"
 #include <filesystem>

@@ -1,4 +1,4 @@
-#include "application/permissions/PermissionProvider.hpp"
+#include "app/permissions/PermissionProvider.hpp"
 #include <cassert>
 #include <chrono>
 #include <iostream>

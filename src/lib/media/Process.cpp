@@ -1,6 +1,6 @@
 #include "lib/media/Process.hpp"
 #ifdef _WIN32
-#include "core/process/IndigenousJsonlProcess.hpp"
+#include "lib/runtime/IndigenousJsonlProcess.hpp"
 #include <mutex>
 #else
 #include <cerrno>

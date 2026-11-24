@@ -1,6 +1,6 @@
-#include "interactive/cards_system/SystemAPIErrorCard.hpp"
-#include "interactive/cards_system/SystemAPIErrorProjection.hpp"
-#include "interactive/cards_system/SystemAPIErrorTicker.hpp"
+#include "ui/cards_system/SystemAPIErrorCard.hpp"
+#include "ui/cards_system/SystemAPIErrorProjection.hpp"
+#include "ui/cards_system/SystemAPIErrorTicker.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

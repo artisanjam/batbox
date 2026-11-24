@@ -1,6 +1,6 @@
-#include "memory_prefetch/Prefetch.hpp"
-#include "memory_prefetch/BatMemoryPath.hpp"
-#include "query/MemoryAttachmentFilter.hpp"
+#include "core/memory_prefetch/Prefetch.hpp"
+#include "core/memory_prefetch/BatMemoryPath.hpp"
+#include "core/query/MemoryAttachmentFilter.hpp"
 #include <cassert>
 #include <chrono>
 #include <filesystem>

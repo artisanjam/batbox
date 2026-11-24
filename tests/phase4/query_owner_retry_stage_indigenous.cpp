@@ -1,5 +1,5 @@
-#include "query/OwnerRetry.hpp"
-#include "retry/Retry.hpp"
+#include "core/query/OwnerRetry.hpp"
+#include "lib/http/Retry.hpp"
 #include <atomic>
 #include <cassert>
 #include <chrono>

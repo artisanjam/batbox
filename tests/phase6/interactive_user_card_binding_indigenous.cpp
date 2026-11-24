@@ -1,4 +1,4 @@
-#include "interactive/cards/UserTextBinding.hpp"
+#include "ui/cards/UserTextBinding.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

@@ -1,5 +1,5 @@
 #include "lib/instructions/hooks/runtime/FlightEnvironmentInternal.hpp"
-#include "shell/PosixPath.hpp"
+#include "lib/shell/PosixPath.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <algorithm>
 #include <cctype>

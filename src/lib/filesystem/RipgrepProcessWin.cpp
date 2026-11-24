@@ -1,5 +1,5 @@
 #include "lib/filesystem/RipgrepProcess.hpp"
-#include "core/process/IndigenousJsonlProcess.hpp"
+#include "lib/runtime/IndigenousJsonlProcess.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <uv.h>
 #include <algorithm>

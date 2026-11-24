@@ -1,7 +1,7 @@
 #include <cstdlib>
-#include "missions/roster/Roster.hpp"
-#include "missions/output/MissionOutput.hpp"
-#include "missions/stop/MissionStop.hpp"
+#include "core/missions/roster/Roster.hpp"
+#include "core/missions/output/MissionOutput.hpp"
+#include "core/missions/stop/MissionStop.hpp"
 #include <atomic>
 #include <chrono>
 #include <condition_variable>

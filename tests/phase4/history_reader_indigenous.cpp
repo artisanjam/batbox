@@ -1,6 +1,6 @@
-#include "history/ReaderIndigenous.hpp"
+#include "core/history/ReaderIndigenous.hpp"
 #include "lib/fs_operations/NodeFsBytesIndigenous.hpp"
-#include "core/event_loop/Loop.hpp"
+#include "lib/runtime/Loop.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

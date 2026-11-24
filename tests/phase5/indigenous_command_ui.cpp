@@ -1,4 +1,4 @@
-#include "interactive/CommandUi.hpp"
+#include "ui/CommandUi.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <string>

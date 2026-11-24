@@ -1,6 +1,6 @@
 #include "lib/instructions/hooks/runtime/IndigenousCommandPreparation.hpp"
-#include "shell/CommandQuoting.hpp"
-#include "shell/WindowsPaths.hpp"
+#include "lib/shell/CommandQuoting.hpp"
+#include "lib/shell/WindowsPaths.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <cctype>
 #include <stdexcept>

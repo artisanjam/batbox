@@ -1,7 +1,7 @@
-#include "bats/ForkedBat.hpp"
-#include "bats/RunBat.hpp"
-#include "file_state_stash/FileStateStash.hpp"
-#include "gadgets/files/FileGadgets.hpp"
+#include "core/bats/ForkedBat.hpp"
+#include "core/bats/RunBat.hpp"
+#include "core/file_state_stash/FileStateStash.hpp"
+#include "core/gadgets/files/FileGadgets.hpp"
 #include "lib/filesystem/FileOps.hpp"
 #include <cassert>
 #include <cmath>

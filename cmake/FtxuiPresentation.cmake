@@ -1,10 +1,10 @@
 add_library(batbox_interactive
-  src/interactive/CommandUi.cpp src/interactive/StreamReducer.cpp
-  src/interactive/PresentationState.cpp src/interactive/TranscriptRows.cpp
-  src/interactive/QueryGuard.cpp src/interactive/QueryTurnStart.cpp
-  src/interactive/QueryTurnFinally.cpp
-  src/interactive/QueryExecutionStart.cpp src/interactive/QueryExecutionContext.cpp
-  src/interactive/QueryExecutionConsume.cpp)
+  src/ui/CommandUi.cpp src/ui/StreamReducer.cpp
+  src/ui/PresentationState.cpp src/ui/TranscriptRows.cpp
+  src/core/turn/QueryGuard.cpp src/core/turn/QueryTurnStart.cpp
+  src/core/turn/QueryTurnFinally.cpp
+  src/core/turn/QueryExecutionStart.cpp src/core/turn/QueryExecutionContext.cpp
+  src/core/turn/QueryExecutionConsume.cpp)
 target_link_libraries(batbox_interactive PUBLIC batbox_flights batbox_event_loop
   batbox_app_state batbox_poetryEntries batbox_query batbox_user_input
   batbox_history batbox_clipboard batbox_terminal_events
@@ -18,40 +18,40 @@ include(cmake/InteractiveContext.cmake)
 # slices of this same directory carved for link bookkeeping, not boundaries;
 # none reference ftxui, so all compile on the presentation-model side.
 target_sources(batbox_interactive PRIVATE
-  src/interactive/text_input/CursorCore.cpp
-  src/interactive/text_input/CursorEdit.cpp
-  src/interactive/text_input/CursorRender.cpp
-  src/interactive/text_input/CursorWords.cpp
-  src/interactive/text_input/KillRing.cpp
-  src/interactive/text_input/MeasuredTextCore.cpp
-  src/interactive/text_input/MeasuredTextLines.cpp
-  src/interactive/text_input/MeasuredTextIndigenous.cpp
-  src/interactive/text_input/TextEditorCore.cpp
-  src/interactive/text_input/TextEditorKeys.cpp
-  src/interactive/text_input/TextEditorIndigenous.cpp
-  src/interactive/submit/CommandQueueCore.cpp
-  src/interactive/submit/CommandQueueEditable.cpp
-  src/interactive/submit/ExecuteFinish.cpp
-  src/interactive/submit/ExecuteInput.cpp
-  src/interactive/submit/PoetrySubmitDirect.cpp
-  src/interactive/submit/QueueProcessor.cpp
-  src/interactive/submit/QueueReadiness.cpp
-  src/interactive/submit/QueuedInputs.cpp
-  src/interactive/submit/Workload.cpp
-  src/interactive/TurnBinding.cpp
-  src/interactive/lifecycle/MessageState.cpp
-  src/interactive/lifecycle/BashGadgets.cpp
-  src/interactive/lifecycle/LoadingState.cpp
-  src/interactive/navigation/ResubmitText.cpp
-  src/interactive/navigation/RewindCore.cpp
-  src/interactive/navigation/MessageCopy.cpp
-  src/interactive/navigation/MessageCopyBinding.cpp
-  src/interactive/repl_runtime/RuntimeCore.cpp
-  src/interactive/repl_runtime/RuntimeDerived.cpp
-  src/interactive/repl_runtime/RuntimeIngress.cpp
-  src/interactive/repl_runtime/RuntimeInit.cpp
-  src/interactive/repl_runtime/RuntimeTranscript.cpp
-  src/interactive/background/NotificationAttachments.cpp)
+  src/ui/text_input/CursorCore.cpp
+  src/ui/text_input/CursorEdit.cpp
+  src/ui/text_input/CursorRender.cpp
+  src/ui/text_input/CursorWords.cpp
+  src/ui/text_input/KillRing.cpp
+  src/ui/text_input/MeasuredTextCore.cpp
+  src/ui/text_input/MeasuredTextLines.cpp
+  src/ui/text_input/MeasuredTextIndigenous.cpp
+  src/ui/text_input/TextEditorCore.cpp
+  src/ui/text_input/TextEditorKeys.cpp
+  src/ui/text_input/TextEditorIndigenous.cpp
+  src/ui/submit/CommandQueueCore.cpp
+  src/ui/submit/CommandQueueEditable.cpp
+  src/ui/submit/ExecuteFinish.cpp
+  src/ui/submit/ExecuteInput.cpp
+  src/ui/submit/PoetrySubmitDirect.cpp
+  src/ui/submit/QueueProcessor.cpp
+  src/ui/submit/QueueReadiness.cpp
+  src/ui/submit/QueuedInputs.cpp
+  src/ui/submit/Workload.cpp
+  src/core/turn/TurnBinding.cpp
+  src/ui/lifecycle/MessageState.cpp
+  src/ui/lifecycle/BashGadgets.cpp
+  src/ui/lifecycle/LoadingState.cpp
+  src/ui/navigation/ResubmitText.cpp
+  src/ui/navigation/RewindCore.cpp
+  src/ui/navigation/MessageCopy.cpp
+  src/ui/navigation/MessageCopyBinding.cpp
+  src/ui/repl_runtime/RuntimeCore.cpp
+  src/ui/repl_runtime/RuntimeDerived.cpp
+  src/ui/repl_runtime/RuntimeIngress.cpp
+  src/ui/repl_runtime/RuntimeInit.cpp
+  src/ui/repl_runtime/RuntimeTranscript.cpp
+  src/ui/background/NotificationAttachments.cpp)
 
 add_library(batbox_terminal_ftxui
   src/ui/terminal_ftxui/Driver.cpp src/ui/terminal_ftxui/PresentationLayout.cpp
@@ -69,31 +69,31 @@ target_compile_options(batbox_terminal_ftxui PRIVATE -Wall -Wextra -Wpedantic)
 # the UI -- the seam between Shell/viewport code and the ftxui-free
 # presentation model above, so it compiles on the driver side.
 target_sources(batbox_terminal_ftxui PRIVATE
-  src/interactive/conversation_shell/ShellCore.cpp
-  src/interactive/conversation_shell/ShellConversation.cpp
-  src/interactive/conversation_shell/ShellRender.cpp
-  src/interactive/conversation_shell/PoetryViewport.cpp
-  src/interactive/conversation_shell/ShellInput.cpp
-  src/interactive/conversation_shell/ShellTranscript.cpp
-  src/interactive/presentation_providers/ThemeLight.cpp
-  src/interactive/presentation_providers/ThemeDark.cpp
-  src/interactive/presentation_providers/ThemeDaltonized.cpp
-  src/interactive/presentation_providers/ThemeData.cpp
-  src/interactive/presentation_providers/ThemeBatbox.cpp
-  src/interactive/presentation_providers/StyleRoles.cpp
-  src/interactive/presentation_providers/SystemTheme.cpp
-  src/interactive/presentation_providers/ThemeState.cpp
-  src/interactive/presentation_providers/Shortcut.cpp
-  src/interactive/presentation_providers/DefaultBindings.cpp
-  src/interactive/presentation_providers/Chrome.cpp
-  src/interactive/presentation_providers/MissionFooter.cpp
-  src/interactive/presentation_providers/CardPalettes.cpp
-  src/application/completion/Commands.cpp
-  src/application/completion/Paths.cpp
-  src/application/editor/IndigenousProcess.cpp
-  src/application/editor/PoetryEditor.cpp
-  src/application/editor/TranscriptFile.cpp
-  src/application/history/History.cpp)
+  src/ui/conversation_shell/ShellCore.cpp
+  src/ui/conversation_shell/ShellConversation.cpp
+  src/ui/conversation_shell/ShellRender.cpp
+  src/ui/conversation_shell/PoetryViewport.cpp
+  src/ui/conversation_shell/ShellInput.cpp
+  src/ui/conversation_shell/ShellTranscript.cpp
+  src/ui/presentation_providers/ThemeLight.cpp
+  src/ui/presentation_providers/ThemeDark.cpp
+  src/ui/presentation_providers/ThemeDaltonized.cpp
+  src/ui/presentation_providers/ThemeData.cpp
+  src/ui/presentation_providers/ThemeBatbox.cpp
+  src/ui/presentation_providers/StyleRoles.cpp
+  src/ui/presentation_providers/SystemTheme.cpp
+  src/ui/presentation_providers/ThemeState.cpp
+  src/ui/presentation_providers/Shortcut.cpp
+  src/ui/presentation_providers/DefaultBindings.cpp
+  src/ui/presentation_providers/Chrome.cpp
+  src/ui/presentation_providers/MissionFooter.cpp
+  src/ui/presentation_providers/CardPalettes.cpp
+  src/app/completion/Commands.cpp
+  src/app/completion/Paths.cpp
+  src/app/editor/IndigenousProcess.cpp
+  src/app/editor/PoetryEditor.cpp
+  src/app/editor/TranscriptFile.cpp
+  src/app/history/History.cpp)
 include(cmake/InteractiveCards.cmake)
 include(cmake/MessageView.cmake)
 include(cmake/MessageListView.cmake)

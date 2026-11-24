@@ -1,8 +1,8 @@
-#include "interactive/conversation_shell/Shell.hpp"
-#include "interactive/presentation_providers/Chrome.hpp"
-#include "interactive/presentation_providers/DefaultBindings.hpp"
-#include "text_sdk/width/IndigenousLayout.hpp"
-#include "history/References.hpp"
+#include "ui/conversation_shell/Shell.hpp"
+#include "ui/presentation_providers/Chrome.hpp"
+#include "ui/presentation_providers/DefaultBindings.hpp"
+#include "lib/text_sdk/width/IndigenousLayout.hpp"
+#include "core/history/References.hpp"
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
 #include <chrono>

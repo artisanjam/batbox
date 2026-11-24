@@ -683,7 +683,7 @@ there.
 ## Where the catalog comes from
 
 `gadgets/providers_catalog.py` reads a models.dev `api.json` and writes
-`src/providers/Catalog.generated.cpp`. It keeps, per provider, the wire kind,
+`src/services/providers/Catalog.generated.cpp`. It keeps, per provider, the wire kind,
 base URL, paths, key variables, documentation link, default quirks and up to 40
 current, tool-capable models with their limits. To refresh it:
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "lib/instructions/hooks/runtime/ProcessHookJson.hpp"
-#include "core/event_loop/Deferred.hpp"
+#include "lib/runtime/Deferred.hpp"
 #include <memory>
 #include <stop_token>
 #include <variant>

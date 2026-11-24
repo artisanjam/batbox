@@ -1,5 +1,5 @@
-#include "interactive/cards_remaining/AttachmentProjection.hpp"
-#include "interactive/cards_remaining/MessageLeavesProjection.hpp"
+#include "ui/cards_remaining/AttachmentProjection.hpp"
+#include "ui/cards_remaining/MessageLeavesProjection.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

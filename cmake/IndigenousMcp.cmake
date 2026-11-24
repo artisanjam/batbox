@@ -1,5 +1,5 @@
 # MCP authentication, connection state machines, and the Indigenous SDK transport boundary.
-add_library(batbox_indigenous_jsonl_process src/core/process/IndigenousJsonlProcess.cpp)
+add_library(batbox_indigenous_jsonl_process src/lib/runtime/IndigenousJsonlProcess.cpp)
 target_link_libraries(batbox_indigenous_jsonl_process PUBLIC batbox_core
   PkgConfig::LIBUV Threads::Threads)
 target_compile_options(batbox_indigenous_jsonl_process PRIVATE -Wall -Wextra -Wpedantic)

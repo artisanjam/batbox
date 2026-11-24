@@ -1,10 +1,10 @@
-#include "application/ModelBinding.hpp"
-#include "application/skills/Provider.hpp"
-#include "application/flights/Flight.hpp"
-#include "bats/ForkedBat.hpp"
-#include "bootstrap/InvokedSkills.hpp"
+#include "app/host/ModelBinding.hpp"
+#include "app/skills/Provider.hpp"
+#include "app/flights/Flight.hpp"
+#include "core/bats/ForkedBat.hpp"
+#include "app/bootstrap/InvokedSkills.hpp"
 #include "core/runtime/Platform.hpp"
-#include "gadgets/live_roster/LiveRoster.hpp"
+#include "core/gadgets/live_roster/LiveRoster.hpp"
 #include <atomic>
 #include <filesystem>
 #include <fstream>

@@ -1,5 +1,5 @@
-#include "user_input/SlashDispatch.hpp"
-#include "user_input/UiCommandRouter.hpp"
+#include "ui/user_input/SlashDispatch.hpp"
+#include "ui/user_input/UiCommandRouter.hpp"
 #include <iostream>
 #include <stdexcept>
 

@@ -1,7 +1,7 @@
 #include "cloud_check.hpp"
-#include "providers/aws/SigV4.hpp"
-#include "providers/cloud/Clock.hpp"
-#include "providers/cloud/Crypto.hpp"
+#include "services/providers/aws/SigV4.hpp"
+#include "services/providers/cloud/Clock.hpp"
+#include "services/providers/cloud/Crypto.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <filesystem>
 #include <fstream>

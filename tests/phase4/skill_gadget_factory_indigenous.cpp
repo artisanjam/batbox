@@ -1,4 +1,4 @@
-#include "skills/SkillGadgetFactory.hpp"
+#include "core/skills/SkillGadgetFactory.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include <iostream>
 #include <stdexcept>

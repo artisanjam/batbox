@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "gadget_results/Budget.hpp"
+#include "ui/gadget_results/Budget.hpp"
 #include <cassert>
 #include <filesystem>
 #include <fstream>

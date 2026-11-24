@@ -1,6 +1,6 @@
-#include "bats/ForkedBat.hpp"
-#include "execution/Orchestration.hpp"
-#include "query/ModelPass.hpp"
+#include "core/bats/ForkedBat.hpp"
+#include "app/execution/Orchestration.hpp"
+#include "core/query/ModelPass.hpp"
 #include <cassert>
 #include <future>
 #include <iostream>

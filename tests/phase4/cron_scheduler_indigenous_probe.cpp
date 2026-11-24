@@ -1,8 +1,8 @@
 #include <cstdlib>
-#include "cron/CronSchedulerIndigenous.hpp"
-#include "cron/CronLock.hpp"
-#include "bootstrap/BootstrapState.hpp"
-#include "cleanup/Roster.hpp"
+#include "services/cron/CronSchedulerIndigenous.hpp"
+#include "services/cron/CronLock.hpp"
+#include "app/bootstrap/BootstrapState.hpp"
+#include "app/cleanup/Roster.hpp"
 #include "core/runtime/JsonValue.hpp"
 #include "core/runtime/Platform.hpp"
 #include <cassert>

@@ -1,4 +1,4 @@
-#include "interactive/repl_runtime/Runtime.hpp"
+#include "ui/repl_runtime/Runtime.hpp"
 #include <cassert>
 #include <iostream>
 

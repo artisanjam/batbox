@@ -1,4 +1,4 @@
-#include "streaming/Reducer.hpp"
+#include "ui/streaming/Reducer.hpp"
 #include <iostream>
 #include <optional>
 #include <stdexcept>

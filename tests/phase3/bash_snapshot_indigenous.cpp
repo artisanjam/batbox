@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "shell/SnapshotRun.hpp"
+#include "lib/shell/SnapshotRun.hpp"
 #include "core/runtime/Platform.hpp"
 #include <filesystem>
 #include <fstream>

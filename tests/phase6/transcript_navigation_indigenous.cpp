@@ -1,4 +1,4 @@
-#include "interactive/transcript_navigation/Navigation.hpp"
+#include "ui/transcript_navigation/Navigation.hpp"
 #include "ftxui/dom/elements.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

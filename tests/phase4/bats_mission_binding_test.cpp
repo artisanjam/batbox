@@ -1,5 +1,5 @@
-#include "bats/BatMissionBinding.hpp"
-#include "bats/BatMissionRuntime.hpp"
+#include "core/bats/BatMissionBinding.hpp"
+#include "core/bats/BatMissionRuntime.hpp"
 #include <cassert>
 #include <iostream>
 using batbox::Json;

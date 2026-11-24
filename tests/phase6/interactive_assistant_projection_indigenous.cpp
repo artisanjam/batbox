@@ -1,4 +1,4 @@
-#include "interactive/cards_assistant/AssistantProjection.hpp"
+#include "ui/cards_assistant/AssistantProjection.hpp"
 #include "ftxui/dom/node.hpp"
 #include "ftxui/screen/screen.hpp"
 #include <cassert>

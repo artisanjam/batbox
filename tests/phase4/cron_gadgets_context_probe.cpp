@@ -1,5 +1,5 @@
-#include "bat_context/PartnerContext.hpp"
-#include "gadgets/cron/CronGadgets.hpp"
+#include "core/bat_context/PartnerContext.hpp"
+#include "core/gadgets/cron/CronGadgets.hpp"
 #include <future>
 #include <iostream>
 #include <memory>

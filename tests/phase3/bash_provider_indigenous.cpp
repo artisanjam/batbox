@@ -1,8 +1,8 @@
 #include <cstdlib>
-#include "shell/BashProvider.hpp"
-#include "shell/ManagedShell.hpp"
-#include "shell/SnapshotRun.hpp"
-#include "shell/CommandSplitter.hpp"
+#include "lib/shell/BashProvider.hpp"
+#include "lib/shell/ManagedShell.hpp"
+#include "lib/shell/SnapshotRun.hpp"
+#include "lib/shell/CommandSplitter.hpp"
 #include <atomic>
 #include <filesystem>
 #include <fstream>

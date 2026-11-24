@@ -1,7 +1,7 @@
-#include "interactive/PresentationState.hpp"
-#include "interactive/text_input/TextEditorIndigenous.hpp"
+#include "ui/PresentationState.hpp"
+#include "ui/text_input/TextEditorIndigenous.hpp"
 #include "ui/keyboard_input/Keyboard.hpp"
-#include "text_sdk/width/IndigenousLayout.hpp"
+#include "lib/text_sdk/width/IndigenousLayout.hpp"
 #include <iostream>
 #include <stdexcept>
 

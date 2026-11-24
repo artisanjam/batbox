@@ -1,5 +1,5 @@
-#include "query/CloseableIndigenousCursor.hpp"
-#include "query/IndigenousModelCursor.hpp"
+#include "core/query/CloseableIndigenousCursor.hpp"
+#include "core/query/IndigenousModelCursor.hpp"
 #include <cassert>
 #include <future>
 #include <string>

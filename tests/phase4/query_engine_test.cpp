@@ -1,6 +1,6 @@
-#include "query/Engine.hpp"
-#include "query/StopHooks.hpp"
-#include "retry/Retry.hpp"
+#include "core/query/Engine.hpp"
+#include "core/query/StopHooks.hpp"
+#include "lib/http/Retry.hpp"
 #include <cassert>
 #include <future>
 #include <iostream>
