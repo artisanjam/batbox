@@ -1,4 +1,4 @@
-#include "application/media/ClipboardImageMac.hpp"
+#include "app/media/ClipboardImageMac.hpp"
 #import <AppKit/AppKit.h>
 
 namespace batbox::application::media::indigenous {
